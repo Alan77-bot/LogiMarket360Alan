@@ -1,0 +1,1 @@
+Pendiente: registrar el modelo discutido, contexto, requisitos, clases, relaciones, estados y secuencias.

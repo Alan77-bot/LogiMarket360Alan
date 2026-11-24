@@ -1,0 +1,1 @@
+Conservar errores reales, correcciones, commits y resultados antes/despues cuando ocurran. No reconstruir evidencia ficticia.

@@ -1,0 +1,1 @@
+Guardar evidencia del codigo clave de los patrones y de su funcionamiento cuando se implementen. No crear capturas de clases vacias. No usar capturas del proyecto anterior como evidencia de este desarrollo.

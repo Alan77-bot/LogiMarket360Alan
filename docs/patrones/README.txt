@@ -1,0 +1,1 @@
+Pendiente: mapa de los 23 patrones con problema, participantes, archivo, recorrido, prueba, beneficio y costo. Las carpetas preparadas no equivalen a patrones implementados.

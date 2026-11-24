@@ -1,0 +1,1 @@
+Pendiente: matriz oficial P01-P38, esperado, obtenido, fecha y evidencia. Ninguna prueba implementada o aprobada por ahora.
