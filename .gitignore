@@ -18,3 +18,9 @@
 .env
 .env.*
 TestResults/
+
+# Evidencias temporales y entregables generados
+tmp/
+output/
+*.log
+logimarket-design.db*
