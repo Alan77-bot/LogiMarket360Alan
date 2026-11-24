@@ -1,2 +1,6 @@
-// PENDIENTE: implementar ResultadoValidacion en esta etapa del aprendizaje.
-// Carpeta: LogiMarket.Application/Validaciones. No contiene logica ni patrones implementados todavia.
+namespace LogiMarket.Application.Validaciones;
+// Responsabilidad de ResultadoValidacion: colaborar desde LogiMarket.Application.Validaciones sin mezclar reglas, persistencia y pantallas.
+public sealed record ResultadoValidacion(bool Valido, string Codigo, string Mensaje)
+{
+    public static ResultadoValidacion Correcto => new(true, "OK", "Pedido valido.");
+}
