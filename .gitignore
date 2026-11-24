@@ -1,0 +1,20 @@
+# Archivos generados al compilar
+**/bin/
+**/obj/
+
+# Configuracion local del editor
+.vs/
+*.user
+*.suo
+
+# Bases de datos locales
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
+# Secretos y resultados de pruebas
+.env
+.env.*
+TestResults/
