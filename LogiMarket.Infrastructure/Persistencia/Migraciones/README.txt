@@ -1,0 +1,1 @@
+Las migraciones seran generadas con dotnet ef cuando existan entidades y mapeos. No se escribiran migraciones ficticias.
