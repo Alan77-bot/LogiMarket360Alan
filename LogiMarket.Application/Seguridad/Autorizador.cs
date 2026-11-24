@@ -1,2 +1,17 @@
-// PENDIENTE: implementar Autorizador en esta etapa del aprendizaje.
-// Carpeta: LogiMarket.Application/Seguridad. No contiene logica ni patrones implementados todavia.
+using LogiMarket.Application.Contratos;
+using LogiMarket.Domain.Enums;
+
+namespace LogiMarket.Application.Seguridad;
+// Responsabilidad de Autorizador: colaborar desde LogiMarket.Application.Seguridad sin mezclar reglas, persistencia y pantallas.
+public sealed class Autorizador(SesionActual sesion, IBitacora bitacora)
+{
+    public async Task Exigir(params Rol[] roles)
+    {
+        if (sesion.Rol == Rol.ADMIN || sesion.Rol is not null && roles.Contains(sesion.Rol.Value))
+            return;
+        await bitacora.Registrar(sesion.Nombre, "SEGURIDAD", "DENEGADO", Guid.NewGuid().ToString());
+        throw new UnauthorizedAccessException("Su rol no permite esta operacion.");
+    }
+
+    public Task Lectura() => Exigir(Rol.VENTAS, Rol.BODEGA, Rol.CONSULTA);
+}
