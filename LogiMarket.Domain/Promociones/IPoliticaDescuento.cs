@@ -1,2 +1,11 @@
-// PENDIENTE: implementar IPoliticaDescuento en esta etapa del aprendizaje.
-// Carpeta: LogiMarket.Domain/Promociones. No contiene logica ni patrones implementados todavia.
+namespace LogiMarket.Domain.Promociones;
+// Patron Strategy: cada promocion decide cuando aplica y que tasa utiliza.
+// Strategy: la calculadora depende del contrato y admite nuevas politicas.
+public interface IPoliticaDescuento
+{
+    int Prioridad { get; }
+
+    decimal Tasa { get; }
+
+    bool Aplica(ContextoPromocion contexto);
+}

@@ -1,2 +1,9 @@
-// PENDIENTE: implementar Vip10 en esta etapa del aprendizaje.
-// Carpeta: LogiMarket.Domain/Promociones. No contiene logica ni patrones implementados todavia.
+namespace LogiMarket.Domain.Promociones;
+// Strategy para clientes VIP cuando no aplica una promocion con mayor prioridad.
+public sealed class Vip10 : IPoliticaDescuento
+{
+    public int Prioridad => 10;
+    public decimal Tasa => 0.10m;
+
+    public bool Aplica(ContextoPromocion contexto) => contexto.EsVip;
+}

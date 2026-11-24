@@ -1,2 +1,6 @@
-// PENDIENTE: implementar IPlazoEntrega en esta etapa del aprendizaje.
-// Carpeta: LogiMarket.Domain/Entregas. No contiene logica ni patrones implementados todavia.
+namespace LogiMarket.Domain.Entregas;
+// Responsabilidad de IPlazoEntrega: colaborar desde LogiMarket.Domain.Entregas sin mezclar reglas, persistencia y pantallas.
+public interface IPlazoEntrega
+{
+    int Dias { get; }
+}

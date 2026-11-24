@@ -1,2 +1,9 @@
-// PENDIENTE: implementar SinDescuento en esta etapa del aprendizaje.
-// Carpeta: LogiMarket.Domain/Promociones. No contiene logica ni patrones implementados todavia.
+namespace LogiMarket.Domain.Promociones;
+// Strategy de respaldo: una venta normal sigue el mismo contrato y utiliza tasa cero.
+public sealed class SinDescuento : IPoliticaDescuento
+{
+    public int Prioridad => 0;
+    public decimal Tasa => 0;
+
+    public bool Aplica(ContextoPromocion contexto) => true;
+}

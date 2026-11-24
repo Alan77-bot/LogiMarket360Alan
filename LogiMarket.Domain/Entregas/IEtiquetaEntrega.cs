@@ -1,2 +1,6 @@
-// PENDIENTE: implementar IEtiquetaEntrega en esta etapa del aprendizaje.
-// Carpeta: LogiMarket.Domain/Entregas. No contiene logica ni patrones implementados todavia.
+namespace LogiMarket.Domain.Entregas;
+// Responsabilidad de IEtiquetaEntrega: colaborar desde LogiMarket.Domain.Entregas sin mezclar reglas, persistencia y pantallas.
+public interface IEtiquetaEntrega
+{
+    string Crear(Guid pedido);
+}
