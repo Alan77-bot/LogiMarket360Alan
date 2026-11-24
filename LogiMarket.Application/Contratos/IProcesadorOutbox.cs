@@ -1,2 +1,6 @@
-// PENDIENTE: implementar IProcesadorOutbox en esta etapa del aprendizaje.
-// Carpeta: LogiMarket.Application/Contratos. No contiene logica ni patrones implementados todavia.
+namespace LogiMarket.Application.Contratos;
+// Responsabilidad de IProcesadorOutbox: colaborar desde LogiMarket.Application.Contratos sin mezclar reglas, persistencia y pantallas.
+public interface IProcesadorOutbox
+{
+    Task<int> Procesar();
+}

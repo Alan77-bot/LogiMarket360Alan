@@ -1,2 +1,8 @@
-// PENDIENTE: implementar IPasarelaPago en esta etapa del aprendizaje.
-// Carpeta: LogiMarket.Application/Contratos. No contiene logica ni patrones implementados todavia.
+using LogiMarket.Application.DTOs;
+
+namespace LogiMarket.Application.Contratos;
+// Responsabilidad de IPasarelaPago: colaborar desde LogiMarket.Application.Contratos sin mezclar reglas, persistencia y pantallas.
+public interface IPasarelaPago
+{
+    Task<ResultadoCobro> CobrarAsync(decimal importe, string clave);
+}

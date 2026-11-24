@@ -1,2 +1,3 @@
-// PENDIENTE: implementar ComponenteEntrada en esta etapa del aprendizaje.
-// Carpeta: LogiMarket.Application/DTOs. No contiene logica ni patrones implementados todavia.
+namespace LogiMarket.Application.DTOs;
+// Responsabilidad de ComponenteEntrada: colaborar desde LogiMarket.Application.DTOs sin mezclar reglas, persistencia y pantallas.
+public sealed record ComponenteEntrada(Guid Id, bool EsKit, int Cantidad);

@@ -1,2 +1,3 @@
-// PENDIENTE: implementar LineaEntrada en esta etapa del aprendizaje.
-// Carpeta: LogiMarket.Application/DTOs. No contiene logica ni patrones implementados todavia.
+namespace LogiMarket.Application.DTOs;
+// Responsabilidad de LineaEntrada: colaborar desde LogiMarket.Application.DTOs sin mezclar reglas, persistencia y pantallas.
+public sealed record LineaEntrada(string Sku, int Cantidad);

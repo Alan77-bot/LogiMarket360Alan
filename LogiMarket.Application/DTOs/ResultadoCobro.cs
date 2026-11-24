@@ -1,2 +1,3 @@
-// PENDIENTE: implementar ResultadoCobro en esta etapa del aprendizaje.
-// Carpeta: LogiMarket.Application/DTOs. No contiene logica ni patrones implementados todavia.
+namespace LogiMarket.Application.DTOs;
+// Responsabilidad de ResultadoCobro: colaborar desde LogiMarket.Application.DTOs sin mezclar reglas, persistencia y pantallas.
+public sealed record ResultadoCobro(bool Aceptado, string Referencia, string Mensaje);
