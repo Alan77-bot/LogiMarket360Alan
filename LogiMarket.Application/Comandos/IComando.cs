@@ -1,2 +1,8 @@
-// PENDIENTE: implementar IComando en esta etapa del aprendizaje.
-// Carpeta: LogiMarket.Application/Comandos. No contiene logica ni patrones implementados todavia.
+namespace LogiMarket.Application.Comandos;
+// Patron Command: representa una solicitud ejecutable y su entrada para la bitacora.
+public interface IComando
+{
+    string Entrada { get; }
+
+    Task Ejecutar();
+}
