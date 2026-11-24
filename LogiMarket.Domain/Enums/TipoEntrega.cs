@@ -1,2 +1,7 @@
-// PENDIENTE: implementar TipoEntrega en esta etapa del aprendizaje.
-// Carpeta: LogiMarket.Domain/Enums. No contiene logica ni patrones implementados todavia.
+namespace LogiMarket.Domain.Enums;
+// Responsabilidad de TipoEntrega: colaborar desde LogiMarket.Domain.Enums sin mezclar reglas, persistencia y pantallas.
+public enum TipoEntrega
+{
+    ESTANDAR,
+    EXPRES
+}

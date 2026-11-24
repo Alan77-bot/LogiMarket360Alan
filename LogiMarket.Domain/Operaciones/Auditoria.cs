@@ -1,2 +1,25 @@
-// PENDIENTE: implementar Auditoria en esta etapa del aprendizaje.
-// Carpeta: LogiMarket.Domain/Operaciones. No contiene logica ni patrones implementados todavia.
+using LogiMarket.Domain.Entidades;
+
+namespace LogiMarket.Domain.Operaciones;
+// Responsabilidad de Auditoria: colaborar desde LogiMarket.Domain.Operaciones sin mezclar reglas, persistencia y pantallas.
+public sealed class Auditoria
+{
+    public Guid Id { get; private set; } = Guid.NewGuid();
+    public string Usuario { get; private set; } = "";
+    public string Operacion { get; private set; } = "";
+    public string Resultado { get; private set; } = "";
+    public string Correlacion { get; private set; } = "";
+    public DateTimeOffset Fecha { get; private set; } = DateTimeOffset.UtcNow;
+
+    private Auditoria()
+    {
+    }
+
+    public Auditoria(string usuario, string operacion, string resultado, string correlacion)
+    {
+        Usuario = usuario;
+        Operacion = operacion;
+        Resultado = resultado;
+        Correlacion = correlacion;
+    }
+}
