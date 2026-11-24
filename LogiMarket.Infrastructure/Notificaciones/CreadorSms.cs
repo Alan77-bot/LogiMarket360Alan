@@ -1,2 +1,8 @@
-// PENDIENTE: implementar CreadorSms en esta etapa del aprendizaje.
-// Carpeta: LogiMarket.Infrastructure/Notificaciones. No contiene logica ni patrones implementados todavia.
+using LogiMarket.Application.Contratos;
+
+namespace LogiMarket.Infrastructure.Notificaciones;
+// Factory Method: construye el colaborador SMS simulado que registra el aviso local.
+public sealed class CreadorSms(IRepositorio repo) : CreadorNotificador
+{
+    public override INotificador Crear() => new NotificadorSmsSimulado(repo);
+}

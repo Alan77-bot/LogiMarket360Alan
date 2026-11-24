@@ -1,2 +1,8 @@
-// PENDIENTE: implementar CreadorEmail en esta etapa del aprendizaje.
-// Carpeta: LogiMarket.Infrastructure/Notificaciones. No contiene logica ni patrones implementados todavia.
+using LogiMarket.Application.Contratos;
+
+namespace LogiMarket.Infrastructure.Notificaciones;
+// Factory Method: construye el colaborador EMAIL simulado que registra el aviso local.
+public sealed class CreadorEmail(IRepositorio repo) : CreadorNotificador
+{
+    public override INotificador Crear() => new NotificadorEmailSimulado(repo);
+}

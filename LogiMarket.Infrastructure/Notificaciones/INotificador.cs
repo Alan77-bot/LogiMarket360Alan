@@ -1,2 +1,8 @@
-// PENDIENTE: implementar INotificador en esta etapa del aprendizaje.
-// Carpeta: LogiMarket.Infrastructure/Notificaciones. No contiene logica ni patrones implementados todavia.
+using LogiMarket.Domain.Operaciones;
+
+namespace LogiMarket.Infrastructure.Notificaciones;
+// Responsabilidad de INotificador: colaborar desde LogiMarket.Infrastructure.Notificaciones sin mezclar reglas, persistencia y pantallas.
+public interface INotificador
+{
+    Task Enviar(EventoOutbox evento);
+}
