@@ -1,2 +1,3 @@
-// PENDIENTE: implementar EstadoEntregado en esta etapa del aprendizaje.
-// Carpeta: LogiMarket.Domain/Estados. No contiene logica ni patrones implementados todavia.
+namespace LogiMarket.Domain.Estados;
+// State: este participante declara las transiciones que se permiten desde su estado.
+public sealed class EstadoEntregado() : EstadoBase;

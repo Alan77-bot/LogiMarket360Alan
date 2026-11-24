@@ -1,2 +1,12 @@
-// PENDIENTE: implementar EstadoBase en esta etapa del aprendizaje.
-// Carpeta: LogiMarket.Domain/Estados. No contiene logica ni patrones implementados todavia.
+using LogiMarket.Domain.Enums;
+
+namespace LogiMarket.Domain.Estados;
+// Patron State: cada estado declara sus destinos permitidos; el formulario no escribe el estado directamente.
+public abstract class EstadoBase(params EstadoPedido[] siguientes)
+{
+    public void Exigir(EstadoPedido destino)
+    {
+        if (!siguientes.Contains(destino))
+            throw new InvalidOperationException($"Transicion no permitida hacia {destino}.");
+    }
+}

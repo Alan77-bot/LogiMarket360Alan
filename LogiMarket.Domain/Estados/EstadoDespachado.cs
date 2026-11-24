@@ -1,2 +1,5 @@
-// PENDIENTE: implementar EstadoDespachado en esta etapa del aprendizaje.
-// Carpeta: LogiMarket.Domain/Estados. No contiene logica ni patrones implementados todavia.
+using LogiMarket.Domain.Enums;
+
+namespace LogiMarket.Domain.Estados;
+// State: este participante declara las transiciones que se permiten desde su estado.
+public sealed class EstadoDespachado() : EstadoBase(EstadoPedido.ENTREGADO);
