@@ -48,13 +48,17 @@ Flujo de demostracion: VENTAS prepara Ana + KIT_TELETRABAJO x1 ESTANDAR, guarda,
 - docs/pruebas/MATRIZ.md: 38 casos oficiales y resultados nuevos.
 - docs/calidad/REVISION.md: riesgos, comprobaciones y limites reales.
 
-La implementacion adapta la referencia del mismo LogiMarket360 a los archivos separados del proyecto Alan, conservando el Rol escrito por el usuario. No se presenta el codigo como una implementacion manual completa del estudiante ni se reutilizan resultados/capturas anteriores como evidencia de Alan. Git conserva cambios funcionales reales en commits separados; el repositorio creado para este proyecto es https://github.com/Alan77-bot/LogiMarket360Alan y la subida esta pendiente de aprobar la publicacion de metadatos personales.
+La implementacion adapta la referencia del mismo LogiMarket360 a los archivos separados del proyecto Alan, conservando el Rol escrito por el usuario. No se presenta el codigo como una implementacion manual completa del estudiante ni se reutilizan resultados/capturas anteriores como evidencia de Alan. Git conserva cambios funcionales reales en commits separados; el repositorio publico es https://github.com/Alan77-bot/LogiMarket360Alan con historial y evidencias anonimizados.
 
 El PDF y los datos de portada siguen pendientes por indicacion del usuario. Las integraciones son simuladas y los comprobantes no tienen validez tributaria.
 ## Publicacion y entrega
 
 Repositorio creado https://github.com/Alan77-bot/LogiMarket360Alan
 
-Version prevista v1.0.0 con ZIP del codigo y evidencias La subida y la Release todavia estan pendientes
+Version v1.0.0 con ZIP del codigo y evidencias anonimizadas
 
 Consultar docs/ENTREGA.md para distinguir lo implementado de los pendientes academicos El PDF y los datos de portada siguen pendientes No se afirma que existan diez pares de refactorizaciones con pruebas antes y despues ni una revision manual exhaustiva de accesibilidad
+
+## Privacidad
+
+No se publica el correo real ni el nombre del equipo usuario de Windows o rutas privadas de perfil El historial utiliza el correo protegido de GitHub y las evidencias conservan resultados y fechas con identificadores anonimizados Consultar docs/PRIVACIDAD.md

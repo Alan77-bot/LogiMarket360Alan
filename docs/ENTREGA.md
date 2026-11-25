@@ -19,13 +19,13 @@
 - Revision manual exhaustiva de TAB foco y escalas DPI de monitor
 - Acreditar diez refactorizaciones con Git y pruebas antes y despues La lista de riesgos no sustituye esos pares
 
-## Publicacion preparada
+## Publicacion
 
 Repositorio creado https://github.com/Alan77-bot/LogiMarket360Alan
 
-Subida de archivos pendiente de autorizacion explicita para publicar correo de autor nombre de equipo y rutas locales presentes en commits y TRX
+Correo real equipo usuario de Windows y rutas privadas retirados de todo el historial y de las evidencias publicadas
 
-Version prevista v1.0.0 El repositorio anterior LogiMarket360 es independiente
+Version v1.0.0 El repositorio anterior LogiMarket360 es independiente
 
 El ZIP de codigo no incluye bin obj .vs bases locales ni claves reales Los usuarios y claves Demo123! son ficticios y se documentan para ejecutar la practica
 
