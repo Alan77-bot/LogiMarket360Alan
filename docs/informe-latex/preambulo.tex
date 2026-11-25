@@ -75,7 +75,7 @@
 \fancyfoot[C]{\thepage}
 
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{4pt}
+\setlength{\parskip}{2pt}
 
 % ============================================================
 % CASILLAS
@@ -128,20 +128,24 @@ columns=fullflexible,showstringspaces=false,frame=single,
 \newcommand{\fechaEvidencia}{24 de noviembre de 2026}
 \setcounter{tocdepth}{2}
 \setlength{\tabcolsep}{5pt}
-\renewcommand{\arraystretch}{1.18}
+\renewcommand{\arraystretch}{1.08}
 \Urlmuskip=0mu plus 2mu
-\lstset{basicstyle=\ttfamily\scriptsize,aboveskip=7pt,belowskip=7pt}
+\lstset{basicstyle=\ttfamily\scriptsize,aboveskip=4pt,belowskip=4pt}
 \newcommand{\captura}[3]{%
- \begin{figure}[htbp]\centering
+ \begin{figure}[H]\centering
  \includegraphics[width=\linewidth,height=8.0cm,keepaspectratio]{imagenes/#1}
  \caption{#2}\label{fig:#3}
  \end{figure}}
 \newcommand{\modelo}[3]{%
- \begin{figure}[htbp]\centering
- \includegraphics[width=\linewidth,height=10.2cm,keepaspectratio]{diagramas/#1.pdf}
+ \begin{figure}[H]\centering
+ \includegraphics[width=\linewidth,height=7.0cm,keepaspectratio]{diagramas/#1.pdf}
  \caption{#2}\label{fig:#3}
  \end{figure}}
 
 \makeatletter
 \renewcommand*\l@subsection{\@dottedtocline{2}{1.5em}{3.2em}}
 \makeatother
+
+\setlength{\intextsep}{7pt}
+\setlength{\textfloatsep}{8pt}
+\captionsetup{skip=4pt}
