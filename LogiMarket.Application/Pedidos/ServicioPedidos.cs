@@ -9,7 +9,7 @@ using LogiMarket.Domain.Pedidos;
 using LogiMarket.Domain.Promociones;
 
 namespace LogiMarket.Application.Pedidos;
-// Responsabilidad de ServicioPedidos: colaborar desde LogiMarket.Application.Pedidos sin mezclar reglas, persistencia y pantallas.
+// Coordina esta responsabilidad a traves de contratos; las reglas del negocio permanecen en su capa.
 public sealed class ServicioPedidos(IRepositorio repo, ITransacciones tx, Autorizador auth, SesionActual sesion, CalculadoraPrecios calculadora, IEnumerable<IFabricaEntrega> entregas, IReloj reloj)
 {
     public async Task<Pedido> Preparar(SolicitudBorrador entrada)

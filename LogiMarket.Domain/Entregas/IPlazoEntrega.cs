@@ -1,5 +1,5 @@
 namespace LogiMarket.Domain.Entregas;
-// Responsabilidad de IPlazoEntrega: colaborar desde LogiMarket.Domain.Entregas sin mezclar reglas, persistencia y pantallas.
+// Abstract Factory: este producto forma parte de una familia de entrega coherente.
 public interface IPlazoEntrega
 {
     int Dias { get; }

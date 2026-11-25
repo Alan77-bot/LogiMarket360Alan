@@ -1,3 +1,3 @@
 namespace LogiMarket.Domain.Entregas;
-// Responsabilidad de Tarifa: colaborar desde LogiMarket.Domain.Entregas sin mezclar reglas, persistencia y pantallas.
+// Abstract Factory: este producto forma parte de una familia de entrega coherente.
 internal sealed record Tarifa(decimal Importe) : ITarifaEntrega;

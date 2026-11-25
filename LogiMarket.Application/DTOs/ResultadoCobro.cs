@@ -1,3 +1,3 @@
 namespace LogiMarket.Application.DTOs;
-// Responsabilidad de ResultadoCobro: colaborar desde LogiMarket.Application.DTOs sin mezclar reglas, persistencia y pantallas.
+// Datos de entrada o salida del caso de uso; no contienen consultas SQL ni controles de pantalla.
 public sealed record ResultadoCobro(bool Aceptado, string Referencia, string Mensaje);

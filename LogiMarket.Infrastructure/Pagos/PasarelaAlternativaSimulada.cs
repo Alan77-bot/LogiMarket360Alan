@@ -3,7 +3,7 @@ using LogiMarket.Application.DTOs;
 using System.Collections.Concurrent;
 
 namespace LogiMarket.Infrastructure.Pagos;
-// Responsabilidad de PasarelaAlternativaSimulada: colaborar desde LogiMarket.Infrastructure.Pagos sin mezclar reglas, persistencia y pantallas.
+// Colaborador de pago simulado. Sus referencias permiten rastrear la operacion sin integrar cobros reales.
 public sealed class PasarelaAlternativaSimulada(OpcionesDemostracion opciones) : IPasarelaPago
 {
     private readonly ConcurrentDictionary<string, (decimal Importe, string Referencia)> cobros = new();

@@ -1,5 +1,5 @@
 namespace LogiMarket.Domain.Operaciones;
-// Responsabilidad de RecepcionEvento: colaborar desde LogiMarket.Domain.Operaciones sin mezclar reglas, persistencia y pantallas.
+// Registro trazable del negocio; las restricciones de persistencia completan su consistencia.
 public sealed class RecepcionEvento
 {
     public Guid EventoId { get; private set; }

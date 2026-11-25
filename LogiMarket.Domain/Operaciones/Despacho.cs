@@ -1,5 +1,5 @@
 namespace LogiMarket.Domain.Operaciones;
-// Responsabilidad de Despacho: colaborar desde LogiMarket.Domain.Operaciones sin mezclar reglas, persistencia y pantallas.
+// Registro trazable del negocio; las restricciones de persistencia completan su consistencia.
 public sealed class Despacho
 {
     public Guid Id { get; private set; } = Guid.NewGuid();

@@ -5,7 +5,7 @@ using LogiMarket.Domain.Catalogo;
 using LogiMarket.Domain.Entidades;
 
 namespace LogiMarket.Application.Catalogo;
-// Responsabilidad de ServicioCatalogo: colaborar desde LogiMarket.Application.Catalogo sin mezclar reglas, persistencia y pantallas.
+// Colabora con la composicion del catalogo manteniendo los datos de las filas separados de las reglas de venta.
 public sealed class ServicioCatalogo(IRepositorio repo, ITransacciones tx, Autorizador auth)
 {
     public async Task<List<FilaCatalogo>> Consultar(string filtro = "")

@@ -1,7 +1,7 @@
 using System.Collections.Concurrent;
 
 namespace LogiMarket.Infrastructure.Pagos;
-// Responsabilidad de PasarelaLegadaSimulada: colaborar desde LogiMarket.Infrastructure.Pagos sin mezclar reglas, persistencia y pantallas.
+// Colaborador de pago simulado. Sus referencias permiten rastrear la operacion sin integrar cobros reales.
 // El legado solo acepta centavos; el adaptador conserva su firma incompatible.
 public sealed class PasarelaLegadaSimulada
 {

@@ -1,4 +1,4 @@
 namespace LogiMarket.Application.Catalogo;
-// Responsabilidad de MetadatosSku: colaborar desde LogiMarket.Application.Catalogo sin mezclar reglas, persistencia y pantallas.
+// Colabora con la composicion del catalogo manteniendo los datos de las filas separados de las reglas de venta.
 // Flyweight: solo comparte datos inmutables; cantidad, precio y stock son externos.
 public sealed record MetadatosSku(string Sku, string Nombre, string Categoria, string Descripcion);

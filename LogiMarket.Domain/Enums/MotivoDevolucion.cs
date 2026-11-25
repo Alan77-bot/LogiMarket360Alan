@@ -1,5 +1,5 @@
 namespace LogiMarket.Domain.Enums;
-// Responsabilidad de MotivoDevolucion: colaborar desde LogiMarket.Domain.Enums sin mezclar reglas, persistencia y pantallas.
+// Valores del negocio que se guardan de forma estable; no cambiar su significado al agregar opciones.
 public enum MotivoDevolucion
 {
     DEFECTO,

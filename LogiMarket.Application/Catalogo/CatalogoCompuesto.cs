@@ -2,7 +2,7 @@ using LogiMarket.Domain.Catalogo;
 using LogiMarket.Domain.Entidades;
 
 namespace LogiMarket.Application.Catalogo;
-// Responsabilidad de CatalogoCompuesto: colaborar desde LogiMarket.Application.Catalogo sin mezclar reglas, persistencia y pantallas.
+// Colabora con la composicion del catalogo manteniendo los datos de las filas separados de las reglas de venta.
 public sealed class CatalogoCompuesto
 {
     public static IReadOnlyDictionary<string, IElementoCatalogo> Construir(List<Producto> productos, List<Kit> kits)

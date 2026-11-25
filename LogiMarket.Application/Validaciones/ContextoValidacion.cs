@@ -2,5 +2,5 @@ using LogiMarket.Domain.Entidades;
 using LogiMarket.Domain.Pedidos;
 
 namespace LogiMarket.Application.Validaciones;
-// Responsabilidad de ContextoValidacion: colaborar desde LogiMarket.Application.Validaciones sin mezclar reglas, persistencia y pantallas.
+// Coordina esta responsabilidad a traves de contratos; las reglas del negocio permanecen en su capa.
 public sealed record ContextoValidacion(Pedido Pedido, Cliente? Cliente, IReadOnlyList<Producto> Productos);

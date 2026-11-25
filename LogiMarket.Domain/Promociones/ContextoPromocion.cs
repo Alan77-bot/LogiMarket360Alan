@@ -1,3 +1,3 @@
 namespace LogiMarket.Domain.Promociones;
-// Responsabilidad de ContextoPromocion: colaborar desde LogiMarket.Domain.Promociones sin mezclar reglas, persistencia y pantallas.
+// Coordina esta responsabilidad a traves de contratos; las reglas del negocio permanecen en su capa.
 public sealed record ContextoPromocion(bool EsVip, int UnidadesFisicas);

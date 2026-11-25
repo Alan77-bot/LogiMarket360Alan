@@ -2,7 +2,7 @@ using LogiMarket.Domain.Entidades;
 using LogiMarket.Domain.Enums;
 
 namespace LogiMarket.Application.Seguridad;
-// Responsabilidad de SesionActual: colaborar desde LogiMarket.Application.Seguridad sin mezclar reglas, persistencia y pantallas.
+// La seguridad se comprueba en el servicio para que tambien funcione cuando no se utiliza la interfaz.
 public sealed class SesionActual
 {
     public Guid? UsuarioId { get; private set; }

@@ -1,7 +1,7 @@
 using LogiMarket.Domain.Operaciones;
 
 namespace LogiMarket.Infrastructure.Notificaciones;
-// Responsabilidad de INotificador: colaborar desde LogiMarket.Infrastructure.Notificaciones sin mezclar reglas, persistencia y pantallas.
+// Factory Method utiliza este colaborador simulado; el resultado se registra localmente, sin envios externos.
 public interface INotificador
 {
     Task Enviar(EventoOutbox evento);

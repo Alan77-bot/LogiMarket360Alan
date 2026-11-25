@@ -1,5 +1,5 @@
 namespace LogiMarket.Application.Contratos;
-// Responsabilidad de OpcionesDemostracion: colaborar desde LogiMarket.Application.Contratos sin mezclar reglas, persistencia y pantallas.
+// Este puerto define lo que necesita Application. Infrastructure proporciona la implementacion concreta.
 public sealed class OpcionesDemostracion
 {
     public bool RechazarCobro { get; set; }

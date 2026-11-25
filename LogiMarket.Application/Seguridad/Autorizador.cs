@@ -2,7 +2,7 @@ using LogiMarket.Application.Contratos;
 using LogiMarket.Domain.Enums;
 
 namespace LogiMarket.Application.Seguridad;
-// Responsabilidad de Autorizador: colaborar desde LogiMarket.Application.Seguridad sin mezclar reglas, persistencia y pantallas.
+// La seguridad se comprueba en el servicio para que tambien funcione cuando no se utiliza la interfaz.
 public sealed class Autorizador(SesionActual sesion, IBitacora bitacora)
 {
     public async Task Exigir(params Rol[] roles)

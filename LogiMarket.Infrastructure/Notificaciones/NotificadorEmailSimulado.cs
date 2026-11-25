@@ -2,7 +2,7 @@ using LogiMarket.Application.Contratos;
 using LogiMarket.Domain.Operaciones;
 
 namespace LogiMarket.Infrastructure.Notificaciones;
-// Responsabilidad de NotificadorEmailSimulado: colaborar desde LogiMarket.Infrastructure.Notificaciones sin mezclar reglas, persistencia y pantallas.
+// Factory Method utiliza este colaborador simulado; el resultado se registra localmente, sin envios externos.
 public sealed class NotificadorEmailSimulado(IRepositorio repo) : INotificador
 {
     public Task Enviar(EventoOutbox evento)

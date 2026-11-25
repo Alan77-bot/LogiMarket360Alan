@@ -1,7 +1,7 @@
 using LogiMarket.Domain.Catalogo;
 
 namespace LogiMarket.Domain.Pedidos;
-// Responsabilidad de InstantaneaElemento: colaborar desde LogiMarket.Domain.Pedidos sin mezclar reglas, persistencia y pantallas.
+// Coordina esta responsabilidad a traves de contratos; las reglas del negocio permanecen en su capa.
 // La instantanea conserva tambien el arbol anidado, ademas del desglose relacional.
 public sealed record InstantaneaElemento(string Sku, decimal Precio, decimal Peso, IReadOnlyList<InstantaneaHijo> Hijos)
 {

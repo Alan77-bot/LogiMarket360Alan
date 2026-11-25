@@ -3,7 +3,7 @@ using LogiMarket.Domain.Operaciones;
 using LogiMarket.Domain.Pedidos;
 
 namespace LogiMarket.Application.Contratos;
-// Responsabilidad de IRepositorio: colaborar desde LogiMarket.Application.Contratos sin mezclar reglas, persistencia y pantallas.
+// Este puerto define lo que necesita Application. Infrastructure proporciona la implementacion concreta.
 public interface IRepositorio
 {
     Task<List<Producto>> Productos();

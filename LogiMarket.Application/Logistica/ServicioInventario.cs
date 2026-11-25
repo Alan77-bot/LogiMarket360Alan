@@ -4,7 +4,7 @@ using LogiMarket.Domain.Enums;
 using LogiMarket.Domain.Operaciones;
 
 namespace LogiMarket.Application.Logistica;
-// Responsabilidad de ServicioInventario: colaborar desde LogiMarket.Application.Logistica sin mezclar reglas, persistencia y pantallas.
+// Coordina esta responsabilidad a traves de contratos; las reglas del negocio permanecen en su capa.
 public sealed class ServicioInventario(IRepositorio repo, ITransacciones tx, Autorizador auth)
 {
     public async Task Mover(Guid producto, int cantidad, string motivo, string referencia)

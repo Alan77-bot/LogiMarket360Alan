@@ -1,5 +1,5 @@
 namespace LogiMarket.Application.Contratos;
-// Responsabilidad de IRegistroRecepciones: colaborar desde LogiMarket.Application.Contratos sin mezclar reglas, persistencia y pantallas.
+// Este puerto define lo que necesita Application. Infrastructure proporciona la implementacion concreta.
 public interface IRegistroRecepciones
 {
     Task<bool> Recibido(Guid evento, string suscriptor);

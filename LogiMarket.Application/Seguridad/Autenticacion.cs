@@ -2,7 +2,7 @@ using LogiMarket.Application.Contratos;
 using LogiMarket.Domain.Entidades;
 
 namespace LogiMarket.Application.Seguridad;
-// Responsabilidad de Autenticacion: colaborar desde LogiMarket.Application.Seguridad sin mezclar reglas, persistencia y pantallas.
+// La seguridad se comprueba en el servicio para que tambien funcione cuando no se utiliza la interfaz.
 public sealed class Autenticacion(IRepositorio repositorio, IHashContrasena hash, SesionActual sesion, IBitacora bitacora)
 {
     public async Task Entrar(string nombre, string clave)

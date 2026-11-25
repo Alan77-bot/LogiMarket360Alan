@@ -1,7 +1,7 @@
 using LogiMarket.Domain.Enums;
 
 namespace LogiMarket.Domain.Operaciones;
-// Responsabilidad de Devolucion: colaborar desde LogiMarket.Domain.Operaciones sin mezclar reglas, persistencia y pantallas.
+// Registro trazable del negocio; las restricciones de persistencia completan su consistencia.
 public sealed class Devolucion
 {
     public Guid Id { get; private set; } = Guid.NewGuid();

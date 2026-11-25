@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography;
 
 namespace LogiMarket.Infrastructure.Persistencia;
-// Responsabilidad de BitacoraEf: colaborar desde LogiMarket.Infrastructure.Persistencia sin mezclar reglas, persistencia y pantallas.
+// Este componente guarda o prepara datos usando EF Core sin llevar esa dependencia al dominio.
 public sealed class BitacoraEf(IDbContextFactory<LogiMarketDbContext> fabrica, LogiMarketDbContext actual) : IBitacora
 {
     public async Task Registrar(string usuario, string operacion, string resultado, string correlacion)
