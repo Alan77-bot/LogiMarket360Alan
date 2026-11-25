@@ -79,7 +79,7 @@ internal static class RevisionFlujo
                 registro.Add("BRIDGE: venta/devolucion en TXT y en ventanas reales de vista previa.");
                 var fabrica = new CatalogoVisualFlyweightFactory();
                 var antes = GC.GetAllocatedBytesForCurrentThread();
-                var sin = Enumerable.Range(0, 1000).Select(i => new Fila(i, new MetadatosSku("P01", "Mouse USB", "Accesorios", "Demostracion"), 1, 20m)).ToArray();
+                var sin = Enumerable.Range(0, 1000).Select(i => new Fila(i, new MetadatosSku("P01", "Mouse USB", "Accesorios", "Catalogo de demostracion"), 1, 20m)).ToArray();
                 var bytesSin = GC.GetAllocatedBytesForCurrentThread() - antes;
                 antes = GC.GetAllocatedBytesForCurrentThread();
                 var con = Enumerable.Range(0, 1000).Select(i => new Fila(i, fabrica.Obtener("P01", "Mouse USB"), 1, 20m)).ToArray();
