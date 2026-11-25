@@ -1,2 +1,5 @@
-// PENDIENTE: implementar VistaDespacho en esta etapa del aprendizaje.
-// Carpeta: LogiMarket.WinForms/Vistas. No contiene logica ni patrones implementados todavia.
+using LogiMarket.WinForms.Compartido;
+namespace LogiMarket.WinForms.Vistas;
+// Reutiliza la consulta y los Commands de VistaPedidos, sin duplicar reglas del negocio.
+public sealed class VistaDespacho(OperacionesUi operaciones, FormularioPrincipalMediator mediator, PermisosVista permisos)
+    : VistaPedidos(operaciones, mediator, "Despacho", permisos);
