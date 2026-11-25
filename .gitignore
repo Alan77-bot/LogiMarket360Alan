@@ -24,3 +24,10 @@ tmp/
 output/
 *.log
 logimarket-design.db*
+
+# Material academico conservado solo en el equipo
+docs/
+scripts/
+*.pdf
+*.tex
+*.zip

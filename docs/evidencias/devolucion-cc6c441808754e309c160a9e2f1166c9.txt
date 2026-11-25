@@ -1,6 +1,0 @@
-﻿LOGIMARKET 360 - DEVOLUCION TOTAL
-Pedido: 20d1df4e-70f3-45cf-9c63-14e4dc19dc9f
-Motivo: DEFECTO
-Reembolso simulado: USD 54.00
-Referencia: REEMBOLSO-20d1df4e70f345cf9c6314e4dc19dc9f
-No incluye tarifa de envio.

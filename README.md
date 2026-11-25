@@ -31,34 +31,14 @@ dotnet ef migrations list --project LogiMarket.Infrastructure
 
 ```powershell
 dotnet test tests/LogiMarket.Tests
-powershell -File scripts/verificar_roles.ps1
-powershell -File scripts/verificar_roles.ps1 -Escenario RevisionFlujo
 ```
 
-Las pruebas crean bases temporales independientes. El ejecutor visual abre formularios reales, conserva capturas/logs en tmp y no altera datos del usuario. La ultima ejecucion completa registrada tiene 62 pruebas aprobadas.
+Las pruebas usan bases SQLite temporales independientes.
 
 Flujo de demostracion: VENTAS prepara Ana + KIT_TELETRABAJO x1 ESTANDAR, guarda, valida y cobra 59.00. BODEGA despacha y entrega. VENTAS devuelve por DEFECTO: 54.00 sin envio, reintegro de componentes una sola vez. Las cifras requieren datos iniciales controlados.
 
-## Estudiar y defender
+## Version
 
-- docs/ESTRUCTURA.md: organizacion de proyectos.
-- docs/patrones/MAPA.md: 23 patrones, archivos, recorridos y pruebas.
-- docs/DEFENSA.md: como localizar cambios y explicarlos.
-- docs/diseno/ARQUITECTURA.md: diagramas y decisiones.
-- docs/pruebas/MATRIZ.md: 38 casos oficiales y resultados nuevos.
-- docs/calidad/REVISION.md: riesgos, comprobaciones y limites reales.
+Version actual v1.0.2 Consultar CHANGELOG.md
 
-El repositorio conserva el historial de cambios funcionales y las evidencias de ejecucion.
-
-El informe LaTeX esta disponible en docs/informe-latex Los datos de portada siguen pendientes. Las integraciones son simuladas y los comprobantes no tienen validez tributaria.
-## Publicacion y entrega
-
-Repositorio creado https://github.com/Alan77-bot/LogiMarket360Alan
-
-Version actual v1.0.1 Cambios en CHANGELOG.md
-
-Consultar docs/ENTREGA.md para distinguir lo implementado de los pendientes academicos El informe LaTeX esta preparado y los datos de portada siguen pendientes No se afirma que existan diez pares de refactorizaciones con pruebas antes y despues ni una revision manual exhaustiva de accesibilidad
-
-## Privacidad
-
-No se publica el correo real ni el nombre del equipo usuario de Windows o rutas privadas de perfil El historial utiliza el correo protegido de GitHub y las evidencias conservan resultados y fechas con identificadores anonimizados Consultar docs/PRIVACIDAD.md
+Las integraciones de pago y notificacion son simuladas Los comprobantes no tienen validez tributaria
