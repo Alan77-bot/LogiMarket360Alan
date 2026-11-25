@@ -4,7 +4,7 @@ Mantener las carpetas imagenes diagramas codigo y secciones junto al archivo pri
 Cambiar participante asignatura nivel y docente en preambulo.tex solo con datos confirmados
 Las imagenes son copias exactas de evidencias publicadas y su procedencia se registra en imagenes/PROCEDENCIA.json
 El documento no inventa fallos ni completa como aprobados requisitos que siguen pendientes
-Commit de evidencias 68bda51063441415524ede51bdf61649ee9b4973
+Commit de evidencias 5d2eaff5a0bf3a2f077bb72ffa85e323abc5fb6c
 
 Tambien puede ejecutar compilar.ps1 con Tectonic instalado
 Overleaf debe usar informe.tex como archivo principal y disponer del paquete xurl
