@@ -1,0 +1,16 @@
+\noindent\begin{minipage}{\linewidth}
+\subsection{Prototype}
+\textbf{Problema y aplicación} Reutilizar un borrador manteniendo copias independientes de sus colecciones.
+
+\textbf{Participantes} Pedido PedidoDetalle PedidoDetalleComponente e instantáneas.
+
+\textbf{Ubicación} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/LogiMarket.Domain/Pedidos/Pedido.cs#L81}{\ruta{LogiMarket.Domain/Pedidos/Pedido.cs}}.
+
+\textbf{Recorrido} ServicioPedidos.Clonar solicita ClonarBorrador que genera otra identidad y copia los detalles.
+
+\lstinputlisting[firstline=81,lastline=93,firstnumber=81]{codigo/04-Pedido.cs}
+\textbf{Comprobación} P14 enlazadas en la matriz de aceptación y el TRX de 62 pruebas aprobadas.
+
+\textbf{Beneficio y costo} Evita reconstruir manualmente una plantilla pero obliga a mantener la copia al incorporar campos.
+
+\end{minipage}\par\medskip

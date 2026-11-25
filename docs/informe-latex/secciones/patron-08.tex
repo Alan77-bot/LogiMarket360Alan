@@ -1,0 +1,16 @@
+\noindent\begin{minipage}{\linewidth}
+\subsection{Composite}
+\textbf{Problema y aplicación} Tratar uniformemente un producto y un kit que contiene otros kits.
+
+\textbf{Participantes} IElementoCatalogo ProductoSimple KitCompuesto y CatalogoCompuesto.
+
+\textbf{Ubicación} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/LogiMarket.Domain/Catalogo/KitCompuesto.cs#L18}{\ruta{LogiMarket.Domain/Catalogo/KitCompuesto.cs}}.
+
+\textbf{Recorrido} CatalogoCompuesto construye el árbol y PedidoBuilder utiliza precio y expansión mediante el contrato común.
+
+\lstinputlisting[firstline=18,lastline=30,firstnumber=18]{codigo/08-KitCompuesto.cs}
+\textbf{Comprobación} P18 enlazadas en la matriz de aceptación y el TRX de 62 pruebas aprobadas.
+
+\textbf{Beneficio y costo} Simplifica el cálculo recursivo pero exige validar ciclos y cantidades.
+
+\end{minipage}\par\medskip

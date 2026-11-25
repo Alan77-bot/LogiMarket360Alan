@@ -1,0 +1,16 @@
+\noindent\begin{minipage}{\linewidth}
+\subsection{Memento}
+\textbf{Problema y aplicación} Restaurar borradores completos después de varias ediciones.
+
+\textbf{Participantes} HistorialBorrador estados capturados y VistaCarrito.
+
+\textbf{Ubicación} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/LogiMarket.Domain/Pedidos/HistorialBorrador.cs#L9}{\ruta{LogiMarket.Domain/Pedidos/HistorialBorrador.cs}}.
+
+\textbf{Recorrido} Capturar conserva copias y DeshacerCompleto o RehacerCompleto recuperan el estado correspondiente.
+
+\lstinputlisting[firstline=9,lastline=21,firstnumber=9]{codigo/18-HistorialBorrador.cs}
+\textbf{Comprobación} P29 enlazadas en la matriz de aceptación y el TRX de 62 pruebas aprobadas.
+
+\textbf{Beneficio y costo} Evita pérdida accidental de ediciones pero consume memoria de copias y debe bloquearse fuera del borrador.
+
+\end{minipage}\par\medskip

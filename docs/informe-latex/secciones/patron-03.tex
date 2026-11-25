@@ -1,0 +1,16 @@
+\noindent\begin{minipage}{\linewidth}
+\subsection{Builder}
+\textbf{Problema y aplicación} Construir una venta con cliente entrega y líneas antes de entregar un agregado válido.
+
+\textbf{Participantes} PedidoBuilder Pedido Cliente y PedidoDetalle.
+
+\textbf{Ubicación} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/LogiMarket.Domain/Pedidos/PedidoBuilder.cs#L31}{\ruta{LogiMarket.Domain/Pedidos/PedidoBuilder.cs}}.
+
+\textbf{Recorrido} ServicioPedidos.Preparar encadena Para ConEntrega Agregar y Construir.
+
+\lstinputlisting[firstline=31,lastline=32,firstnumber=31]{codigo/03-PedidoBuilder.cs}
+\textbf{Comprobación} P13 enlazadas en la matriz de aceptación y el TRX de 62 pruebas aprobadas.
+
+\textbf{Beneficio y costo} Hace explícitos los pasos de construcción aunque agrega un objeto intermedio.
+
+\end{minipage}\par\medskip

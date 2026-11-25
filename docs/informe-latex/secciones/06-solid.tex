@@ -1,0 +1,26 @@
+
+\section{Clean Code y cinco principios SOLID}
+\subsection{Separación de responsabilidades}
+Los nombres de archivos reflejan sus participantes. Se evita colocar cálculos monetarios SQL o reglas de transición dentro de los botones. Los comentarios del código están escritos sin tildes y señalan patrones y decisiones importantes sin repetir definiciones genéricas.
+\begingroup\small
+\noindent
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.1\linewidth}>{\raggedright\arraybackslash}p{0.43\linewidth}>{\raggedright\arraybackslash}p{0.39\linewidth}@{}}
+\toprule
+\textbf{SOLID} & \textbf{Aplicación concreta} & \textbf{Comprobación}\\
+\midrule
+SRP & CalculadoraPrecios calcula RepositorioEf persiste y las vistas presentan & Reglas monetarias fuera de WinForms y EF fuera de Domain\\[3pt]
+OCP & Una promoción adicional implementa IPoliticaDescuento y se registra en DI & P32 extiende Strategy sin editar la calculadora\\[3pt]
+LSP & Las pasarelas legada adaptada y alternativa cumplen IPasarelaPago & P16 y P38 sustituyen proveedores bajo el mismo contrato\\[3pt]
+ISP & Pago reembolso salida de documento consultas y transacciones tienen contratos separados & Los casos de uso reciben los puertos de su responsabilidad\\[3pt]
+DIP & Facade depende de IRepositorio ITransacciones e IPasarelaPago & P38 comprueba referencias y P20 sustituye un colaborador que falla\\[3pt]
+\bottomrule
+\end{tabular}
+\par\endgroup
+
+\subsection{KISS DRY y YAGNI}
+KISS mantiene las integraciones simuladas y los flujos visibles sin añadir servicios de nube no exigidos DRY se refleja en Ui en las transacciones reutilizables y en la base VistaPedidos usada por Cobro Despacho y Devoluciones YAGNI evita introducir pagos reales contenedores o fiscalidad no definidos por la práctica.
+
+La organización de pruebas se revisó después de distribuir los casos por responsabilidad. Se retiraron 42 ayudas privadas sin uso y se ejecutó de nuevo la suite completa conservando 62 aprobadas. Esa limpieza no se utiliza como evidencia de 42 defectos ni de nuevos escenarios.
+
+\subsection{Cómo localizar un cambio en la defensa}
+Para una nueva promoción se modifica el conjunto de estrategias Para otro proveedor se implementa el puerto de cobro y su selección Para un campo persistido se revisan entidad caso de uso mapeo formulario y migración Para cambiar un permiso se revisan tanto PermisosVista como la autorización de Application. Cada modificación debe acompañarse de un caso que compruebe el resultado y sus efectos no permitidos.

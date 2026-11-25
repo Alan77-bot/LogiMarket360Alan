@@ -1,0 +1,18 @@
+\noindent\begin{minipage}{\linewidth}
+\subsection{Flyweight}
+\textbf{Problema y aplicación} Evitar crear metadatos idénticos para muchas filas.
+
+\textbf{Participantes} CatalogoVisualFlyweightFactory MetadatosSku y filas visuales.
+
+\textbf{Ubicación} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/LogiMarket.Application/Catalogo/CatalogoVisualFlyweightFactory.cs#L6}{\ruta{LogiMarket.Application/Catalogo/CatalogoVisualFlyweightFactory.cs}}.
+
+\textbf{Recorrido} Obtener reutiliza por SKU mientras cantidad y precio permanecen como datos externos de cada fila.
+
+\lstinputlisting[firstline=6,lastline=8,firstnumber=6]{codigo/11-CatalogoVisualFlyweightFactory.cs}
+\textbf{Comprobación} P21 enlazadas en la matriz de aceptación y el TRX de 62 pruebas aprobadas.
+
+\textbf{Beneficio y costo} Reduce objetos repetidos a cambio de una caché y de separar estado compartido del particular.
+
+La ejecución de 1000 filas registró una instancia compartida y ReferenceEquals verdadero. La comparación midió 104176 bytes sin compartir frente a 56360 compartiendo en el mismo hilo. No representa memoria total del proceso.
+
+\end{minipage}\par\medskip

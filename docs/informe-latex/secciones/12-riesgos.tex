@@ -1,0 +1,48 @@
+
+\section{Riesgos, limitaciones y decisiones técnicas}
+\subsection{Riesgos identificados y medidas}
+La tabla relaciona riesgos atendidos con medidas y evidencia. No afirma que todos fueran defectos nuevos observados en rojo durante el proyecto Alan. Parte de las medidas procede de la referencia ya corregida del mismo caso.
+\begingroup\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.08\linewidth}>{\raggedright\arraybackslash}p{0.25\linewidth}>{\raggedright\arraybackslash}p{0.33\linewidth}>{\raggedright\arraybackslash}p{0.26\linewidth}@{}}
+\toprule
+\textbf{ID} & \textbf{Riesgo} & \textbf{Medida} & \textbf{Evidencia}\\
+\midrule
+\endfirsthead
+\toprule
+\textbf{ID} & \textbf{Riesgo} & \textbf{Medida} & \textbf{Evidencia}\\
+\midrule
+\endhead
+R01 & Lógica en formularios & Cálculos y estados en Domain coordinación en Application & Pruebas monetarias y de estados\\[3pt]
+R02 & Permiso solo visual & Autorizador y Proxy antes del proveedor & P22 y pruebas por rol\\[3pt]
+R03 & Cobro repetido & Claves únicas y consulta idempotente & P07\\[3pt]
+R04 & Sobreventa & BEGIN IMMEDIATE y Version & P36\\[3pt]
+R05 & Guardado parcial & Transacciones de confirmación y devolución & P20 y fallo de reembolso\\[3pt]
+R06 & Aviso fallido tras cobrar & Outbox y recepciones por suscriptor & P30 y P37\\[3pt]
+R07 & Precio retroactivo & Instantáneas de componentes y árbol & P14 e integridad\\[3pt]
+R08 & Kit circular & Detección de ciclos antes de guardar & P18 y prueba de reversión\\[3pt]
+R09 & Deshacer una venta pagada & Memento limitado al borrador & P29 y P08\\[3pt]
+R10 & Reembolso o reintegro repetido & Devolución única y política sin flete & P35\\[3pt]
+R11 & SKU histórico alterado & Rechazar cambios de SKU utilizado & Prueba de integridad de SKU\\[3pt]
+R12 & Identidad de hijos EF & ValueGenerated.Never para Guid de dominio & Migración e integración\\[3pt]
+R13 & Totales anteriores a una edición & Invalidar valoración y recalcular & Pruebas de valoración\\[3pt]
+R14 & Mezclar datos de demostración & Bases temporales y carpeta propia & Inicialización y pruebas\\[3pt]
+R15 & Refrescar vistas de otro rol & Instanciar solo vistas permitidas & Ejecutor de roles\\[3pt]
+R16 & Cabeceras poco legibles & Ajustar contraste y perfil visible & Capturas del tema final\\[3pt]
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subsection{Git refactorización y evidencia antes y después}
+Se conservaron cambios reales por finalidad y ramas de implementación comentarios y publicación. Antes de publicar se anonimizaron autorías de contacto y rutas privadas conservando fechas mensajes y relaciones de los 43 commits previos. Los identificadores SHA cambiaron por esa limpieza. El código de 202 archivos de fuente y proyecto permaneció idéntico.
+
+La guía exige al menos diez riesgos y una explicación de refactorización concreta con Git y prueba antes y después. La lista anterior cubre riesgos pero \textbf{no acredita diez pares nuevos de fallo y reparación} No se reconstruyen commits ni pruebas rojas retrospectivas para aparentar ese cumplimiento.
+
+\subsection{Limitaciones verificables}
+\begin{itemize}[leftmargin=1.2cm]
+\item La revisión manual exhaustiva de TAB foco y DPI de monitor sigue pendiente
+\item Las capturas de código del IDE no se sustituyen por los listados de este informe Ambos sirven para explicar pero son evidencias diferentes
+\item Los pagos correos SMS y guías son simulados y los comprobantes no tienen validez tributaria
+\item No se declara un SLA de respuesta ni una reducción de memoria total del proceso a partir de Flyweight
+\item La persistencia con otro contenedor DI no se presenta como una comprobación manual de reiniciar Windows
+\item La autoría y comprensión individual deben sustentarse en la defensa El documento no certifica que toda la implementación haya sido escrita manualmente por el participante
+\end{itemize}

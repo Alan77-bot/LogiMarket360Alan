@@ -1,0 +1,16 @@
+\noindent\begin{minipage}{\linewidth}
+\subsection{Observer}
+\textbf{Problema y aplicación} Ejecutar varias reacciones independientes a un evento durable.
+
+\textbf{Participantes} PublicadorEventos ISuscriptorEvento NotificacionObserver AuditoriaObserver y MetricasObserver.
+
+\textbf{Ubicación} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/LogiMarket.Application/Eventos/PublicadorEventos.cs#L10}{\ruta{LogiMarket.Application/Eventos/PublicadorEventos.cs}}.
+
+\textbf{Recorrido} Publicar verifica recepciones invoca al suscriptor y marca su recepción para reintentos.
+
+\lstinputlisting[firstline=10,lastline=21,firstnumber=10]{codigo/19-PublicadorEventos.cs}
+\textbf{Comprobación} P30 y P37 enlazadas en la matriz de aceptación y el TRX de 62 pruebas aprobadas.
+
+\textbf{Beneficio y costo} Desacopla reacciones de la venta pero exige controlar recepciones fallos y recuperación.
+
+\end{minipage}\par\medskip

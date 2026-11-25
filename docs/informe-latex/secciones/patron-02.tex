@@ -1,0 +1,16 @@
+\noindent\begin{minipage}{\linewidth}
+\subsection{Abstract Factory}
+\textbf{Problema y aplicación} Mantener tarifa plazo y etiqueta compatibles con una modalidad de entrega.
+
+\textbf{Participantes} IFabricaEntrega EntregaEstandarFactory EntregaExpresFactory ITarifaEntrega IPlazoEntrega e IEtiquetaEntrega.
+
+\textbf{Ubicación} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/LogiMarket.Domain/Entregas/IFabricaEntrega.cs#L6}{\ruta{LogiMarket.Domain/Entregas/IFabricaEntrega.cs}}.
+
+\textbf{Recorrido} ServicioPedidos obtiene la tarifa y ServicioDespachos obtiene plazo y guía de la misma familia.
+
+\lstinputlisting[firstline=6,lastline=13,firstnumber=6]{codigo/02-IFabricaEntrega.cs}
+\textbf{Comprobación} P12 enlazadas en la matriz de aceptación y el TRX de 62 pruebas aprobadas.
+
+\textbf{Beneficio y costo} Evita mezclar elementos de modalidades diferentes pero requiere contratos para cada producto de la familia.
+
+\end{minipage}\par\medskip

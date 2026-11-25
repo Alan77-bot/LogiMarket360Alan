@@ -1,0 +1,90 @@
+{
+  "commit_fuente": "68bda51063441415524ede51bdf61649ee9b4973",
+  "imagenes": [
+    {
+      "archivo": "imagenes/acceso.png",
+      "origen": "https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/docs/evidencias/capturas/acceso.png",
+      "sha256": "c108d796d846167d46f7d1eaaded6963a2454106c866772d2eedaf17301d480b"
+    },
+    {
+      "archivo": "imagenes/bodega.png",
+      "origen": "https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/docs/evidencias/capturas/bodega.png",
+      "sha256": "979025a7dd06cc6645ad47f921d9b136cf61d691ba5c60ccc948c97b3a689c51"
+    },
+    {
+      "archivo": "imagenes/bridge-devolucion.png",
+      "origen": "https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/docs/evidencias/capturas/bridge-devolucion.png",
+      "sha256": "ed9d29ad0891bd5c75145e3d5588b67b2d70f218c24224f1241a916c8a045233"
+    },
+    {
+      "archivo": "imagenes/bridge-venta.png",
+      "origen": "https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/docs/evidencias/capturas/bridge-venta.png",
+      "sha256": "dff0d5810417fca1e0d042a3aa7c3aac7cd05b1218170dea69934b99584b63e4"
+    },
+    {
+      "archivo": "imagenes/consulta.png",
+      "origen": "https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/docs/evidencias/capturas/consulta.png",
+      "sha256": "37a601bd9cbaf546902ab2b66c528d6c090265432506f4cd30e7f03c59e3d96f"
+    },
+    {
+      "archivo": "imagenes/flujo-01-cobro.png",
+      "origen": "https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/docs/evidencias/capturas/flujo-01-cobro.png",
+      "sha256": "ebc8dbf6815486df8f67ff5df5298f3386dabe58644dd9c477211b4b55991f34"
+    },
+    {
+      "archivo": "imagenes/flujo-02-stock.png",
+      "origen": "https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/docs/evidencias/capturas/flujo-02-stock.png",
+      "sha256": "4c8374685a7112c0206d1c5426b2b3d9e8cf39127b11dfb739ec7258a1f1e8f2"
+    },
+    {
+      "archivo": "imagenes/flujo-03-entregado.png",
+      "origen": "https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/docs/evidencias/capturas/flujo-03-entregado.png",
+      "sha256": "40ee518ca15c31ec310fb3d374d977c4b7a77fe330ff9ce43d467056500e3030"
+    },
+    {
+      "archivo": "imagenes/flujo-04-reintegro.png",
+      "origen": "https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/docs/evidencias/capturas/flujo-04-reintegro.png",
+      "sha256": "af477f733c6229c008ded84ae3ef818547208e5f7640e8501333c4e20a7c6511"
+    },
+    {
+      "archivo": "imagenes/flujo-05-metricas.png",
+      "origen": "https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/docs/evidencias/capturas/flujo-05-metricas.png",
+      "sha256": "d64706b82819a1901d6cdff5a00eee8f465786c4375bf5aa2b1c8b4d02662def"
+    },
+    {
+      "archivo": "imagenes/ventas.png",
+      "origen": "https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/docs/evidencias/capturas/ventas.png",
+      "sha256": "9107c3328d80498bebdf5e0badde6bd40d53deae5631773d7485baa0bdc64a19"
+    },
+    {
+      "archivo": "imagenes/vista-Auditoria-y-demo.png",
+      "origen": "https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/docs/evidencias/capturas/vista-Auditoria-y-demo.png",
+      "sha256": "dc57a7840b58eab9e25887605a17d76a5e79471852a0f3de576faeda8c3359db"
+    },
+    {
+      "archivo": "imagenes/vista-Carrito.png",
+      "origen": "https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/docs/evidencias/capturas/vista-Carrito.png",
+      "sha256": "a427475030eefdbe2924e4e34c3db46cf08bba8406596ab8f6de460c358ada05"
+    },
+    {
+      "archivo": "imagenes/vista-Catalogo-y-kits.png",
+      "origen": "https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/docs/evidencias/capturas/vista-Catalogo-y-kits.png",
+      "sha256": "4db16a5f92f852232107e82d15c1d943e3e471ae3a41457076a8c3ca06634a60"
+    },
+    {
+      "archivo": "imagenes/vista-Clientes.png",
+      "origen": "https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/docs/evidencias/capturas/vista-Clientes.png",
+      "sha256": "7293ba98c1aaadbf285942f6b91d4db4ff51d1b8d3d09aa39039df0bd1f47c3a"
+    },
+    {
+      "archivo": "imagenes/vista-Pedidos.png",
+      "origen": "https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/docs/evidencias/capturas/vista-Pedidos.png",
+      "sha256": "7469ae476d428006f1d5dce76c28e77b775e029a690a0b1446265b46b63690dc"
+    },
+    {
+      "archivo": "imagenes/vista-Reportes.png",
+      "origen": "https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/docs/evidencias/capturas/vista-Reportes.png",
+      "sha256": "89e457f7e61fdb7c2e94a3e344dede6c2dfed1cbd467e7ed685fe6b6b41af27b"
+    }
+  ]
+}

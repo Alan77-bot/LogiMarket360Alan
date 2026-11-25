@@ -1,0 +1,29 @@
+
+\section{Arquitectura y dependencias}
+\subsection{Cinco proyectos independientes}
+\begingroup\small
+\noindent
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.33\linewidth}>{\raggedright\arraybackslash}p{0.59\linewidth}@{}}
+\toprule
+\textbf{Proyecto} & \textbf{Responsabilidad y referencias}\\
+\midrule
+LogiMarket.Domain & Entidades invariantes estados políticas y contratos puros del catálogo No referencia proyectos propios\\[3pt]
+LogiMarket.Application & Casos de uso comandos consultas autorizaciones y puertos Referencia Domain\\[3pt]
+LogiMarket.Infrastructure & EF SQLite repositorios transacciones adaptadores salidas y Outbox Referencia Application y Domain\\[3pt]
+LogiMarket.WinForms & Formularios vistas y composición DI Referencia Application e Infrastructure para configurar\\[3pt]
+LogiMarket.Tests & Pruebas unitarias integración arquitectura y aceptación Referencia las tres capas internas\\[3pt]
+\bottomrule
+\end{tabular}
+\par\endgroup
+
+Las cinco carpetas contienen cinco archivos de proyecto distintos. La prueba P38 inspecciona referencias de ensamblado Domain y Application no dependen de EF SQLite Infrastructure ni Windows Forms.
+\modelo{componentes}{Referencias de compilación entre los cinco proyectos}{componentes}
+\FloatBarrier
+\subsection{Composición y ámbitos}
+Program prepara la carpeta de datos inicializa EF y utiliza RegistroServicios para conectar contratos con implementaciones. Cada operación visual crea un ámbito nuevo. No se comparte DbContext entre pantallas MetricasSesion se registra como Singleton y representa contadores de sesión \cite{di}.
+
+\subsection{Secuencias de aprobación y rechazo}
+\modelo{secuencia-aprobada}{Confirmación aprobada y procesamiento posterior al commit}{seq-aprobada}
+\modelo{secuencia-rechazada}{Rechazo por permiso antes del proveedor}{seq-rechazada}
+\FloatBarrier
+El orden Proxy Decorator Adapter evita producir logs de cobro o alcanzar al proveedor cuando el rol no puede pagar. Los rechazos de seguridad pueden registrarse por separado. La notificación posterior utiliza Outbox para que su fallo no obligue a repetir el cobro.

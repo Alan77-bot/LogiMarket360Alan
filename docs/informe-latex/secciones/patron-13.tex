@@ -1,0 +1,16 @@
+\noindent\begin{minipage}{\linewidth}
+\subsection{Chain of Responsibility}
+\textbf{Problema y aplicación} Informar una causa de rechazo por vez siguiendo un orden de validación.
+
+\textbf{Participantes} ValidadorCliente ValidadorLineas ValidadorStock ValidadorEstado y CadenaConfirmacion.
+
+\textbf{Ubicación} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/LogiMarket.Application/Validaciones/ValidadorPedido.cs#L14}{\ruta{LogiMarket.Application/Validaciones/ValidadorPedido.cs}}.
+
+\textbf{Recorrido} Validar revisa la regla actual y delega en siguiente solo si el resultado es válido.
+
+\lstinputlisting[firstline=14,lastline=19,firstnumber=14]{codigo/13-ValidadorPedido.cs}
+\textbf{Comprobación} P23 enlazadas en la matriz de aceptación y el TRX de 62 pruebas aprobadas.
+
+\textbf{Beneficio y costo} Permite validadores pequeños y extensibles pero el orden cambia el primer mensaje informado.
+
+\end{minipage}\par\medskip

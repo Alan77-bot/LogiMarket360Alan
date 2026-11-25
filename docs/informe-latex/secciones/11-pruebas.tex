@@ -1,0 +1,512 @@
+
+\section{Pruebas y resultados}
+\subsection{Entorno y alcance de la comprobación}
+Se ejecutó la suite de xUnit con bases SQLite temporales independientes. La migración y la semilla forman parte de los escenarios de integración. La ejecución del 24 de noviembre de 2026 terminó con 62 aprobadas 0 fallidas y 0 omitidas. El TRX publicado conserva estos resultados con identificadores del equipo anonimizados.
+
+\begin{lstlisting}[language={},numbers=none]
+dotnet test tests/LogiMarket.Tests
+Total 62  Aprobadas 62  Fallidas 0  Omitidas 0
+Compilacion desde ZIP limpio
+Errores 0  Advertencias 0  RESULTADO APROBADO
+\end{lstlisting}
+El bloque anterior resume los registros y no se presenta como captura de terminal. Las evidencias completas son \ruta{docs/evidencias/resultados/aceptacion-alan.trx} y \ruta{docs/evidencias/compilacion-limpia.txt}.
+
+\subsection{Resultados numéricos}
+\begingroup\small
+\noindent
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.4\linewidth}>{\raggedright\arraybackslash}p{0.13\linewidth}>{\raggedright\arraybackslash}p{0.14\linewidth}>{\raggedright\arraybackslash}p{0.11\linewidth}>{\raggedright\arraybackslash}p{0.12\linewidth}@{}}
+\toprule
+\textbf{Escenario} & \textbf{Subtotal} & \textbf{Descuento} & \textbf{Envío} & \textbf{Total}\\
+\midrule
+Ana VIP kit x1 ESTANDAR & 60.00 & 6.00 & 5.00 & 59.00\\[3pt]
+Luis NORMAL P04 x2 y P05 x2 EXPRES & 90.00 & 0.00 & 12.00 & 102.00\\[3pt]
+Carmen P03 x10 ESTANDAR & 100.00 & 15.00 & 5.00 & 90.00\\[3pt]
+\bottomrule
+\end{tabular}
+\par\endgroup
+
+La devolución total de Ana genera 54.00 de reembolso. La recuperación Outbox no duplica el cobro. La persistencia se comprobó con un nuevo contenedor DI y DbContext contra el mismo SQLite sin presentar esa prueba como un reinicio manual del equipo.
+
+\subsection{Cobertura de patrones}
+\begingroup\small
+\noindent
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.35\linewidth}>{\raggedright\arraybackslash}p{0.22\linewidth}>{\raggedright\arraybackslash}p{0.35\linewidth}@{}}
+\toprule
+\textbf{Familia} & \textbf{Implementados} & \textbf{Casos principales}\\
+\midrule
+Creacionales & 5 de 5 & P11 a P15\\[3pt]
+Estructurales & 7 de 7 & P16 a P22\\[3pt]
+Comportamentales & 11 de 11 & P23 a P34\\[3pt]
+Total & 23 de 23 & Mapa de archivos y matriz de aceptación\\[3pt]
+\bottomrule
+\end{tabular}
+\par\endgroup
+
+\subsection{Matriz de los 38 casos oficiales}
+Todos los casos siguientes utilizan las precondiciones de la guía y enlazan con las pruebas de la suite registrada. La fecha común es 24 de noviembre de 2026 a las 19:12:21 zona UTC-05:00. La evidencia automática común es el TRX citado y la evidencia de formularios se distingue cuando corresponde. El JSON de la matriz conserva la lista completa de archivos y métodos.
+\subsubsection*{P01 --- APROBADO}
+\textbf{Entrada y precondición} Creación de DB desde archivo inexistente y seed.
+
+\textbf{Esperado} Migraciones aplicadas; cinco productos, dos kits y roles; sin duplicados al relanzar seed.
+
+\textbf{Obtenido} 1 prueba(s) automatizada(s) aprobada(s). Base nueva creada por migraciones, cinco productos, dos kits, cuatro usuarios y ninguna migración pendiente; seed repetido sin duplicados.
+
+\textbf{Archivo} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/tests/LogiMarket.Tests/Integracion/MigracionesTests.cs}{\ruta{tests/LogiMarket.Tests/Integracion/MigracionesTests.cs}}
+
+\textbf{Método} \ruta{MigracionesTests.P01_MigracionesYSeedIdempotente}
+
+\medskip\hrule\medskip
+\subsubsection*{P02 --- APROBADO}
+\textbf{Entrada y precondición} Ana VIP compra KIT\_TELETRABAJO  $\times$ 1 ESTÁNDAR, base recién preparada.
+
+\textbf{Esperado} Total 59.00; stock P01=7, P02=4, P03=19; estado PAGADO y un pago.
+
+\textbf{Obtenido} 1 prueba(s) automatizada(s) aprobada(s). Total 59.00, PAGADO y un pago; stock P01=7, P02=4 y P03=19 comprobado.
+
+\textbf{Archivo} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/tests/LogiMarket.Tests/Aceptacion/CasosOficialesTests.cs}{\ruta{tests/LogiMarket.Tests/Aceptacion/CasosOficialesTests.cs}}
+
+\textbf{Método} \ruta{CasosOficialesTests.P02_P04_CasosOficiales}
+
+\medskip\hrule\medskip
+\subsubsection*{P03 --- APROBADO}
+\textbf{Entrada y precondición} Luis NORMAL compra 2 P04 + 2 P05 EXPRÉS, base recién preparada.
+
+\textbf{Esperado} Total 102.00; P04=2, P05=28; un pago.
+
+\textbf{Obtenido} 1 prueba(s) automatizada(s) aprobada(s). Total 102.00 y un pago; stock P04=2 y P05=28 comprobado.
+
+\textbf{Archivo} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/tests/LogiMarket.Tests/Aceptacion/CasosOficialesTests.cs}{\ruta{tests/LogiMarket.Tests/Aceptacion/CasosOficialesTests.cs}}
+
+\textbf{Método} \ruta{CasosOficialesTests.P02_P04_CasosOficiales}
+
+\medskip\hrule\medskip
+\subsubsection*{P04 --- APROBADO}
+\textbf{Entrada y precondición} Carmen MAYORISTA compra P03  $\times$ 10 ESTÁNDAR, base recién preparada.
+
+\textbf{Esperado} Total 90.00; P03=10; descuento 15.00.
+
+\textbf{Obtenido} 1 prueba(s) automatizada(s) aprobada(s). Total 90.00, descuento 15.00 y stock P03=10 comprobado.
+
+\textbf{Archivo} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/tests/LogiMarket.Tests/Aceptacion/CasosOficialesTests.cs}{\ruta{tests/LogiMarket.Tests/Aceptacion/CasosOficialesTests.cs}}
+
+\textbf{Método} \ruta{CasosOficialesTests.P02_P04_CasosOficiales}
+
+\medskip\hrule\medskip
+\subsubsection*{P05 --- APROBADO}
+\textbf{Entrada y precondición} KIT\_TELETRABAJO  $\times$ 6 con stock inicial, intentar confirmar.
+
+\textbf{Esperado} Rechazo por P02 insuficiente; sin pago/stock/evento de éxito.
+
+\textbf{Obtenido} 1 prueba(s) automatizada(s) aprobada(s). Rechazo por P02; sin pago, movimientos ni evento de exito y sin descontar P01.
+
+\textbf{Archivo} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/tests/LogiMarket.Tests/Aplicacion/ConfirmacionTests.cs}{\ruta{tests/LogiMarket.Tests/Aplicacion/ConfirmacionTests.cs}}
+
+\textbf{Método} \ruta{ConfirmacionTests.P05_KitPorSeisSinEfectos}
+
+\medskip\hrule\medskip
+\subsubsection*{P06 --- APROBADO}
+\textbf{Entrada y precondición} Simular error de cobro en pedido válido.
+
+\textbf{Esperado} Se conserva inventario y estado previo; sin pago aprobado ni Outbox de éxito.
+
+\textbf{Obtenido} 1 prueba(s) automatizada(s) aprobada(s). Cobro rechazado, estado VALIDADO e inventario conservado; sin pago aprobado ni Outbox de exito.
+
+\textbf{Archivo} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/tests/LogiMarket.Tests/Aplicacion/ConfirmacionTests.cs}{\ruta{tests/LogiMarket.Tests/Aplicacion/ConfirmacionTests.cs}}
+
+\textbf{Método} \ruta{ConfirmacionTests.P06_RechazoNoDescuentaStock}
+
+\medskip\hrule\medskip
+\subsubsection*{P07 --- APROBADO}
+\textbf{Entrada y precondición} Repetir confirmación con misma clave de idempotencia.
+
+\textbf{Esperado} Un pago y un movimiento por SKU; devuelve el resultado original sin cobro doble.
+
+\textbf{Obtenido} 1 prueba(s) automatizada(s) aprobada(s). Mismo identificador de pago en reintentos; un pago y tres movimientos, uno por SKU.
+
+\textbf{Archivo} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/tests/LogiMarket.Tests/Integracion/IdempotenciaTests.cs}{\ruta{tests/LogiMarket.Tests/Integracion/IdempotenciaTests.cs}}
+
+\textbf{Método} \ruta{IdempotenciaTests.P07_ConfirmacionIdempotente}
+
+\medskip\hrule\medskip
+\subsubsection*{P08 --- APROBADO}
+\textbf{Entrada y precondición} Pedido PAGADO; intentar cancelar y modificar precio.
+
+\textbf{Esperado} Ambas operaciones denegadas; datos e historial intactos.
+
+\textbf{Obtenido} 1 prueba(s) automatizada(s) aprobada(s). Cancelar y editar el pedido pagado provocan rechazo; total e historial conservados.
+
+\textbf{Archivo} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/tests/LogiMarket.Tests/Dominio/EstadosTests.cs}{\ruta{tests/LogiMarket.Tests/Dominio/EstadosTests.cs}}
+
+\textbf{Método} \ruta{EstadosTests.P08_PagadoNoAdmiteCancelarNiEditar}
+
+\medskip\hrule\medskip
+\subsubsection*{P09 --- APROBADO}
+\textbf{Entrada y precondición} Despachar y entregar con BODEGA; intentar despachar sin pago.
+
+\textbf{Esperado} Éxito solo en secuencia permitida; rechazo sin cambios en estado inválido.
+
+\textbf{Obtenido} 1 prueba(s) automatizada(s) aprobada(s). Despacho sin pago rechazado; BODEGA completa despacho y entrega del pedido pagado.
+
+\textbf{Archivo} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/tests/LogiMarket.Tests/Aplicacion/PermisosTests.cs}{\ruta{tests/LogiMarket.Tests/Aplicacion/PermisosTests.cs}}
+
+\textbf{Método} \ruta{PermisosTests.P09_DespachoEntregaYRechazoSinPago}
+
+\medskip\hrule\medskip
+\subsubsection*{P10 --- APROBADO}
+\textbf{Entrada y precondición} Cerrar y reabrir; consultar pedido, stock, pago y auditoría.
+
+\textbf{Esperado} Información persiste en SQLite y coincide con operaciones anteriores.
+
+\textbf{Obtenido} 1 prueba(s) automatizada(s) aprobada(s). Otro proveedor DI abre la misma SQLite y recupera pedido PAGADO, pago, stock P01=7 y auditoria.
+
+\textbf{Archivo} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/tests/LogiMarket.Tests/Integracion/PersistenciaTests.cs}{\ruta{tests/LogiMarket.Tests/Integracion/PersistenciaTests.cs}}
+
+\textbf{Método} \ruta{PersistenciaTests.P10_PersistenciaConOtroProveedorDi}
+
+\medskip\hrule\medskip
+\subsubsection*{P11 --- APROBADO}
+\textbf{Entrada y precondición} Factory Method: alternar EMAIL/SMS tras evento.
+
+\textbf{Esperado} Cada creador retorna notificador concreto y registra el aviso correcto.
+
+\textbf{Obtenido} 2 prueba(s) automatizada(s) aprobada(s). EMAIL y SMS registran el canal elegido; una sola notificacion por evento.
+
+\textbf{Archivo} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/tests/LogiMarket.Tests/Integracion/OutboxTests.cs}{\ruta{tests/LogiMarket.Tests/Integracion/OutboxTests.cs}}
+
+\textbf{Método} \ruta{OutboxTests.P11_P30_ObserverYFactoryPublicanUnaVez}
+
+\medskip\hrule\medskip
+\subsubsection*{P12 --- APROBADO}
+\textbf{Entrada y precondición} Abstract Factory: ESTÁNDAR/EXPRÉS.
+
+\textbf{Esperado} Tarifas 5/12 y plazos 3/1 días; guías coherentes con la familia.
+
+\textbf{Obtenido} 1 prueba(s) automatizada(s) aprobada(s). ESTANDAR: tarifa 5, plazo 3 y prefijo STD. EXPRES: tarifa 12, plazo 1 y prefijo EXP.
+
+\textbf{Archivo} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/tests/LogiMarket.Tests/Patrones/CreacionalesTests.cs}{\ruta{tests/LogiMarket.Tests/Patrones/CreacionalesTests.cs}}
+
+\textbf{Método} \ruta{CreacionalesTests.P12_FamiliasCompatibles}
+
+\medskip\hrule\medskip
+\subsubsection*{P13 --- APROBADO}
+\textbf{Entrada y precondición} Builder: pedido vacío y pedido completo.
+
+\textbf{Esperado} Incompleto rechazado; completo crea agregado válido.
+
+\textbf{Obtenido} 1 prueba(s) automatizada(s) aprobada(s). Constructor sin cliente o sin lineas rechazado; agregado completo construido.
+
+\textbf{Archivo} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/tests/LogiMarket.Tests/Patrones/CreacionalesTests.cs}{\ruta{tests/LogiMarket.Tests/Patrones/CreacionalesTests.cs}}
+
+\textbf{Método} \ruta{CreacionalesTests.P13_BuilderRechazaIncompleto}
+
+\medskip\hrule\medskip
+\subsubsection*{P14 --- APROBADO}
+\textbf{Entrada y precondición} Prototype: clonar KIT\_TELETRABAJO; editar cantidad.
+
+\textbf{Esperado} Copia profunda; plantilla/copia previa permanecen intactas.
+
+\textbf{Obtenido} 1 prueba(s) automatizada(s) aprobada(s). Copia profunda comprobada con cambio de cantidad y árbol historico serializado.
+
+\textbf{Archivo} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/tests/LogiMarket.Tests/Patrones/CreacionalesTests.cs}{\ruta{tests/LogiMarket.Tests/Patrones/CreacionalesTests.cs}}
+
+\textbf{Método} \ruta{CreacionalesTests.P14_PrototypeProfundo}
+
+\medskip\hrule\medskip
+\subsubsection*{P15 --- APROBADO}
+\textbf{Entrada y precondición} Singleton: consultar métricas desde dos vistas.
+
+\textbf{Esperado} Misma instancia compartida, contadores observables y thread-safe.
+
+\textbf{Obtenido} 1 prueba(s) automatizada(s) aprobada(s). Dos ambitos reciben la misma instancia; 1000 registros concurrentes del mismo evento cuentan un pago.
+
+\textbf{Archivo} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/tests/LogiMarket.Tests/Patrones/CreacionalesTests.cs}{\ruta{tests/LogiMarket.Tests/Patrones/CreacionalesTests.cs}}
+
+\textbf{Método} \ruta{CreacionalesTests.P15_SingletonIdentidadYConcurrencia}
+
+\medskip\hrule\medskip
+\subsubsection*{P16 --- APROBADO}
+\textbf{Entrada y precondición} Adapter: proveedor legado y alternativo.
+
+\textbf{Esperado} Cobros desde ambos con mismo contrato; legado intacto.
+
+\textbf{Obtenido} 2 prueba(s) automatizada(s) aprobada(s). Ambos proveedores aceptan 59.00, conservan referencia en el reintento y rechazan entradas invalidas.
+
+\textbf{Archivo} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/tests/LogiMarket.Tests/Patrones/EstructuralesTests.cs}{\ruta{tests/LogiMarket.Tests/Patrones/EstructuralesTests.cs}}
+
+\textbf{Método} \ruta{EstructuralesTests.P16_P38_LspProveedores}
+
+\medskip\hrule\medskip
+\subsubsection*{P17 --- APROBADO}
+\textbf{Entrada y precondición} Bridge: dos comprobantes  $\times$  dos medios.
+
+\textbf{Esperado} Cuatro combinaciones; VistaPrevia visible y TXT real.
+
+\textbf{Obtenido} 1 prueba(s) automatizada(s) aprobada(s). Cuatro combinaciones ejecutadas; vistas previas reales y TXT en docs/evidencias/comprobantes.
+
+\textbf{Archivo} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/tests/LogiMarket.Tests/Patrones/EstructuralesTests.cs}{\ruta{tests/LogiMarket.Tests/Patrones/EstructuralesTests.cs}}
+
+\textbf{Método} \ruta{EstructuralesTests.P17_BridgeCuatroCombinacionesContenidoYArchivo}
+
+\textbf{Complemento} Capturas y log del flujo de formularios en la sección 10 y \ruta{docs/evidencias/flujo-ui.txt}
+
+\medskip\hrule\medskip
+\subsubsection*{P18 --- APROBADO}
+\textbf{Entrada y precondición} Composite: kits y composición anidada; intentar ciclo.
+
+\textbf{Esperado} Precios 50/60; expansión correcta; ciclo rechazado.
+
+\textbf{Obtenido} 1 prueba(s) automatizada(s) aprobada(s). Precios 50/60, expansion P01/P02/P03 y cantidades propagadas; ciclo indirecto rechazado.
+
+\textbf{Archivo} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/tests/LogiMarket.Tests/Dominio/KitsTests.cs}{\ruta{tests/LogiMarket.Tests/Dominio/KitsTests.cs}}
+
+\textbf{Método} \ruta{KitsTests.KitAnidadoExpandeCantidadesYRechazaCicloIndirecto}
+
+\medskip\hrule\medskip
+\subsubsection*{P19 --- APROBADO}
+\textbf{Entrada y precondición} Decorator: cobro autorizado, exitoso/fallido.
+
+\textbf{Esperado} LOG de inicio y fin/error rodea la ejecución, no altera resultado.
+
+\textbf{Obtenido} 2 prueba(s) automatizada(s) aprobada(s). Secuencia observada INICIO, PASARELA y FIN/ERROR, conservando el resultado del proveedor.
+
+\textbf{Archivo} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/tests/LogiMarket.Tests/Patrones/EstructuralesTests.cs}{\ruta{tests/LogiMarket.Tests/Patrones/EstructuralesTests.cs}}
+
+\textbf{Método} \ruta{EstructuralesTests.P19_DecoradorRodeaEjecucion}
+
+\medskip\hrule\medskip
+\subsubsection*{P20 --- APROBADO}
+\textbf{Entrada y precondición} Facade: confirmar con fallo en un colaborador.
+
+\textbf{Esperado} Operación consistente; ninguna persistencia parcial indebida.
+
+\textbf{Obtenido} 1 prueba(s) automatizada(s) aprobada(s). Fallo del colaborador deja estado VALIDADO, stock P01=8, sin pago ni evento de exito.
+
+\textbf{Archivo} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/tests/LogiMarket.Tests/Aplicacion/ConfirmacionTests.cs}{\ruta{tests/LogiMarket.Tests/Aplicacion/ConfirmacionTests.cs}}
+
+\textbf{Método} \ruta{ConfirmacionTests.P20_FalloColaboradorNoDejaPersistenciaParcial}
+
+\medskip\hrule\medskip
+\subsubsection*{P21 --- APROBADO}
+\textbf{Entrada y precondición} Flyweight: 1.000 filas con metadatos repetidos.
+
+\textbf{Esperado} ReferenceEquals true; identidad y memoria documentadas.
+
+\textbf{Obtenido} 1000 filas, una instancia compartida y ReferenceEquals True; medición nueva: 104176 frente a 56360 bytes asignados. Condiciones en flujo-ui.txt.
+
+\textbf{Archivo} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/tests/LogiMarket.Tests/Patrones/EstructuralesTests.cs}{\ruta{tests/LogiMarket.Tests/Patrones/EstructuralesTests.cs}}
+
+\textbf{Método} \ruta{EstructuralesTests.P21_MilFilasCompartenIdentidadConComparacionEquivalente}
+
+\medskip\hrule\medskip
+\subsubsection*{P22 --- APROBADO}
+\textbf{Entrada y precondición} Proxy: rol CONSULTA/BODEGA intenta pagar.
+
+\textbf{Esperado} Rechazo antes de Decorator/Adapter; sin cobro ni LOG de cobro.
+
+\textbf{Obtenido} 2 prueba(s) automatizada(s) aprobada(s). CONSULTA y BODEGA reciben UnauthorizedAccessException antes del proveedor; ningun LOG de COBRO.
+
+\textbf{Archivo} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/tests/LogiMarket.Tests/Aplicacion/PermisosTests.cs}{\ruta{tests/LogiMarket.Tests/Aplicacion/PermisosTests.cs}}
+
+\textbf{Método} \ruta{PermisosTests.P22_ProxyDetieneAntesDeCobro}
+
+\medskip\hrule\medskip
+\subsubsection*{P23 --- APROBADO}
+\textbf{Entrada y precondición} Chain: pedido sin cliente y sin stock; corregir un error.
+
+\textbf{Esperado} Se informa primera validación y luego la siguiente; sin ejecución de cobro.
+
+\textbf{Obtenido} 1 prueba(s) automatizada(s) aprobada(s). Primero se informa CLIENTE y, al corregirlo, STOCK; no se invoca cobro.
+
+\textbf{Archivo} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/tests/LogiMarket.Tests/Patrones/ComportamentalesTests.cs}{\ruta{tests/LogiMarket.Tests/Patrones/ComportamentalesTests.cs}}
+
+\textbf{Método} \ruta{ComportamentalesTests.P23_CadenaPrimeroClienteLuegoStock}
+
+\medskip\hrule\medskip
+\subsubsection*{P24 --- APROBADO}
+\textbf{Entrada y precondición} Command: confirmar desde UI e invocador de prueba.
+
+\textbf{Esperado} Mismo comando y resultado funcional; historial de invocación.
+
+\textbf{Obtenido} 1 prueba(s) automatizada(s) aprobada(s). El boton de cobro y el test invocan ConfirmarPedidoCommand mediante InvocadorComandos.
+
+\textbf{Archivo} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/tests/LogiMarket.Tests/Aplicacion/ComandosTests.cs}{\ruta{tests/LogiMarket.Tests/Aplicacion/ComandosTests.cs}}
+
+\textbf{Método} \ruta{ComandosTests.P24_ComandoInvocadoRegistraResultado}
+
+\medskip\hrule\medskip
+\subsubsection*{P25 --- APROBADO}
+\textbf{Entrada y precondición} Interpreter: ESTADO = PAGADO AND TOTAL >= 50.
+
+\textbf{Esperado} Devuelve únicamente pedidos que cumplen el filtro.
+
+\textbf{Obtenido} 1 prueba(s) automatizada(s) aprobada(s). ESTADO = PAGADO AND TOTAL >= 50 acepta el pedido pagado de 65.00 y descarta el filtro de BORRADOR.
+
+\textbf{Archivo} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/tests/LogiMarket.Tests/Patrones/ComportamentalesTests.cs}{\ruta{tests/LogiMarket.Tests/Patrones/ComportamentalesTests.cs}}
+
+\textbf{Método} \ruta{ComportamentalesTests.P25_InterpreterSeleccionaPagado}
+
+\medskip\hrule\medskip
+\subsubsection*{P26 --- APROBADO}
+\textbf{Entrada y precondición} Interpreter: sintaxis errónea y paréntesis.
+
+\textbf{Esperado} Error legible sin SQL concatenado; precedencia correcta.
+
+\textbf{Obtenido} 1 prueba(s) automatizada(s) aprobada(s). AND tiene prioridad sobre OR; parentesis cambian el resultado y sintaxis invalida genera FormatException.
+
+\textbf{Archivo} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/tests/LogiMarket.Tests/Patrones/ComportamentalesTests.cs}{\ruta{tests/LogiMarket.Tests/Patrones/ComportamentalesTests.cs}}
+
+\textbf{Método} \ruta{ComportamentalesTests.P26_InterpreterPrecedenciaYErrores}
+
+\medskip\hrule\medskip
+\subsubsection*{P27 --- APROBADO}
+\textbf{Entrada y precondición} Iterator: recorrer KIT\_TELETRABAJO.
+
+\textbf{Esperado} P01, P02, P03 una vez por unidad requerida, sin bucle.
+
+\textbf{Obtenido} 1 prueba(s) automatizada(s) aprobada(s). Iterador propio produce P01, P02 y P03, termina y permanece terminado.
+
+\textbf{Archivo} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/tests/LogiMarket.Tests/Patrones/ComportamentalesTests.cs}{\ruta{tests/LogiMarket.Tests/Patrones/ComportamentalesTests.cs}}
+
+\textbf{Método} \ruta{ComportamentalesTests.P27_P34_IteratorYVisitorKits}
+
+\medskip\hrule\medskip
+\subsubsection*{P28 --- APROBADO}
+\textbf{Entrada y precondición} Mediator: confirmar y revisar tres vistas.
+
+\textbf{Esperado} Catálogo, pedidos y métricas se refrescan sin acoplamiento directo.
+
+\textbf{Obtenido} 1 prueba(s) automatizada(s) aprobada(s). Verificacion automatica del coordinador y capturas 07, 08 y 09: pedido pagado, stock actualizado y metrica de pago=1.
+
+\textbf{Archivo} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/tests/LogiMarket.Tests/Patrones/MediatorTests.cs}{\ruta{tests/LogiMarket.Tests/Patrones/MediatorTests.cs}}
+
+\textbf{Método} \ruta{MediatorTests.P28_MediatorRefrescaStockPedidosYMetricas}
+
+\textbf{Complemento} Capturas y log del flujo de formularios en la sección 10 y \ruta{docs/evidencias/flujo-ui.txt}
+
+\medskip\hrule\medskip
+\subsubsection*{P29 --- APROBADO}
+\textbf{Entrada y precondición} Memento: tres ediciones, dos deshacer y un rehacer.
+
+\textbf{Esperado} Se restauran borradores completos; no se deshace un pago.
+
+\textbf{Obtenido} 1 prueba(s) automatizada(s) aprobada(s). Tres estados: deshacer devuelve cantidades 2 y 1; rehacer devuelve 2. Historial bloqueado rechaza deshacer.
+
+\textbf{Archivo} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/tests/LogiMarket.Tests/Patrones/ComportamentalesTests.cs}{\ruta{tests/LogiMarket.Tests/Patrones/ComportamentalesTests.cs}}
+
+\textbf{Método} \ruta{ComportamentalesTests.P29_MementoTresCambiosDosDeshacerUnRehacer}
+
+\medskip\hrule\medskip
+\subsubsection*{P30 --- APROBADO}
+\textbf{Entrada y precondición} Observer: PedidoPagado con tres suscriptores.
+
+\textbf{Esperado} Notificación, auditoría y métrica actualizadas una vez.
+
+\textbf{Obtenido} 2 prueba(s) automatizada(s) aprobada(s). Un aviso, una auditoria de PedidoPagado y una metrica; segundo procesamiento no publica de nuevo.
+
+\textbf{Archivo} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/tests/LogiMarket.Tests/Integracion/OutboxTests.cs}{\ruta{tests/LogiMarket.Tests/Integracion/OutboxTests.cs}}
+
+\textbf{Método} \ruta{OutboxTests.P11_P30_ObserverYFactoryPublicanUnaVez}
+
+\medskip\hrule\medskip
+\subsubsection*{P31 --- APROBADO}
+\textbf{Entrada y precondición} State: ciclo válido y PAGADO $\rightarrow$ CANCELADO inválido.
+
+\textbf{Esperado} Transiciones con reglas por estado, sin escritura directa.
+
+\textbf{Obtenido} 1 prueba(s) automatizada(s) aprobada(s). Ciclo permitido completo; despacho prematuro, cancelacion y repeticion rechazados.
+
+\textbf{Archivo} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/tests/LogiMarket.Tests/Dominio/EstadosTests.cs}{\ruta{tests/LogiMarket.Tests/Dominio/EstadosTests.cs}}
+
+\textbf{Método} \ruta{EstadosTests.P31_StateRechazaRetrocesoYRepeticion}
+
+\medskip\hrule\medskip
+\subsubsection*{P32 --- APROBADO}
+\textbf{Entrada y precondición} Strategy: VIP, MAYORISTA, NORMAL y nueva promoción.
+
+\textbf{Esperado} Descuentos 6/15/0; extensión sin editar la calculadora central.
+
+\textbf{Obtenido} 1 prueba(s) automatizada(s) aprobada(s). Politica nueva aplica 20\% sin editar la calculadora; pruebas numericas adicionales verifican VIP, MAYORISTA y NORMAL.
+
+\textbf{Archivo} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/tests/LogiMarket.Tests/Dominio/PromocionesTests.cs}{\ruta{tests/LogiMarket.Tests/Dominio/PromocionesTests.cs}}
+
+\textbf{Método} \ruta{PromocionesTests.P32_ExtenderStrategySinCambiarCalculadora}
+
+\medskip\hrule\medskip
+\subsubsection*{P33 --- APROBADO}
+\textbf{Entrada y precondición} Template Method: defecto día 20; arrepentimiento día 10.
+
+\textbf{Esperado} Defecto aceptado; arrepentimiento rechazado sin reembolso/stock.
+
+\textbf{Obtenido} 1 prueba(s) automatizada(s) aprobada(s). Arrepentimiento dia 10 rechazado; defecto dia 20 también verificado en P35.
+
+\textbf{Archivo} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/tests/LogiMarket.Tests/Aplicacion/DevolucionesTests.cs}{\ruta{tests/LogiMarket.Tests/Aplicacion/DevolucionesTests.cs}}
+
+\textbf{Método} \ruta{DevolucionesTests.P33_ArrepentimientoDiaDiezNoAlteraStock}
+
+\medskip\hrule\medskip
+\subsubsection*{P34 --- APROBADO}
+\textbf{Entrada y precondición} Visitor: KIT\_TELETRABAJO.
+
+\textbf{Esperado} Detalle P01/P02/P03; peso total 1.00 kg.
+
+\textbf{Obtenido} 1 prueba(s) automatizada(s) aprobada(s). Visitor obtiene tres SKU y peso total 1.00 kg del kit teletrabajo.
+
+\textbf{Archivo} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/tests/LogiMarket.Tests/Patrones/ComportamentalesTests.cs}{\ruta{tests/LogiMarket.Tests/Patrones/ComportamentalesTests.cs}}
+
+\textbf{Método} \ruta{ComportamentalesTests.P27_P34_IteratorYVisitorKits}
+
+\medskip\hrule\medskip
+\subsubsection*{P35 --- APROBADO}
+\textbf{Entrada y precondición} Devolver pedido ENTREGADO por defecto y repetir solicitud.
+
+\textbf{Esperado} Para Ana: USD 54.00 de reembolso sin flete; un solo reintegro y devolución única.
+
+\textbf{Obtenido} 1 prueba(s) automatizada(s) aprobada(s). Ana recibe 54.00, sin envío; stock P01 vuelve a 8 y la solicitud repetida se rechaza; una devolución.
+
+\textbf{Archivo} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/tests/LogiMarket.Tests/Aplicacion/DevolucionesTests.cs}{\ruta{tests/LogiMarket.Tests/Aplicacion/DevolucionesTests.cs}}
+
+\textbf{Método} \ruta{DevolucionesTests.P35_DevolucionAnaUnicaPor54}
+
+\textbf{Complemento} Capturas y log del flujo de formularios en la sección 10 y \ruta{docs/evidencias/flujo-ui.txt}
+
+\medskip\hrule\medskip
+\subsubsection*{P36 --- APROBADO}
+\textbf{Entrada y precondición} Dos cobros concurrentes sobre un SKU cuyo stock se configuró previamente en una unidad.
+
+\textbf{Esperado} Máximo un cobro aprobado; stock no negativo; sin sobreventa.
+
+\textbf{Obtenido} 1 prueba(s) automatizada(s) aprobada(s). Con P01=1 y dos confirmaciones concurrentes: una aceptada, un pago y stock final cero.
+
+\textbf{Archivo} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/tests/LogiMarket.Tests/Integracion/ConcurrenciaTests.cs}{\ruta{tests/LogiMarket.Tests/Integracion/ConcurrenciaTests.cs}}
+
+\textbf{Método} \ruta{ConcurrenciaTests.P36_DosConfirmacionesConcurrentesSinSobreventa}
+
+\medskip\hrule\medskip
+\subsubsection*{P37 --- APROBADO}
+\textbf{Entrada y precondición} Outbox: falla notificador y reiniciar procesador.
+
+\textbf{Esperado} Evento pendiente se recupera, se marca procesado una vez y sin duplicar cobro.
+
+\textbf{Obtenido} 1 prueba(s) automatizada(s) aprobada(s). Fallo deja evento pendiente con un intento; procesador nuevo lo recupera; un aviso y un pago.
+
+\textbf{Archivo} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/tests/LogiMarket.Tests/Integracion/OutboxTests.cs}{\ruta{tests/LogiMarket.Tests/Integracion/OutboxTests.cs}}
+
+\textbf{Método} \ruta{OutboxTests.P37_RecuperacionOutboxConNuevoProcesador}
+
+\textbf{Complemento} Capturas y log del flujo de formularios en la sección 10 y \ruta{docs/evidencias/flujo-ui.txt}
+
+\medskip\hrule\medskip
+\subsubsection*{P38 --- APROBADO}
+\textbf{Entrada y precondición} Pruebas de LSP/ISP/DIP y build desde código limpio.
+
+\textbf{Esperado} Reemplazo de proveedor, contratos segregados, referencias correctas y 25 pruebas automatizadas aprobadas.
+
+\textbf{Obtenido} Contratos y referencias comprobados por las pruebas; compilacion limpia registrada en docs/evidencias/compilacion-limpia.txt.
+
+\textbf{Archivo} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/tests/LogiMarket.Tests/Arquitectura/DependenciasTests.cs}{\ruta{tests/LogiMarket.Tests/Arquitectura/DependenciasTests.cs}}
+
+\textbf{Método} \ruta{EstructuralesTests.P16_P38_LspProveedores}
+
+\textbf{Método} \ruta{DependenciasTests.P38_DependenciasInternasSinFrameworksDePersistenciaNiUi}
+
+\medskip\hrule\medskip

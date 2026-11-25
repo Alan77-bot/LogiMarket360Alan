@@ -1,0 +1,67 @@
+
+\section{Modelo de dominio y datos}
+\subsection{Entidades e invariantes}
+El agregado Pedido controla cliente entrega líneas importes estado versión e historial. Las entidades de catálogo impiden precio no positivo peso negativo stock negativo y cantidades inválidas. Los kits rechazan referencias circulares antes de guardar y al construir su representación compuesta.
+
+Se conserva una instantánea de precio peso cantidad y composición en cada línea. El árbol anidado se registra en JSON además del desglose relacional. Un cambio de precio o kit del catálogo no modifica una venta anterior. La cantidad del componente ya incorpora cuántos kits contiene la línea y no debe multiplicarse dos veces.
+
+\modelo{clases}{Clases críticas y contratos del proceso de venta}{clases}
+\FloatBarrier
+\subsection{Modelo relacional}
+\modelo{datos-catalogo}{Relaciones del catálogo y registros de identidad}{er-catalogo}
+\modelo{datos-venta}{Relaciones de venta pago logística y eventos}{er-venta}
+\FloatBarrier
+\begingroup\small
+\noindent
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.74\linewidth}@{}}
+\toprule
+\textbf{Grupo} & \textbf{Entidades y propósito}\\
+\midrule
+Identidad & Usuario conserva rol y hash Cliente conserva categoría y estado activo\\[3pt]
+Catálogo & Producto Kit y KitComponente con claves y destinos de componente válidos\\[3pt]
+Venta & Pedido PedidoDetalle PedidoDetalleComponente e HistorialEstado\\[3pt]
+Operaciones & Pago MovimientoInventario Despacho y Devolucion\\[3pt]
+Trazabilidad & EventoOutbox RecepcionEvento Aviso y Auditoria\\[3pt]
+\bottomrule
+\end{tabular}
+\par\endgroup
+
+\subsection{Claves restricciones y concurrencia}
+Cada entidad tiene clave primaria. Las relaciones utilizan claves foráneas reales SKU y usuario tienen índices únicos dentro de sus tablas. El servicio comprueba también que un SKU no se repita entre producto y kit Pago tiene unicidad por pedido clave de idempotencia y referencia Devolucion es única por pedido y referencia MovimientoInventario utiliza la combinación producto referencia motivo RecepcionEvento tiene clave compuesta evento y suscriptor.
+
+SQLite toma un bloqueo de escritura antes de consultar existencias mediante BEGIN IMMEDIATE Producto y Pedido disponen además de un token Version. La transacción registra pago movimientos estado y Outbox de manera consistente. Las transacciones locales no se presentan como una garantía distribuida con una pasarela bancaria real \cite{transacciones}.
+
+\subsection{Migración semilla y recuperación}
+La migración InicialAlan y su snapshot se generaron para esta estructura de entidades. La inicialización aplica migraciones y una semilla idempotente con cinco productos dos kits cuatro cuentas y clientes de prueba. Un marcador evita que reiniciar la aplicación vuelva a crear datos borrados intencionalmente \cite{migraciones}.
+
+La base de ejecución se ubica bajo \ruta{LOCALAPPDATA/LogiMarket360Alan/logimarket.db} La fábrica de diseño utiliza otra ruta para generar migraciones. Las evidencias públicas sustituyen los identificadores del equipo por valores anónimos.
+
+\subsection{Catálogo y reglas numéricas de control}
+\begingroup\small
+\noindent
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.09\linewidth}>{\raggedright\arraybackslash}p{0.32\linewidth}>{\raggedright\arraybackslash}p{0.16\linewidth}>{\raggedright\arraybackslash}p{0.12\linewidth}>{\raggedright\arraybackslash}p{0.14\linewidth}@{}}
+\toprule
+\textbf{SKU} & \textbf{Producto} & \textbf{Precio USD} & \textbf{Stock} & \textbf{Peso kg}\\
+\midrule
+P01 & Mouse USB & 20.00 & 8 & 0.20\\[3pt]
+P02 & Teclado & 30.00 & 5 & 0.70\\[3pt]
+P03 & Memoria USB & 10.00 & 20 & 0.10\\[3pt]
+P04 & Webcam & 40.00 & 4 & 0.35\\[3pt]
+P05 & Alfombrilla & 5.00 & 30 & 0.10\\[3pt]
+\bottomrule
+\end{tabular}
+\par\endgroup
+
+KIT\_OFICINA contiene P01 y P02 y cuesta USD 50.00 KIT\_TELETRABAJO añade P03 al kit anterior y cuesta USD 60.00. Su peso físico total es 1.00 kg.
+
+Las promociones son excluyentes MAYORISTA aplica 15\% desde diez unidades físicas finales y tiene prioridad VIP aplica 10\% si no corresponde mayorista NORMAL utiliza 0\% ESTANDAR cuesta USD 5.00 con plazo de tres días EXPRES cuesta USD 12.00 con un día.
+\begin{align*}
+\text{subtotal} &= \sum_i \text{precio}_i\cdot\text{cantidad}_i\\
+\text{descuento} &= \operatorname{redondear}(\text{subtotal}\cdot\text{tasa},2)\\
+\text{total} &= \text{subtotal}-\text{descuento}+\text{tarifa}
+\end{align*}
+Se usa decimal y MidpointRounding.AwayFromZero. El reembolso es subtotal menos descuento y excluye el envío.
+
+\modelo{estados}{Transiciones válidas del pedido}{estados}
+Solo se cancela desde BORRADOR o VALIDADO La devolución se conserva en un registro separado y no agrega un estado fuera del ciclo oficial DEFECTO se acepta hasta 30 días desde la entrega ARREPENTIMIENTO hasta siete días y sin uso.
+\FloatBarrier

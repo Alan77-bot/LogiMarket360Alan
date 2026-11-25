@@ -1,0 +1,16 @@
+\noindent\begin{minipage}{\linewidth}
+\subsection{Decorator}
+\textbf{Problema y aplicación} Agregar registros de inicio fin o error sin cambiar el proveedor.
+
+\textbf{Participantes} AuditoriaPagoDecorator IPasarelaPago IBitacora y proveedor envuelto.
+
+\textbf{Ubicación} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/LogiMarket.Infrastructure/Pagos/AuditoriaPagoDecorator.cs#L11}{\ruta{LogiMarket.Infrastructure/Pagos/AuditoriaPagoDecorator.cs}}.
+
+\textbf{Recorrido} El decorador registra y llama al colaborador interno devolviendo su mismo resultado.
+
+\lstinputlisting[firstline=11,lastline=23,firstnumber=11]{codigo/09-AuditoriaPagoDecorator.cs}
+\textbf{Comprobación} P19 enlazadas en la matriz de aceptación y el TRX de 62 pruebas aprobadas.
+
+\textbf{Beneficio y costo} Separa auditoría del proveedor aunque el orden de envolturas debe configurarse correctamente.
+
+\end{minipage}\par\medskip

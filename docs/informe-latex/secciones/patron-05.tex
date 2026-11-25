@@ -1,0 +1,16 @@
+\noindent\begin{minipage}{\linewidth}
+\subsection{Singleton}
+\textbf{Problema y aplicación} Compartir los contadores de sesión sin crear una instancia por pantalla.
+
+\textbf{Participantes} MetricasSesion MetricasObserver RegistroServicios y vistas.
+
+\textbf{Ubicación} \href{https://github.com/Alan77-bot/LogiMarket360Alan/blob/68bda51063441415524ede51bdf61649ee9b4973/LogiMarket.Application/Eventos/MetricasSesion.cs#L7}{\ruta{LogiMarket.Application/Eventos/MetricasSesion.cs}}.
+
+\textbf{Recorrido} DI registra AddSingleton y todos los consumidores reciben la misma instancia.
+
+\lstinputlisting[firstline=7,lastline=14,firstnumber=7]{codigo/05-MetricasSesion.cs}
+\textbf{Comprobación} P15 enlazadas en la matriz de aceptación y el TRX de 62 pruebas aprobadas.
+
+\textbf{Beneficio y costo} Mantiene identidad compartida y contadores seguros ante concurrencia pero no reemplaza un reporte histórico.
+
+\end{minipage}\par\medskip
