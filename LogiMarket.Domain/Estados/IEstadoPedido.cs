@@ -1,2 +1,7 @@
-// PENDIENTE: implementar IEstadoPedido en esta etapa del aprendizaje.
-// Carpeta: LogiMarket.Domain/Estados. No contiene logica ni patrones implementados todavia.
+using LogiMarket.Domain.Enums;
+namespace LogiMarket.Domain.Estados;
+// State: contrato del comportamiento que decide si se permite una transicion.
+public interface IEstadoPedido
+{
+    void Exigir(EstadoPedido destino);
+}
