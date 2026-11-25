@@ -26,62 +26,6 @@ namespace LogiMarket.Tests.Dominio;
 // Escenarios de ProductoTests con datos controlados. Comprobamos el efecto y los cambios que no deben ocurrir.
 public sealed class ProductoTests
 {
-    private sealed class ReembolsoConFallo : IReembolsosSimulados
-    {
-        public Task<string> ReembolsarAsync(Guid pedido, decimal importe) => throw new IOException("Reembolso indisponible.");
-    }
-
-    private sealed class PasarelaConFallo : IPasarelaPago
-    {
-        public Task<ResultadoCobro> CobrarAsync(decimal importe, string clave) => throw new IOException("Colaborador indisponible.");
-    }
-
-    private static Pedido Crear(int cantidad = 1)
-    {
-        var pedido = new PedidoBuilder().Para(new Cliente("Ana", CategoriaCliente.VIP)).ConEntrega(TipoEntrega.ESTANDAR).Agregar(new ProductoSimple("P01", "Mouse", 20, .2m), cantidad).Construir();
-        pedido.Valorar(new([new Mayorista15(), new Vip10(), new SinDescuento()]), 5);
-        return pedido;
-    }
-
-    private sealed class SalidaCaptura : ISalidaDocumento
-    {
-        public string Texto { get; private set; } = "";
-
-        public Task Emitir(string nombre, string contenido)
-        {
-            Texto = contenido;
-            return Task.CompletedTask;
-        }
-    }
-
-    private sealed class BitacoraCaptura : IBitacora
-    {
-        public List<string> Secuencia { get; } = [];
-
-        public Task Registrar(string usuario, string operacion, string resultado, string correlacion)
-        {
-            Secuencia.Add(resultado);
-            return Task.CompletedTask;
-        }
-    }
-
-    private sealed class PasarelaCaptura(List<string> secuencia, bool acepta) : IPasarelaPago
-    {
-        public Task<ResultadoCobro> CobrarAsync(decimal importe, string clave)
-        {
-            secuencia.Add("PASARELA");
-            return Task.FromResult(new ResultadoCobro(acepta, "REF", "Rechazo"));
-        }
-    }
-
-    private sealed class PromocionNueva : IPoliticaDescuento
-    {
-        public int Prioridad => 100;
-        public decimal Tasa => .20m;
-
-        public bool Aplica(ContextoPromocion contexto) => true;
-    }
-
     [Fact]
     public async Task ProductoUsadoNoSeEliminaNiCambiaSku()
     {

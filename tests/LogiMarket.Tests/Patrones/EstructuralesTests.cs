@@ -63,14 +63,6 @@ public sealed class EstructuralesTests
         }
     }
 
-    private sealed class PromocionNueva : IPoliticaDescuento
-    {
-        public int Prioridad => 100;
-        public decimal Tasa => .20m;
-
-        public bool Aplica(ContextoPromocion contexto) => true;
-    }
-
     [Fact]
     public void P21_MilFilasCompartenIdentidadConComparacionEquivalente()
     {

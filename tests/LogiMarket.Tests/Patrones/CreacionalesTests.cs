@@ -29,45 +29,6 @@ public sealed class CreacionalesTests
         return pedido;
     }
 
-    private sealed class SalidaCaptura : ISalidaDocumento
-    {
-        public string Texto { get; private set; } = "";
-
-        public Task Emitir(string nombre, string contenido)
-        {
-            Texto = contenido;
-            return Task.CompletedTask;
-        }
-    }
-
-    private sealed class BitacoraCaptura : IBitacora
-    {
-        public List<string> Secuencia { get; } = [];
-
-        public Task Registrar(string usuario, string operacion, string resultado, string correlacion)
-        {
-            Secuencia.Add(resultado);
-            return Task.CompletedTask;
-        }
-    }
-
-    private sealed class PasarelaCaptura(List<string> secuencia, bool acepta) : IPasarelaPago
-    {
-        public Task<ResultadoCobro> CobrarAsync(decimal importe, string clave)
-        {
-            secuencia.Add("PASARELA");
-            return Task.FromResult(new ResultadoCobro(acepta, "REF", "Rechazo"));
-        }
-    }
-
-    private sealed class PromocionNueva : IPoliticaDescuento
-    {
-        public int Prioridad => 100;
-        public decimal Tasa => .20m;
-
-        public bool Aplica(ContextoPromocion contexto) => true;
-    }
-
     [Fact]
     public void P12_FamiliasCompatibles()
     {

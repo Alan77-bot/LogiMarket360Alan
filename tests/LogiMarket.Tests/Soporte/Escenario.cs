@@ -10,7 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Xunit;
 
 namespace LogiMarket.Tests.Soporte;
-// Responsabilidad de Escenario: colaborar desde LogiMarket.Tests.Soporte sin mezclar reglas, persistencia y pantallas.
+// Coordina esta responsabilidad a traves de contratos; las reglas del negocio permanecen en su capa.
 public sealed class Escenario : IAsyncDisposable
 {
     public string Ruta { get; } = Path.Combine(Path.GetTempPath(), $"logimarket-test-{Guid.NewGuid():N}.db");

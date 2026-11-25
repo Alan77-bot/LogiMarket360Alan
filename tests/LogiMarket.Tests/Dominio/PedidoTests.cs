@@ -23,24 +23,6 @@ namespace LogiMarket.Tests.Dominio;
 // Escenarios de PedidoTests con datos controlados. Comprobamos el efecto y los cambios que no deben ocurrir.
 public sealed class PedidoTests
 {
-    private static async Task SinEfectos(Escenario e, Guid id) => await e.Usar(async s =>
-    {
-        var repo = s.GetRequiredService<IRepositorio>();
-        Assert.Equal(8, (await repo.Productos()).Single(p => p.Sku == "P01").Stock);
-        Assert.Null(await repo.PagoPorPedido(id));
-        Assert.Empty(await s.GetRequiredService<IConsultasOperativas>().Eventos());
-        Assert.Empty(await s.GetRequiredService<IConsultasOperativas>().Movimientos());
-    });
-    private sealed class ReembolsoConFallo : IReembolsosSimulados
-    {
-        public Task<string> ReembolsarAsync(Guid pedido, decimal importe) => throw new IOException("Reembolso indisponible.");
-    }
-
-    private sealed class PasarelaConFallo : IPasarelaPago
-    {
-        public Task<ResultadoCobro> CobrarAsync(decimal importe, string clave) => throw new IOException("Colaborador indisponible.");
-    }
-
     [Fact]
     public async Task InstantaneaNoCambiaConCatalogo()
     {

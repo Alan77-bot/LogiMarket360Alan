@@ -8,7 +8,6 @@ namespace LogiMarket.Tests.Arquitectura;
 // Escenarios de DependenciasTests con datos controlados. Comprobamos el efecto y los cambios que no deben ocurrir.
 public sealed class DependenciasTests
 {
-    private sealed record Fila(int Indice, MetadatosSku Metadatos, int Cantidad, decimal Precio);
     [Fact]
     public void P38_DependenciasInternasSinFrameworksDePersistenciaNiUi()
     {

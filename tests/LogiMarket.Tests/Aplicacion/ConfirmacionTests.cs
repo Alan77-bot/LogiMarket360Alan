@@ -31,11 +31,6 @@ public sealed class ConfirmacionTests
         Assert.Empty(await s.GetRequiredService<IConsultasOperativas>().Eventos());
         Assert.Empty(await s.GetRequiredService<IConsultasOperativas>().Movimientos());
     });
-    private sealed class ReembolsoConFallo : IReembolsosSimulados
-    {
-        public Task<string> ReembolsarAsync(Guid pedido, decimal importe) => throw new IOException("Reembolso indisponible.");
-    }
-
     private sealed class PasarelaConFallo : IPasarelaPago
     {
         public Task<ResultadoCobro> CobrarAsync(decimal importe, string clave) => throw new IOException("Colaborador indisponible.");

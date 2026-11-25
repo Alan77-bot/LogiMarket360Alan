@@ -19,14 +19,6 @@ namespace LogiMarket.Tests.Aceptacion;
 // Escenarios de CasosOficialesTests con datos controlados. Comprobamos el efecto y los cambios que no deben ocurrir.
 public sealed class CasosOficialesTests
 {
-    private static async Task SinEfectos(Escenario e, Guid id) => await e.Usar(async s =>
-    {
-        var repo = s.GetRequiredService<IRepositorio>();
-        Assert.Equal(8, (await repo.Productos()).Single(p => p.Sku == "P01").Stock);
-        Assert.Null(await repo.PagoPorPedido(id));
-        Assert.Empty(await s.GetRequiredService<IConsultasOperativas>().Eventos());
-        Assert.Empty(await s.GetRequiredService<IConsultasOperativas>().Movimientos());
-    });
     [Theory]
     [InlineData("Ana", TipoEntrega.ESTANDAR, "KIT_TELETRABAJO", 1, "", 0, 59, "P01", 7)]
     [InlineData("Luis", TipoEntrega.EXPRES, "P04", 2, "P05", 2, 102, "P04", 2)]

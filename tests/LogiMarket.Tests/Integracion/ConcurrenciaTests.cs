@@ -19,14 +19,6 @@ namespace LogiMarket.Tests.Integracion;
 // Escenarios de ConcurrenciaTests con datos controlados. Comprobamos el efecto y los cambios que no deben ocurrir.
 public sealed class ConcurrenciaTests
 {
-    private static async Task SinEfectos(Escenario e, Guid id) => await e.Usar(async s =>
-    {
-        var repo = s.GetRequiredService<IRepositorio>();
-        Assert.Equal(8, (await repo.Productos()).Single(p => p.Sku == "P01").Stock);
-        Assert.Null(await repo.PagoPorPedido(id));
-        Assert.Empty(await s.GetRequiredService<IConsultasOperativas>().Eventos());
-        Assert.Empty(await s.GetRequiredService<IConsultasOperativas>().Movimientos());
-    });
     [Fact]
     public async Task P36_DosConfirmacionesConcurrentesSinSobreventa()
     {
