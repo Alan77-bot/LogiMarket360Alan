@@ -1,5 +1,5 @@
 namespace LogiMarket.Application.Validaciones;
-// Chain: el orden cliente, lineas, stock y estado determina el primer mensaje de rechazo.
+// Chain el orden cliente lineas stock y estado determina el primer mensaje de rechazo
 public static class CadenaConfirmacion
 {
     public static ResultadoValidacion Validar(ContextoValidacion c, bool exigirValidado = true)

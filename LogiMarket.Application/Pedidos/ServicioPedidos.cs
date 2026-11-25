@@ -9,7 +9,7 @@ using LogiMarket.Domain.Pedidos;
 using LogiMarket.Domain.Promociones;
 
 namespace LogiMarket.Application.Pedidos;
-// Coordina esta responsabilidad a traves de contratos; las reglas del negocio permanecen en su capa.
+
 public sealed class ServicioPedidos(IRepositorio repo, ITransacciones tx, Autorizador auth, SesionActual sesion, CalculadoraPrecios calculadora, IEnumerable<IFabricaEntrega> entregas, IReloj reloj)
 {
     public async Task<Pedido> Preparar(SolicitudBorrador entrada)
@@ -61,7 +61,7 @@ public sealed class ServicioPedidos(IRepositorio repo, ITransacciones tx, Autori
         {
             var pedido = await repo.Pedido(id);
             pedido.ExigirEditable();
-            // Se usan precios historicos de las lineas, no el catalogo actual.
+            // Se usan precios historicos de las lineas no el catalogo actual
             pedido.Valorar(calculadora, entregas.Single(e => e.Tipo == pedido.Entrega).CrearTarifa().Importe);
             var resultado = CadenaConfirmacion.Validar(new(pedido, (await repo.Clientes()).SingleOrDefault(c => c.Id == pedido.ClienteId), await repo.Productos()), false);
             if (!resultado.Valido)

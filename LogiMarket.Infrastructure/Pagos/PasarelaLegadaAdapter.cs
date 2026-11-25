@@ -3,7 +3,7 @@ using LogiMarket.Application.DTOs;
 using System.Collections.Concurrent;
 
 namespace LogiMarket.Infrastructure.Pagos;
-// Patron Adapter: convierte el importe decimal a centavos para conservar el contrato de la pasarela legada.
+// Patron Adapter convierte el importe decimal a centavos para conservar el contrato de la pasarela legada
 public sealed class PasarelaLegadaAdapter(PasarelaLegadaSimulada legado, OpcionesDemostracion opciones) : IPasarelaPago
 {
     public Task<ResultadoCobro> CobrarAsync(decimal importe, string clave)

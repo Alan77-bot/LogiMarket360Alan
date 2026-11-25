@@ -21,7 +21,7 @@ using Microsoft.Extensions.DependencyInjection;
 using LogiMarket.Infrastructure.InyeccionDependencias;
 
 namespace LogiMarket.Tests.Patrones;
-// Escenarios de EstructuralesTests con datos controlados. Comprobamos el efecto y los cambios que no deben ocurrir.
+// Escenarios de EstructuralesTests con datos controlados Comprobamos el efecto y los cambios que no deben ocurrir
 public sealed class EstructuralesTests
 {
     private sealed record Fila(int Indice, MetadatosSku Metadatos, int Cantidad, decimal Precio);

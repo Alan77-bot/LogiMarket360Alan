@@ -2,7 +2,7 @@ using LogiMarket.Application.Comprobantes;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace LogiMarket.WinForms.Compartido;
-// Bridge, salida concreta: muestra el documento completo en una ventana de lectura.
+// Bridge salida concreta muestra el documento completo en una ventana de lectura
 public sealed class SalidaVistaPrevia(IWin32Window propietario) : ISalidaDocumento
 {
     public Task Emitir(string nombre, string contenido)

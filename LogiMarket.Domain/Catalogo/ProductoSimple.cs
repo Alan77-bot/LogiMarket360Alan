@@ -1,5 +1,5 @@
 namespace LogiMarket.Domain.Catalogo;
-// Composite, participante hoja. Aporta un producto fisico al recorrido sin conocer sus kits padres.
+// Composite participante hoja Aporta un producto fisico al recorrido sin conocer sus kits padres
 public sealed class ProductoSimple : IElementoCatalogo
 {
     public void Aceptar(IVisitanteCatalogo visitante, int cantidad = 1) => visitante.Visitar(this, cantidad);

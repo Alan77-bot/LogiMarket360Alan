@@ -3,7 +3,7 @@ using LogiMarket.Domain.Pedidos;
 using System.Globalization;
 
 namespace LogiMarket.Application.Comprobantes;
-// Bridge, abstraccion concreta para venta. La salida puede ser vista previa o archivo TXT.
+// Bridge abstraccion concreta para venta La salida puede ser vista previa o archivo TXT
 public sealed class ComprobanteVenta(Pedido pedido, ISalidaDocumento salida) : Comprobante(salida)
 {
     protected override string Nombre => $"venta-{pedido.Id:N}";

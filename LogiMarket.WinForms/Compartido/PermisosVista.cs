@@ -1,8 +1,8 @@
 using LogiMarket.Domain.Enums;
 
 namespace LogiMarket.WinForms.Compartido;
-// Controla lo que aparece segun el rol; Application sigue siendo responsable de autorizar las operaciones reales.
-// Solo decide la presentacion. Application sigue autorizando cada operacion real.
+// Controla lo que aparece segun el rol Application sigue siendo responsable de autorizar las operaciones reales
+// Solo decide la presentacion Application sigue autorizando cada operacion real
 public sealed class PermisosVista(Rol? rol)
 {
     public bool Administrar => rol == Rol.ADMIN;

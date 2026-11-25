@@ -1,8 +1,8 @@
 using System.Collections;
 
 namespace LogiMarket.Domain.Catalogo;
-// Patron Iterator: recorre las hojas con sus cantidades sin exponer como esta organizado el arbol.
-// Iterator: pila propia, orden estable y cantidades propagadas sin exponer listas.
+// Patron Iterator recorre las hojas con sus cantidades sin exponer como esta organizado el arbol
+// Iterator pila propia orden estable y cantidades propagadas sin exponer listas
 public sealed class IteradorFisico : IEnumerator<ComponenteFisico>
 {
     private readonly Stack<(IElementoCatalogo Elemento, int Cantidad)> pendientes = new();

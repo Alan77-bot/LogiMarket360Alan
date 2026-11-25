@@ -1,5 +1,5 @@
 namespace LogiMarket.Domain.Catalogo;
-// Patron Composite: calcula y expande una estructura anidada, rechazando ciclos.
+// Patron Composite calcula y expande una estructura anidada rechazando ciclos
 public sealed class KitCompuesto : IElementoCatalogo
 {
     public IReadOnlyList<(IElementoCatalogo Elemento, int Cantidad)> Componentes => componentes.AsReadOnly();
@@ -20,7 +20,7 @@ public sealed class KitCompuesto : IElementoCatalogo
         ArgumentNullException.ThrowIfNull(elemento);
         if (cantidad <= 0)
             throw new ArgumentOutOfRangeException(nameof(cantidad));
-        // Se comprueba el arbol antes de modificar la composicion.
+        // Se comprueba el arbol antes de modificar la composicion
         if (Contiene(elemento, Sku))
             throw new InvalidOperationException("El kit produciria un ciclo.");
         componentes.Add((elemento, cantidad));

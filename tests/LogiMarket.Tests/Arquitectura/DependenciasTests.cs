@@ -5,7 +5,7 @@ using Xunit;
 using LogiMarket.Infrastructure.InyeccionDependencias;
 
 namespace LogiMarket.Tests.Arquitectura;
-// Escenarios de DependenciasTests con datos controlados. Comprobamos el efecto y los cambios que no deben ocurrir.
+// Escenarios de DependenciasTests con datos controlados Comprobamos el efecto y los cambios que no deben ocurrir
 public sealed class DependenciasTests
 {
     [Fact]

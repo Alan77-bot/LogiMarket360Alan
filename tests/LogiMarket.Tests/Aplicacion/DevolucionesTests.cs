@@ -17,7 +17,7 @@ using Xunit;
 using LogiMarket.Application.Clientes;
 
 namespace LogiMarket.Tests.Aplicacion;
-// Escenarios de DevolucionesTests con datos controlados. Comprobamos el efecto y los cambios que no deben ocurrir.
+// Escenarios de DevolucionesTests con datos controlados Comprobamos el efecto y los cambios que no deben ocurrir
 public sealed class DevolucionesTests
 {
     private sealed class ReembolsoConFallo : IReembolsosSimulados

@@ -23,7 +23,7 @@ using LogiMarket.Infrastructure.Pagos;
 using LogiMarket.Infrastructure.InyeccionDependencias;
 
 namespace LogiMarket.Tests.Dominio;
-// Escenarios de ProductoTests con datos controlados. Comprobamos el efecto y los cambios que no deben ocurrir.
+// Escenarios de ProductoTests con datos controlados Comprobamos el efecto y los cambios que no deben ocurrir
 public sealed class ProductoTests
 {
     [Fact]

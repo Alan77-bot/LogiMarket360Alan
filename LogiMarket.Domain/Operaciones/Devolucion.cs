@@ -1,7 +1,7 @@
 using LogiMarket.Domain.Enums;
 
 namespace LogiMarket.Domain.Operaciones;
-// Registro trazable del negocio; las restricciones de persistencia completan su consistencia.
+// Registro trazable del negocio las restricciones de persistencia completan su consistencia
 public sealed class Devolucion
 {
     public Guid Id { get; private set; } = Guid.NewGuid();

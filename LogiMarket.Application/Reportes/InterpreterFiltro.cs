@@ -3,8 +3,8 @@ using System.Globalization;
 using System.Text.RegularExpressions;
 
 namespace LogiMarket.Application.Reportes;
-// Patron Interpreter: construye expresiones para filtros con AND, OR y parentesis; no concatena SQL.
-// Interpreter: descenso recursivo; AND tiene prioridad sobre OR.
+// Patron Interpreter construye expresiones para filtros con AND OR y parentesis no concatena SQL
+// Interpreter descenso recursivo AND tiene prioridad sobre OR
 public sealed class InterpreterFiltro
 {
     private readonly List<string> tokens = [];

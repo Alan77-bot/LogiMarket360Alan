@@ -3,7 +3,7 @@ using LogiMarket.Domain.Operaciones;
 using System.Collections.Concurrent;
 
 namespace LogiMarket.Application.Eventos;
-// Observer: registra la publicacion de negocio sin acoplar la confirmacion a esta reaccion.
+// Observer registra la publicacion de negocio sin acoplar la confirmacion a esta reaccion
 public sealed class AuditoriaObserver(IRepositorio repo) : ISuscriptorEvento
 {
     public string Nombre => "AUDITORIA";

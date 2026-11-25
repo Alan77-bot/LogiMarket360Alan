@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 
 namespace LogiMarket.Infrastructure.Persistencia;
-// Aplica migraciones y carga la semilla una sola vez. No recrea productos eliminados al volver a iniciar.
+// Aplica migraciones y carga la semilla una sola vez No recrea productos eliminados al volver a iniciar
 public sealed class Inicializador(LogiMarketDbContext db, IHashContrasena hash)
 {
     public async Task Ejecutar()
@@ -15,7 +15,7 @@ public sealed class Inicializador(LogiMarketDbContext db, IHashContrasena hash)
         var repo = new RepositorioEf(db);
         await repo.Ejecutar(async () =>
         {
-            // La semilla se instala una vez; no resucita datos borrados por el usuario.
+            // La semilla se instala una vez no resucita datos borrados por el usuario
             if (await db.Set<Auditoria>().AnyAsync(a => a.Operacion == "SEED_INICIAL"))
                 return true;
             var datos = new[]

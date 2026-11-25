@@ -8,7 +8,7 @@ using Xunit;
 using LogiMarket.Infrastructure.InyeccionDependencias;
 
 namespace LogiMarket.Tests.Patrones;
-// Escenarios de MediatorTests con datos controlados. Comprobamos el efecto y los cambios que no deben ocurrir.
+// Escenarios de MediatorTests con datos controlados Comprobamos el efecto y los cambios que no deben ocurrir
 public sealed class MediatorTests
 {
     [Fact]

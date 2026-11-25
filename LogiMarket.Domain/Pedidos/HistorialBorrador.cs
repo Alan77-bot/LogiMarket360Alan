@@ -1,6 +1,6 @@
 namespace LogiMarket.Domain.Pedidos;
-// Patron Memento: conservamos copias completas para deshacer y rehacer. Un pago no se puede deshacer aqui.
-// Memento: cada entrada es una copia profunda; el historial nunca revierte pagos.
+// Patron Memento conservamos copias completas para deshacer y rehacer Un pago no se puede deshacer aqui
+// Memento cada entrada es una copia profunda el historial nunca revierte pagos
 public sealed class HistorialBorrador
 {
     private readonly List<Pedido?> estados = [null ];

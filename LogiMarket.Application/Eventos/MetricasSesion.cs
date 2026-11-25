@@ -2,8 +2,8 @@ using LogiMarket.Domain.Operaciones;
 using System.Collections.Concurrent;
 
 namespace LogiMarket.Application.Eventos;
-// Patron Singleton mediante DI: todas las vistas comparten esta instancia. Las metricas no sustituyen al historial.
-// Singleton por DI; los identificadores previenen contar dos veces el mismo evento.
+// Patron Singleton mediante DI todas las vistas comparten esta instancia Las metricas no sustituyen al historial
+// Singleton por DI los identificadores previenen contar dos veces el mismo evento
 public sealed class MetricasSesion
 {
     private readonly ConcurrentDictionary<Guid, string> eventos = new();

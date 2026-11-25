@@ -16,7 +16,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Xunit;
 
 namespace LogiMarket.Tests.Integracion;
-// Escenarios de IdempotenciaTests con datos controlados. Comprobamos el efecto y los cambios que no deben ocurrir.
+// Escenarios de IdempotenciaTests con datos controlados Comprobamos el efecto y los cambios que no deben ocurrir
 public sealed class IdempotenciaTests
 {
     [Fact]

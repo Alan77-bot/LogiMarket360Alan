@@ -10,7 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Xunit;
 
 namespace LogiMarket.Tests.Soporte;
-// Coordina esta responsabilidad a traves de contratos; las reglas del negocio permanecen en su capa.
+
 public sealed class Escenario : IAsyncDisposable
 {
     public string Ruta { get; } = Path.Combine(Path.GetTempPath(), $"logimarket-test-{Guid.NewGuid():N}.db");
@@ -67,7 +67,7 @@ public sealed class Escenario : IAsyncDisposable
     {
         await Proveedor.DisposeAsync();
         Microsoft.Data.Sqlite.SqliteConnection.ClearAllPools();
-        // Solo se elimina el archivo temporal creado por este escenario.
+        // Solo se elimina el archivo temporal creado por este escenario
         foreach (var archivo in new[]
         {
             Ruta,

@@ -19,7 +19,7 @@ using Xunit;
 using LogiMarket.Infrastructure.InyeccionDependencias;
 
 namespace LogiMarket.Tests.Patrones;
-// Escenarios de CreacionalesTests con datos controlados. Comprobamos el efecto y los cambios que no deben ocurrir.
+// Escenarios de CreacionalesTests con datos controlados Comprobamos el efecto y los cambios que no deben ocurrir
 public sealed class CreacionalesTests
 {
     private static Pedido Crear(int cantidad = 1)

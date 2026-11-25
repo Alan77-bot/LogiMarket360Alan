@@ -7,8 +7,8 @@ using LogiMarket.WinForms.Compartido;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace LogiMarket.WinForms.Vistas;
-// Consulta datos reales y metricas del Singleton; Mediator mantiene los indicadores actualizados.
-// Esta vista presenta consultas; las reglas de venta siguen en Application y Domain.
+// Consulta datos reales y metricas del Singleton Mediator mantiene los indicadores actualizados
+// Esta vista presenta consultas las reglas de venta siguen en Application y Domain
 public sealed class VistaPanel : UserControl
 {
     private readonly OperacionesUi operaciones;
@@ -91,7 +91,7 @@ public sealed class VistaPanel : UserControl
         filas.ColumnStyles.Add(new(SizeType.Absolute, 110));
         filas.ColumnStyles.Add(new(SizeType.Percent, 100));
         filas.ColumnStyles.Add(new(SizeType.Absolute, 42));
-        // Se usa el enum del dominio para mantener los estados visibles en un solo lugar.
+        // Se usa el enum del dominio para mantener los estados visibles en un solo lugar
         foreach (var estado in Enum.GetValues<EstadoPedido>())
         {
             var fila = estados.Count;
@@ -129,7 +129,7 @@ public sealed class VistaPanel : UserControl
         sesion.Margin = new Padding(4, 12, 4, 12);
         tabla.Controls.Add(sesion);
         Controls.Add(tabla);
-        // Mediator conserva el refresco automatico al cambiar pedidos o inventario.
+        // Mediator conserva el refresco automatico al cambiar pedidos o inventario
         mediator.Registrar(Refrescar);
     }
 
@@ -216,7 +216,7 @@ public sealed class VistaPanel : UserControl
         encabezado.AutoSize = false;
         encabezado.Dock = DockStyle.Fill;
         encabezado.Height = 34;
-        // Las filas reservan espacio para el titulo y el contenido al redimensionar.
+        // Las filas reservan espacio para el titulo y el contenido al redimensionar
         panel.Controls.Add(encabezado, 0, 0);
         return panel;
     }

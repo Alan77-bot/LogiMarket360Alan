@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace LogiMarket.WinForms.Formularios;
 
-// La ventana captura datos; Autenticacion y Autorizador mantienen las reglas fuera de la UI.
+// La ventana captura datos Autenticacion y Autorizador mantienen las reglas fuera de la UI
 public sealed class FormularioAcceso : Form
 {
     public FormularioAcceso(OperacionesUi operaciones)

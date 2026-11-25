@@ -1,7 +1,7 @@
 using LogiMarket.Domain.Enums;
 
 namespace LogiMarket.Domain.Entregas;
-// Abstract Factory EXPRES: USD 12, un dia y etiqueta de la misma familia.
+// Abstract Factory EXPRES USD 12 un dia y etiqueta de la misma familia
 public sealed class EntregaExpresFactory : IFabricaEntrega
 {
     public TipoEntrega Tipo => TipoEntrega.EXPRES;

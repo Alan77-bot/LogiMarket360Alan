@@ -1,5 +1,5 @@
 namespace LogiMarket.Domain.Operaciones;
-// Se guarda junto con la venta para recuperar las reacciones pendientes sin cobrar otra vez.
+// Se guarda junto con la venta para recuperar las reacciones pendientes sin cobrar otra vez
 public sealed class EventoOutbox
 {
     public Guid Id { get; private set; } = Guid.NewGuid();

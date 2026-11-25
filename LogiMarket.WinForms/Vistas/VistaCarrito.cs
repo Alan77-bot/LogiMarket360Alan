@@ -9,7 +9,7 @@ using LogiMarket.WinForms.Compartido;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace LogiMarket.WinForms.Vistas;
-// Presenta Builder y Memento: prepara el pedido y permite deshacer/rehacer sin calcular reglas dentro del formulario.
+// Presenta Builder y Memento prepara el pedido y permite deshacer/rehacer sin calcular reglas dentro del formulario
 public sealed class VistaCarrito : UserControl
 {
     private sealed record OpcionCliente(Guid Id, string Nombre)

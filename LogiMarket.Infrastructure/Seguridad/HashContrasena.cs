@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography;
 
 namespace LogiMarket.Infrastructure.Seguridad;
-// PBKDF2 con sal aleatoria y comparacion constante. Las cuentas de demostracion nunca justifican guardar claves en texto.
+// PBKDF2 con sal aleatoria y comparacion constante Las cuentas de demostracion nunca justifican guardar claves en texto
 public sealed class HashContrasena : IHashContrasena
 {
     private const int Iteraciones = 210000;

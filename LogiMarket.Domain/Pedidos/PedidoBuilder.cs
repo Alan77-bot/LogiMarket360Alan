@@ -3,8 +3,8 @@ using LogiMarket.Domain.Entidades;
 using LogiMarket.Domain.Enums;
 
 namespace LogiMarket.Domain.Pedidos;
-// Patron Builder: reunimos cliente, entrega y lineas antes de construir un pedido valido.
-// Builder: no entrega agregados sin cliente y lineas completas.
+// Patron Builder reunimos cliente entrega y lineas antes de construir un pedido valido
+// Builder no entrega agregados sin cliente y lineas completas
 public sealed class PedidoBuilder
 {
     private Cliente? cliente;

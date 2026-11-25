@@ -1,6 +1,6 @@
 namespace LogiMarket.Application.Validaciones;
-// Patron Chain of Responsibility: procesa una regla y delega en la siguiente solo si puede continuar.
-// Chain of Responsibility: se detiene en la primera causa verificable.
+// Patron Chain of Responsibility procesa una regla y delega en la siguiente solo si puede continuar
+// Chain of Responsibility se detiene en la primera causa verificable
 public abstract class ValidadorPedido
 {
     private ValidadorPedido? siguiente;

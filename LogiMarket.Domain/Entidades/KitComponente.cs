@@ -1,5 +1,5 @@
 namespace LogiMarket.Domain.Entidades;
-// Cada componente apunta a un producto o a un kit hijo, nunca a ambos. La cantidad debe ser positiva.
+// Cada componente apunta a un producto o a un kit hijo nunca a ambos La cantidad debe ser positiva
 public sealed class KitComponente
 {
     public Guid Id { get; private set; } = Guid.NewGuid();

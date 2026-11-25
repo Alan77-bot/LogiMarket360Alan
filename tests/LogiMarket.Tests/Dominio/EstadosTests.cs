@@ -25,7 +25,7 @@ using LogiMarket.Infrastructure.Documentos;
 using LogiMarket.Infrastructure.Pagos;
 
 namespace LogiMarket.Tests.Dominio;
-// Escenarios de EstadosTests con datos controlados. Comprobamos el efecto y los cambios que no deben ocurrir.
+// Escenarios de EstadosTests con datos controlados Comprobamos el efecto y los cambios que no deben ocurrir
 public sealed class EstadosTests
 {
     private static Pedido Crear(int cantidad = 1)

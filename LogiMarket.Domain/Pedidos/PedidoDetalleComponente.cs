@@ -1,7 +1,7 @@
 using LogiMarket.Domain.Catalogo;
 
 namespace LogiMarket.Domain.Pedidos;
-// Cantidad fisica total de esta linea: ya incluye cuantas unidades del kit se compraron.
+// Cantidad fisica total de esta linea ya incluye cuantas unidades del kit se compraron
 public sealed class PedidoDetalleComponente
 {
     public Guid Id { get; private set; } = Guid.NewGuid();

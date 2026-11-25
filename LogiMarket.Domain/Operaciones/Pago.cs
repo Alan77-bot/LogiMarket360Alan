@@ -1,5 +1,5 @@
 namespace LogiMarket.Domain.Operaciones;
-// Solo representa un pago aprobado. Pedido, clave y referencia tendran restricciones unicas en SQLite.
+// Solo representa un pago aprobado Pedido clave y referencia tendran restricciones unicas en SQLite
 public sealed class Pago
 {
     public Guid Id { get; private set; } = Guid.NewGuid();

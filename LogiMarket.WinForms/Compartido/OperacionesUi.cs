@@ -3,8 +3,8 @@ using LogiMarket.Application.Seguridad;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace LogiMarket.WinForms.Compartido;
-// Coordina esta responsabilidad a traves de contratos; las reglas del negocio permanecen en su capa.
-// El ambito vive solo durante una operacion; no se comparte DbContext entre pantallas.
+
+// El ambito vive solo durante una operacion no se comparte DbContext entre pantallas
 public sealed class OperacionesUi(IServiceProvider proveedor)
 {
     public async Task<T> Consultar<T>(Func<IServiceProvider, Task<T>> accion)

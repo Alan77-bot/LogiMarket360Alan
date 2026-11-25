@@ -4,8 +4,8 @@ using LogiMarket.Application.Seguridad;
 using System.Collections.Concurrent;
 
 namespace LogiMarket.Infrastructure.Pagos;
-// Patron Decorator: agrega inicio, fin o error alrededor del cobro y conserva el resultado del colaborador.
-// Decorator: agrega trazas sin cambiar el contrato del proveedor.
+// Patron Decorator agrega inicio fin o error alrededor del cobro y conserva el resultado del colaborador
+// Decorator agrega trazas sin cambiar el contrato del proveedor
 public sealed class AuditoriaPagoDecorator(IPasarelaPago interno, IBitacora bitacora, SesionActual sesion) : IPasarelaPago
 {
     public async Task<ResultadoCobro> CobrarAsync(decimal importe, string clave)

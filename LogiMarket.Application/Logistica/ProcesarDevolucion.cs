@@ -5,8 +5,8 @@ using LogiMarket.Domain.Operaciones;
 using LogiMarket.Domain.Pedidos;
 
 namespace LogiMarket.Application.Logistica;
-// Patron Template Method: fija la secuencia completa y deja la inspeccion particular a cada motivo.
-// Template Method: el esqueleto es comun; cada motivo decide plazo y condicion.
+// Patron Template Method fija la secuencia completa y deja la inspeccion particular a cada motivo
+// Template Method el esqueleto es comun cada motivo decide plazo y condicion
 public abstract class ProcesarDevolucion(IRepositorio repo, ITransacciones tx, Autorizador auth, IReloj reloj, IReembolsosSimulados reembolsos)
 {
     protected abstract MotivoDevolucion Motivo { get; }

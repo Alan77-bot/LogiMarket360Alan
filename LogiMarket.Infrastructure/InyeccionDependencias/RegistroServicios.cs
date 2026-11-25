@@ -18,7 +18,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace LogiMarket.Infrastructure.InyeccionDependencias;
-// Composition root de infraestructura. Aqui conectamos Singleton, Strategies y Proxy -> Decorator -> Adapter.
+// Composition root de infraestructura Aqui conectamos Singleton Strategies y Proxy -> Decorator -> Adapter
 public static class RegistroServicios
 {
     public static IServiceCollection AgregarLogiMarket(this IServiceCollection servicios, string ruta)

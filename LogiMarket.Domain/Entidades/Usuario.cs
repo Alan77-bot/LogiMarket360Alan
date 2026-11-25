@@ -1,7 +1,7 @@
 using LogiMarket.Domain.Enums;
 
 namespace LogiMarket.Domain.Entidades;
-// Guardamos el hash recibido, nunca la clave escrita por el usuario. El rol se comprueba en los servicios.
+// Guardamos el hash recibido nunca la clave escrita por el usuario El rol se comprueba en los servicios
 public sealed class Usuario
 {
     public Guid Id { get; private set; } = Guid.NewGuid();

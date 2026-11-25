@@ -1,5 +1,5 @@
 namespace LogiMarket.Domain.Entidades;
-// Esta entidad guarda la composicion persistida. Composite se construye a partir de ella en CatalogoCompuesto.
+// Esta entidad guarda la composicion persistida Composite se construye a partir de ella en CatalogoCompuesto
 public sealed class Kit
 {
     public Guid Id { get; private set; } = Guid.NewGuid();

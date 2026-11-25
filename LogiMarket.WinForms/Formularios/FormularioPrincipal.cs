@@ -8,7 +8,7 @@ using LogiMarket.WinForms.Vistas;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace LogiMarket.WinForms.Formularios;
-// Construye solo las vistas del rol actual. La navegacion no crea pantallas ocultas que luego se refresquen por Mediator.
+// Construye solo las vistas del rol actual La navegacion no crea pantallas ocultas que luego se refresquen por Mediator
 public sealed class FormularioPrincipal : Form
 {
     private readonly Panel contenido = new()
@@ -51,7 +51,7 @@ public sealed class FormularioPrincipal : Form
             throw new UnauthorizedAccessException("Inicie sesion con un rol valido.");
         if (permisos.Vender)
             carrito = new(operaciones, mediator);
-        // Las fabricas evitan crear y registrar vistas ajenas al rol en el Mediator.
+        // Las fabricas evitan crear y registrar vistas ajenas al rol en el Mediator
         var definiciones = new (string Nombre, Func<UserControl> Crear)[]
         {
             ("Panel general", () => new VistaPanel(operaciones, mediator, metricas)),

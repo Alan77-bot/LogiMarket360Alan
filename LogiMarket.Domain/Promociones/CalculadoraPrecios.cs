@@ -1,5 +1,5 @@
 namespace LogiMarket.Domain.Promociones;
-// Patron Strategy: seleccionamos una politica, no sumamos promociones. El dinero usa decimal y AwayFromZero.
+// Patron Strategy seleccionamos una politica no sumamos promociones El dinero usa decimal y AwayFromZero
 public sealed class CalculadoraPrecios(IEnumerable<IPoliticaDescuento> politicas)
 {
     public Totales Calcular(decimal subtotal, decimal tarifa, ContextoPromocion contexto)

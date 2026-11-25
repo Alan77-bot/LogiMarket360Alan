@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography;
 
 namespace LogiMarket.Infrastructure.Persistencia;
-// Este componente guarda o prepara datos usando EF Core sin llevar esa dependencia al dominio.
+// Este componente guarda o prepara datos usando EF Core sin llevar esa dependencia al dominio
 public sealed class BitacoraEf(IDbContextFactory<LogiMarketDbContext> fabrica, LogiMarketDbContext actual) : IBitacora
 {
     public async Task Registrar(string usuario, string operacion, string resultado, string correlacion)
@@ -15,7 +15,7 @@ public sealed class BitacoraEf(IDbContextFactory<LogiMarketDbContext> fabrica, L
             return;
         }
 
-        // Fuera de la transaccion se guardan tambien intentos denegados.
+        // Fuera de la transaccion se guardan tambien intentos denegados
         await using var db = await fabrica.CreateDbContextAsync();
         db.Add(new Auditoria(usuario, operacion, resultado, correlacion));
         await db.SaveChangesAsync();

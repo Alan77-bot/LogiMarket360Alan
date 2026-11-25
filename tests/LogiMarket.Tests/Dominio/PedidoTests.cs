@@ -20,7 +20,7 @@ using LogiMarket.Domain.Entidades;
 using LogiMarket.Domain.Promociones;
 
 namespace LogiMarket.Tests.Dominio;
-// Escenarios de PedidoTests con datos controlados. Comprobamos el efecto y los cambios que no deben ocurrir.
+// Escenarios de PedidoTests con datos controlados Comprobamos el efecto y los cambios que no deben ocurrir
 public sealed class PedidoTests
 {
     [Fact]

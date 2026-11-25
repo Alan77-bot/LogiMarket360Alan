@@ -6,7 +6,7 @@ using LogiMarket.WinForms.Formularios;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace LogiMarket.WinForms.Vistas;
-// Esta pantalla presenta datos y delega los cambios en Application; no escribe tablas directamente.
+// Esta pantalla presenta datos y delega los cambios en Application no escribe tablas directamente
 public sealed class VistaCatalogo : UserControl
 {
     private readonly OperacionesUi operaciones;

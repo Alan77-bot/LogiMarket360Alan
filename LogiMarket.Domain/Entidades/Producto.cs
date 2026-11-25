@@ -1,5 +1,5 @@
 namespace LogiMarket.Domain.Entidades;
-// El producto protege precio, peso y stock. Cambiar existencias siempre pasa por Mover.
+// El producto protege precio peso y stock Cambiar existencias siempre pasa por Mover
 public sealed class Producto
 {
     public Guid Id { get; private set; } = Guid.NewGuid();

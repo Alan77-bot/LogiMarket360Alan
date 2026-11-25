@@ -1,7 +1,7 @@
 using LogiMarket.Domain.Enums;
 
 namespace LogiMarket.Domain.Estados;
-// State: conserva las instancias de cada estado y permite seleccionar su comportamiento.
+// State conserva las instancias de cada estado y permite seleccionar su comportamiento
 public static class CatalogoEstados
 {
     private static readonly IReadOnlyDictionary<EstadoPedido, EstadoBase> mapa = new Dictionary<EstadoPedido, EstadoBase>

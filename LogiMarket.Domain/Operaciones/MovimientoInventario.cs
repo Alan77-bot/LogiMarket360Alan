@@ -1,5 +1,5 @@
 namespace LogiMarket.Domain.Operaciones;
-// Una cantidad negativa es salida y una positiva es entrada. La referencia permite rastrear su causa.
+// Una cantidad negativa es salida y una positiva es entrada La referencia permite rastrear su causa
 public sealed class MovimientoInventario
 {
     public Guid Id { get; private set; } = Guid.NewGuid();

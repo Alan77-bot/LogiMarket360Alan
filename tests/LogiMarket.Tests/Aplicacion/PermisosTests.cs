@@ -17,7 +17,7 @@ using Xunit;
 using LogiMarket.Application.Clientes;
 
 namespace LogiMarket.Tests.Aplicacion;
-// Escenarios de PermisosTests con datos controlados. Comprobamos el efecto y los cambios que no deben ocurrir.
+// Escenarios de PermisosTests con datos controlados Comprobamos el efecto y los cambios que no deben ocurrir
 public sealed class PermisosTests
 {
     [Fact]
@@ -58,7 +58,7 @@ public sealed class PermisosTests
         var pedido = await e.Borrador();
         var producto = await e.Usar(async s => (await s.GetRequiredService<IRepositorio>().Productos()).Single(p => p.Sku == "P01"));
         await e.Entrar(usuario);
-        // Se llama al servicio directamente; ocultar botones no es la barrera de seguridad.
+        // Se llama al servicio directamente ocultar botones no es la barrera de seguridad
         await Assert.ThrowsAsync<UnauthorizedAccessException>(() => e.Usar(s => s.GetRequiredService<ServicioCatalogo>().GuardarProducto(null, "PROHIBIDO", "No crear", 1, 0, 1)));
         if (usuario != "ventas")
         {

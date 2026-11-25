@@ -9,7 +9,7 @@ using LogiMarket.WinForms.Compartido;
 using LogiMarket.WinForms.Formularios;
 using Microsoft.Extensions.DependencyInjection;
 
-// Ejecutado por verificar_roles.ps1 en un proyecto temporal, fuera de la solucion.
+// Ejecutado por verificar_roles ps1 en un proyecto temporal fuera de la solucion
 internal static class RevisionRoles
 {
     [STAThread]
@@ -22,7 +22,7 @@ internal static class RevisionRoles
         servicios.AddSingleton<ISalidaDocumento>(new SalidaArchivoTxt(salida));
         using var proveedor = servicios.BuildServiceProvider();
         using (var scope = proveedor.CreateScope()) scope.ServiceProvider.GetRequiredService<Inicializador>().Ejecutar().GetAwaiter().GetResult();
-                // Captura del formulario implementado, sin sustituirlo por un diseno ilustrativo.
+                // Captura del formulario implementado sin sustituirlo por un diseno ilustrativo
         using (var acceso = new FormularioAcceso(new OperacionesUi(proveedor))) {
             acceso.Show(); Application.DoEvents();
             using var imagen = new Bitmap(acceso.Width, acceso.Height);

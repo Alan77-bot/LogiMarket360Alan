@@ -2,7 +2,7 @@ using LogiMarket.WinForms.Compartido;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace LogiMarket.WinForms.Formularios;
-// El dialogo captura y valida campos basicos; las reglas del negocio se verifican en los servicios.
+// El dialogo captura y valida campos basicos las reglas del negocio se verifican en los servicios
 public sealed class DialogoCampos : Form
 {
     private readonly Dictionary<string, Control> campos = [];

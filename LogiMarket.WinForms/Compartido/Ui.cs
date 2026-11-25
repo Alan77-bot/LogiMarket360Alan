@@ -1,7 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
 
 namespace LogiMarket.WinForms.Compartido;
-// Reunimos estilos y controles reutilizables; los formularios conservan su foco en capturar y mostrar datos.
+// Reunimos estilos y controles reutilizables los formularios conservan su foco en capturar y mostrar datos
 public static class Ui
 {
     public static readonly Color Fondo = Color.FromArgb(244, 247, 251);
@@ -23,7 +23,7 @@ public static class Ui
             RowHeadersVisible = false,
             AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells, EnableHeadersVisualStyles = false, CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal, GridColor = Color.FromArgb(232, 237, 244), ColumnHeadersHeight = 38, ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         };
-                // Una tabla legible importa mas que decorar cada celda con imagenes.
+
         grid.ColumnHeadersDefaultCellStyle = new DataGridViewCellStyle { BackColor = Azul, ForeColor = Color.White, SelectionBackColor = Azul, SelectionForeColor = Color.White, Font = new Font("Segoe UI", 9, FontStyle.Bold), Padding = new Padding(8) };
         grid.DefaultCellStyle = new DataGridViewCellStyle { BackColor = Color.White, ForeColor = Color.FromArgb(40, 54, 73), SelectionBackColor = Color.FromArgb(221, 235, 252), SelectionForeColor = Azul, Padding = new Padding(8, 5, 8, 5), Font = new Font("Segoe UI", 10) };
         grid.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(247, 249, 252);
@@ -101,7 +101,7 @@ public static class Ui
                 "EntregadoEn" => "Entrega registrada",
                 _ => c.Name
             };
-        // AllCells evita redistribuir columnas de vistas que aun no tienen ventana.
+        // AllCells evita redistribuir columnas de vistas que aun no tienen ventana
         }
 
         if (seleccion is not null)
@@ -112,7 +112,7 @@ public static class Ui
                     break;
                 }
     }
-    // El tema es presentacion reutilizable, no un patron GoF adicional.
+
     public static void Menu(Button boton, bool seleccionado)
     {
         boton.AutoSize = false; boton.Size = new Size(206, 43);

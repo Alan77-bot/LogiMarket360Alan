@@ -1,7 +1,7 @@
 using LogiMarket.Domain.Pedidos;
 
 namespace LogiMarket.Application.Validaciones;
-// Chain of Responsibility: esta regla devuelve el primer error y deja continuar solo si se cumple.
+// Chain of Responsibility esta regla devuelve el primer error y deja continuar solo si se cumple
 public sealed class ValidadorStock : ValidadorPedido
 {
     protected override ResultadoValidacion Revisar(ContextoValidacion c)

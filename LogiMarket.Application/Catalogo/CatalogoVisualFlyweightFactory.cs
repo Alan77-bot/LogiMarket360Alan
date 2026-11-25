@@ -1,5 +1,5 @@
 namespace LogiMarket.Application.Catalogo;
-// Patron Flyweight: comparte metadatos por SKU; cantidad y precio de cada fila permanecen fuera del objeto compartido.
+// Patron Flyweight comparte metadatos por SKU cantidad y precio de cada fila permanecen fuera del objeto compartido
 public sealed class CatalogoVisualFlyweightFactory
 {
     private readonly Dictionary<string, MetadatosSku> cache = [];

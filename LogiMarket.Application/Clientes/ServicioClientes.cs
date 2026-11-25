@@ -4,7 +4,7 @@ using LogiMarket.Domain.Entidades;
 using LogiMarket.Domain.Enums;
 
 namespace LogiMarket.Application.Clientes;
-// Coordina esta responsabilidad a traves de contratos; las reglas del negocio permanecen en su capa.
+
 public sealed class ServicioClientes(IRepositorio repo, ITransacciones tx, Autorizador auth)
 {
     public async Task<List<Cliente>> Consultar(string filtro = "")

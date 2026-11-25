@@ -4,7 +4,7 @@ using LogiMarket.Domain.Pedidos;
 using Microsoft.EntityFrameworkCore;
 
 namespace LogiMarket.Infrastructure.Persistencia.Configuraciones;
-// Las restricciones de este grupo se aplican tambien si alguien intenta guardar datos fuera de la UI.
+// Las restricciones de este grupo se aplican tambien si alguien intenta guardar datos fuera de la UI
 public static class ConfiguracionOperaciones
 {
     public static void Aplicar(ModelBuilder m)

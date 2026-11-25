@@ -2,7 +2,7 @@ using LogiMarket.Application.Contratos;
 using LogiMarket.Application.Seguridad;
 
 namespace LogiMarket.Application.Comandos;
-// Patron Command: ejecuta el mismo objeto desde UI o pruebas y registra el resultado de la invocacion.
+// Patron Command ejecuta el mismo objeto desde UI o pruebas y registra el resultado de la invocacion
 public sealed class InvocadorComandos(IBitacora bitacora, SesionActual sesion)
 {
     public async Task Ejecutar(IComando comando)

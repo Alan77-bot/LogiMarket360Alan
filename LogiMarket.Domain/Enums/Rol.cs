@@ -1,7 +1,7 @@
 namespace LogiMarket.Domain.Enums;
 
-// Define los perfiles de acceso del sistema.
-// Los permisos se comprobaran en Application.
+// Define los perfiles de acceso del sistema
+// Los permisos se comprobaran en Application
 public enum Rol
 {
     ADMIN = 1,

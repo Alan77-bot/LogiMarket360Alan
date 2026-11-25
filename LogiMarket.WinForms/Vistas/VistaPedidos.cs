@@ -11,7 +11,7 @@ using LogiMarket.WinForms.Formularios;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace LogiMarket.WinForms.Vistas;
-// La UI invoca Commands y servicios; State y los permisos se verifican de nuevo fuera de los botones.
+// La UI invoca Commands y servicios State y los permisos se verifican de nuevo fuera de los botones
 public class VistaPedidos : UserControl
 {
     private readonly OperacionesUi operaciones;

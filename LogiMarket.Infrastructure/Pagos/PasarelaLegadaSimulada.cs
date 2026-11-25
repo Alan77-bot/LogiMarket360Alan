@@ -1,8 +1,8 @@
 using System.Collections.Concurrent;
 
 namespace LogiMarket.Infrastructure.Pagos;
-// Colaborador de pago simulado. Sus referencias permiten rastrear la operacion sin integrar cobros reales.
-// El legado solo acepta centavos; el adaptador conserva su firma incompatible.
+// Colaborador de pago simulado Sus referencias permiten rastrear la operacion sin integrar cobros reales
+// El legado solo acepta centavos el adaptador conserva su firma incompatible
 public sealed class PasarelaLegadaSimulada
 {
     private readonly ConcurrentDictionary<string, (long Importe, string Referencia)> cobros = new();

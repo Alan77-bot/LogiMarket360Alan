@@ -1,7 +1,7 @@
 using System.Collections;
 
 namespace LogiMarket.Domain.Catalogo;
-// Patron Visitor: agrupa las cantidades finales por SKU para consultar y verificar la composicion.
+// Patron Visitor agrupa las cantidades finales por SKU para consultar y verificar la composicion
 public sealed class DesgloseVisitor : IVisitanteCatalogo
 {
     private readonly SortedDictionary<string, int> cantidades = new(StringComparer.Ordinal);

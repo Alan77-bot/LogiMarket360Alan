@@ -1,7 +1,7 @@
 using LogiMarket.Domain.Catalogo;
 
 namespace LogiMarket.Domain.Pedidos;
-// La linea conserva una instantanea del kit y sus precios. Un cambio de catalogo no reescribe la venta.
+// La linea conserva una instantanea del kit y sus precios Un cambio de catalogo no reescribe la venta
 public sealed class PedidoDetalle
 {
     public Guid Id { get; private set; } = Guid.NewGuid();

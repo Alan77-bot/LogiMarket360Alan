@@ -2,7 +2,7 @@ using LogiMarket.Domain.Entidades;
 using LogiMarket.Domain.Enums;
 
 namespace LogiMarket.Domain.Pedidos;
-// Cada transicion deja fecha y usuario. El estado actual sirve para operar; este registro explica el recorrido.
+// Cada transicion deja fecha y usuario El estado actual sirve para operar este registro explica el recorrido
 public sealed class HistorialEstado
 {
     public Guid Id { get; private set; } = Guid.NewGuid();

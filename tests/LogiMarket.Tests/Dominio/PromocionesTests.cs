@@ -19,7 +19,7 @@ using Microsoft.Extensions.DependencyInjection;
 using LogiMarket.Infrastructure.InyeccionDependencias;
 
 namespace LogiMarket.Tests.Dominio;
-// Escenarios de PromocionesTests con datos controlados. Comprobamos el efecto y los cambios que no deben ocurrir.
+// Escenarios de PromocionesTests con datos controlados Comprobamos el efecto y los cambios que no deben ocurrir
 public sealed class PromocionesTests
 {
     private sealed class PromocionNueva : IPoliticaDescuento

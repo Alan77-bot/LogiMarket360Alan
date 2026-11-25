@@ -2,7 +2,7 @@ using LogiMarket.Domain.Operaciones;
 using System.Globalization;
 
 namespace LogiMarket.Application.Comprobantes;
-// Bridge, abstraccion concreta para devolucion. Nunca devuelve el costo del envio.
+// Bridge abstraccion concreta para devolucion Nunca devuelve el costo del envio
 public sealed class ComprobanteDevolucion(Devolucion devolucion, ISalidaDocumento salida) : Comprobante(salida)
 {
     protected override string Nombre => $"devolucion-{devolucion.Id:N}";

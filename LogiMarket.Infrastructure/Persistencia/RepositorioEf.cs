@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Data;
 
 namespace LogiMarket.Infrastructure.Persistencia;
-// Implementa los puertos sin filtrar EF a Application. BEGIN IMMEDIATE y versiones protegen frente a escritores concurrentes.
+// Implementa los puertos sin filtrar EF a Application BEGIN IMMEDIATE y versiones protegen frente a escritores concurrentes
 public sealed class RepositorioEf(LogiMarketDbContext db, SesionActual? sesion = null) : IRepositorio, ITransacciones, IConsultasOperativas, IRegistroRecepciones
 {
     public Task<List<Producto>> Productos() => db.Productos.ToListAsync();
@@ -35,8 +35,8 @@ public sealed class RepositorioEf(LogiMarketDbContext db, SesionActual? sesion =
     public void Marcar(Guid evento, string suscriptor) => db.Add(new RecepcionEvento(evento, suscriptor));
     public async Task<T> Ejecutar<T>(Func<Task<T>> operacion)
     {
-        // SQLite BEGIN IMMEDIATE toma el bloqueo de escritura antes de consultar stock.
-        // Esto protege incluso dos procesos diferentes, no solo dos tareas de la interfaz.
+        // SQLite BEGIN IMMEDIATE toma el bloqueo de escritura antes de consultar stock
+        // Esto protege incluso dos procesos diferentes no solo dos tareas de la interfaz
         db.ChangeTracker.Clear();
         await db.Database.OpenConnectionAsync();
         var conexion = (SqliteConnection)db.Database.GetDbConnection();
@@ -59,7 +59,7 @@ public sealed class RepositorioEf(LogiMarketDbContext db, SesionActual? sesion =
             await transaccion.RollbackAsync();
             await db.Database.UseTransactionAsync(null);
             db.ChangeTracker.Clear();
-            // Las trazas de un intento real se conservan, aunque el negocio se revierta.
+            // Las trazas de un intento real se conservan aunque el negocio se revierta
             if (trazas.Count > 0)
             {
                 db.AddRange(trazas);

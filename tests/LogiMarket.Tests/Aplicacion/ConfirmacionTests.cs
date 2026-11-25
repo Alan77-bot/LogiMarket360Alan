@@ -20,7 +20,7 @@ using LogiMarket.Domain.Entidades;
 using LogiMarket.Domain.Promociones;
 
 namespace LogiMarket.Tests.Aplicacion;
-// Escenarios de ConfirmacionTests con datos controlados. Comprobamos el efecto y los cambios que no deben ocurrir.
+// Escenarios de ConfirmacionTests con datos controlados Comprobamos el efecto y los cambios que no deben ocurrir
 public sealed class ConfirmacionTests
 {
     private static async Task SinEfectos(Escenario e, Guid id) => await e.Usar(async s =>

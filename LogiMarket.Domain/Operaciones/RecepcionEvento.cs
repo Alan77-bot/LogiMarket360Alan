@@ -1,5 +1,5 @@
 namespace LogiMarket.Domain.Operaciones;
-// Registro trazable del negocio; las restricciones de persistencia completan su consistencia.
+// Registro trazable del negocio las restricciones de persistencia completan su consistencia
 public sealed class RecepcionEvento
 {
     public Guid EventoId { get; private set; }

@@ -5,13 +5,13 @@ using LogiMarket.Infrastructure.Persistencia;
 using Microsoft.EntityFrameworkCore;
 
 namespace LogiMarket.Infrastructure.Outbox;
-// Procesa despues del commit. Un fallo queda pendiente y se reintenta sin repetir pago ni suscriptores completados.
+// Procesa despues del commit Un fallo queda pendiente y se reintenta sin repetir pago ni suscriptores completados
 public sealed class ProcesadorOutbox(LogiMarketDbContext db, PublicadorEventos publicador) : IProcesadorOutbox
 {
     public async Task<int> Procesar()
     {
         var cantidad = 0;
-        // Un bloqueo de escritura evita que dos procesadores publiquen a la vez.
+        // Un bloqueo de escritura evita que dos procesadores publiquen a la vez
         var repo = new RepositorioEf(db);
         await repo.Ejecutar(async () =>
         {

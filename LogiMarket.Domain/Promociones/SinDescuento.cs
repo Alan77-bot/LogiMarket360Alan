@@ -1,5 +1,5 @@
 namespace LogiMarket.Domain.Promociones;
-// Strategy de respaldo: una venta normal sigue el mismo contrato y utiliza tasa cero.
+// Strategy de respaldo una venta normal sigue el mismo contrato y utiliza tasa cero
 public sealed class SinDescuento : IPoliticaDescuento
 {
     public int Prioridad => 0;

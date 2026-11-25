@@ -19,7 +19,7 @@ using Xunit;
 using LogiMarket.Infrastructure.InyeccionDependencias;
 
 namespace LogiMarket.Tests.Patrones;
-// Escenarios de ComportamentalesTests con datos controlados. Comprobamos el efecto y los cambios que no deben ocurrir.
+// Escenarios de ComportamentalesTests con datos controlados Comprobamos el efecto y los cambios que no deben ocurrir
 public sealed class ComportamentalesTests
 {
     private static Pedido Crear(int cantidad = 1)

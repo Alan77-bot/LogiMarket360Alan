@@ -6,7 +6,7 @@ using LogiMarket.WinForms.Formularios;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace LogiMarket.WinForms.Vistas;
-// Demuestra Factory Method, Adapter, Observer y Flyweight con colaboradores reales y escenarios de fallo controlados.
+// Demuestra Factory Method Adapter Observer y Flyweight con colaboradores reales y escenarios de fallo controlados
 public sealed class VistaAuditoria : UserControl
 {
     private readonly OperacionesUi operaciones;
@@ -86,7 +86,7 @@ public sealed class VistaAuditoria : UserControl
     private Task DemostrarFlyweight()
     {
         var fabrica = new CatalogoVisualFlyweightFactory();
-        // La medicion compara estructuras externas equivalentes en el mismo hilo.
+        // La medicion compara estructuras externas equivalentes en el mismo hilo
         var antes = GC.GetAllocatedBytesForCurrentThread();
         var sin = Enumerable.Range(0, 1000).Select(i => new FilaVisual(i, new MetadatosSku("P01", "Mouse USB", "Accesorios", "Catalogo de demostracion"), 1, 20m)).ToArray();
         var bytesSin = GC.GetAllocatedBytesForCurrentThread() - antes;

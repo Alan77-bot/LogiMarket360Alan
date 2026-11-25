@@ -6,8 +6,8 @@ using LogiMarket.Domain.Operaciones;
 using LogiMarket.Domain.Pedidos;
 
 namespace LogiMarket.Application.Pedidos;
-// Patron Facade: coordina permisos, Chain, pago, stock y Outbox en una transaccion. No conoce EF ni SQL.
-// Facade: coordina colaboradores; no conoce EF, SQL ni tasas de descuento.
+// Patron Facade coordina permisos Chain pago stock y Outbox en una transaccion No conoce EF ni SQL
+// Facade coordina colaboradores no conoce EF SQL ni tasas de descuento
 public sealed class ConfirmacionPedidoFacade(IRepositorio repo, ITransacciones tx, Autorizador auth, IPasarelaPago pasarela, SesionActual sesion, IReloj reloj)
 {
     public async Task<Pago> Confirmar(Guid id, string clave)

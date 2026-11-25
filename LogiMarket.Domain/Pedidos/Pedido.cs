@@ -5,7 +5,7 @@ using LogiMarket.Domain.Estados;
 using LogiMarket.Domain.Promociones;
 
 namespace LogiMarket.Domain.Pedidos;
-// Agregado de la venta. Aqui viven las invariantes, Prototype en ClonarBorrador y State al cambiar de estado.
+// Agregado de la venta Aqui viven las invariantes Prototype en ClonarBorrador y State al cambiar de estado
 public sealed class Pedido
 {
     public Guid Id { get; private set; } = Guid.NewGuid();
@@ -65,9 +65,9 @@ public sealed class Pedido
 
     public void Transicionar(EstadoPedido destino, string usuario, DateTimeOffset ahora)
     {
-        // State: cada objeto de estado conoce sus siguientes estados validos.
+        // State cada objeto de estado conoce sus siguientes estados validos
         CatalogoEstados.Obtener(Estado).Exigir(destino);
-        // Una cantidad editada no puede validar importes calculados anteriormente.
+        // Una cantidad editada no puede validar importes calculados anteriormente
         if (destino == EstadoPedido.VALIDADO && (necesitaValoracion || Total <= 0))
             throw new InvalidOperationException("Recalcule los importes antes de validar.");
         Estado = destino;
@@ -77,7 +77,7 @@ public sealed class Pedido
         historial.Add(new(Id, destino, usuario));
     }
 
-    // Prototype: se copian las colecciones y se genera una identidad nueva.
+    // Prototype se copian las colecciones y se genera una identidad nueva
     public Pedido ClonarBorrador()
     {
         ExigirEditable();

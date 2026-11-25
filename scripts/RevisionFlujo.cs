@@ -16,7 +16,7 @@ using LogiMarket.WinForms.Compartido;
 using LogiMarket.WinForms.Formularios;
 using Microsoft.Extensions.DependencyInjection;
 
-// Ejecutor de evidencia: usa los servicios y formularios reales en una base temporal.
+// Ejecutor de evidencia usa los servicios y formularios reales en una base temporal
 internal static class RevisionFlujo
 {
     [STAThread]

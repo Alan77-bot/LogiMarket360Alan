@@ -1,7 +1,7 @@
 using LogiMarket.Domain.Enums;
 
 namespace LogiMarket.Domain.Entregas;
-// Abstract Factory ESTANDAR: USD 5, tres dias y etiqueta de la misma familia.
+// Abstract Factory ESTANDAR USD 5 tres dias y etiqueta de la misma familia
 public sealed class EntregaEstandarFactory : IFabricaEntrega
 {
     public TipoEntrega Tipo => TipoEntrega.ESTANDAR;

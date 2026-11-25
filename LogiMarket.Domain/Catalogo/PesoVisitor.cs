@@ -1,7 +1,7 @@
 using System.Collections;
 
 namespace LogiMarket.Domain.Catalogo;
-// Patron Visitor: acumula el peso de los componentes, respetando las cantidades de cada kit.
+// Patron Visitor acumula el peso de los componentes respetando las cantidades de cada kit
 public sealed class PesoVisitor : IVisitanteCatalogo
 {
     public decimal Peso { get; private set; }

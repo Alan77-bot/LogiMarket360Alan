@@ -7,7 +7,7 @@ using LogiMarket.WinForms.Compartido;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace LogiMarket.WinForms.Vistas;
-// Presenta Interpreter para filtrar y Bridge para combinar documentos con vista previa o TXT.
+// Presenta Interpreter para filtrar y Bridge para combinar documentos con vista previa o TXT
 public sealed class VistaReportes : UserControl
 {
     private readonly OperacionesUi operaciones;

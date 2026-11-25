@@ -6,7 +6,7 @@ using LogiMarket.Domain.Operaciones;
 using LogiMarket.Domain.Pedidos;
 
 namespace LogiMarket.Application.Logistica;
-// Coordina esta responsabilidad a traves de contratos; las reglas del negocio permanecen en su capa.
+
 public sealed class ServicioDespachos(IRepositorio repo, ITransacciones tx, Autorizador auth, SesionActual sesion, IEnumerable<IFabricaEntrega> familias, IReloj reloj)
 {
     public async Task Despachar(Guid id)

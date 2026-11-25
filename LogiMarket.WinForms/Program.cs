@@ -10,14 +10,14 @@ using LogiMarket.WinForms.Formularios;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace LogiMarket.WinForms;
-// Composition root de WinForms: prepara la base local, DI, acceso y ciclo de sesion. No contiene reglas de venta.
+// Composition root de WinForms prepara la base local DI acceso y ciclo de sesion No contiene reglas de venta
 internal static class Program
 {
     [STAThread]
     private static void Main()
     {
         ApplicationConfiguration.Initialize();
-        // Composition root: las implementaciones concretas se eligen solo aqui.
+        // Composition root las implementaciones concretas se eligen solo aqui
         var ruta = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "LogiMarket360Alan");
         Directory.CreateDirectory(ruta);
         var servicios = new ServiceCollection().AgregarLogiMarket(Path.Combine(ruta, "logimarket.db"));

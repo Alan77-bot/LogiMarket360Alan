@@ -1,7 +1,7 @@
 using LogiMarket.Domain.Enums;
 
 namespace LogiMarket.Domain.Entidades;
-// El cliente conserva su categoria; el descuento mayorista se decide por unidades, no por una categoria adicional.
+// El cliente conserva su categoria el descuento mayorista se decide por unidades no por una categoria adicional
 public sealed class Cliente
 {
     public Guid Id { get; private set; } = Guid.NewGuid();
