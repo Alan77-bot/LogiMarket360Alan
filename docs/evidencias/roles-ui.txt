@@ -1,0 +1,36 @@
+admin MENU APROBADO: Panel general, Catalogo y kits, Clientes, Carrito, Pedidos, Cobro, Despacho y entrega, Devoluciones, Inventario, Reportes, Auditoria y demo
+admin / Panel general APROBADO: Actualizar
+admin / Catalogo y kits APROBADO: Buscar, Nuevo producto, Editar, Nuevo kit, Eliminar
+admin / Clientes APROBADO: Buscar, Nuevo cliente, Editar cliente
+admin / Carrito APROBADO: Agregar / cambiar cantidad, Quitar linea, Recalcular, Deshacer, Rehacer, Guardar borrador, Nuevo
+admin / Pedidos APROBADO: Filtrar, Detalle e historial, Editar borrador, Clonar borrador, Validar, Cancelar pedido
+admin / Cobro APROBADO: Filtrar, Detalle e historial, Confirmar cobro simulado
+admin / Despacho y entrega APROBADO: Filtrar, Detalle e historial, Despachar, Marcar entregado, Seguimiento
+admin / Devoluciones APROBADO: Filtrar, Detalle e historial, Devolucion total
+admin / Inventario APROBADO: Registrar entrada / salida, Actualizar
+admin / Reportes APROBADO: Consultar, Venta vista previa, Venta TXT, Devolucion vista previa, Devolucion TXT
+admin / Auditoria y demo APROBADO: Opciones de demostracion, Reintentar Outbox, Demostrar 1.000 filas
+ventas MENU APROBADO: Panel general, Catalogo y kits, Clientes, Carrito, Pedidos, Cobro, Devoluciones, Reportes
+ventas / Panel general APROBADO: Actualizar
+ventas / Catalogo y kits APROBADO: Buscar
+ventas / Clientes APROBADO: Buscar, Nuevo cliente, Editar cliente
+ventas / Carrito APROBADO: Agregar / cambiar cantidad, Quitar linea, Recalcular, Deshacer, Rehacer, Guardar borrador, Nuevo
+ventas / Pedidos APROBADO: Filtrar, Detalle e historial, Editar borrador, Clonar borrador, Validar, Cancelar pedido
+ventas / Cobro APROBADO: Filtrar, Detalle e historial, Confirmar cobro simulado
+ventas / Devoluciones APROBADO: Filtrar, Detalle e historial, Devolucion total
+ventas / Reportes APROBADO: Consultar, Venta vista previa, Venta TXT, Devolucion vista previa, Devolucion TXT
+bodega MENU APROBADO: Panel general, Catalogo y kits, Despacho y entrega, Inventario
+bodega / Panel general APROBADO: Actualizar
+bodega / Catalogo y kits APROBADO: Buscar
+bodega / Despacho y entrega APROBADO: Filtrar, Detalle e historial, Despachar, Marcar entregado, Seguimiento
+bodega / Inventario APROBADO: Registrar entrada / salida, Actualizar
+consulta MENU APROBADO: Panel general, Catalogo y kits, Clientes, Pedidos, Despacho y entrega, Devoluciones, Inventario, Reportes
+consulta / Panel general APROBADO: Actualizar
+consulta / Catalogo y kits APROBADO: Buscar
+consulta / Clientes APROBADO: Buscar
+consulta / Pedidos APROBADO: Filtrar, Detalle e historial
+consulta / Despacho y entrega APROBADO: Filtrar, Detalle e historial, Seguimiento
+consulta / Devoluciones APROBADO: Filtrar, Detalle e historial
+consulta / Inventario APROBADO: Actualizar
+consulta / Reportes APROBADO: Consultar, Venta vista previa, Venta TXT, Devolucion vista previa, Devolucion TXT
+RESULTADO: APROBADO

@@ -1,0 +1,8 @@
+VENTA: total 59.00; P01=7, P02=4, P03=19; estado PAGADO.
+OUTBOX: fallo real y recuperacion; repetir clave conserva un pago y metrica Pagos=1.
+RECHAZO: cancelar ENTREGADO denegado; el pedido conserva su estado.
+DEVOLUCION: 54.00 sin envio; P01=8, P02=5, P03=20.
+BRIDGE: venta/devolucion en TXT y en ventanas reales de vista previa.
+FLYWEIGHT: 1000 filas, 1 instancia compartida, ReferenceEquals=True; sin compartir=104176, compartido=56360 bytes asignados en el mismo hilo. No es memoria total del proceso.
+PERSISTENCIA: un nuevo contenedor DI y DbContext recuperan ENTREGADO y total 59.00 desde el mismo SQLite.
+RESULTADO: APROBADO
