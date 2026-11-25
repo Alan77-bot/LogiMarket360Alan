@@ -1,1 +1,1 @@
-Guardar evidencia del codigo clave de los patrones y de su funcionamiento cuando se implementen. No crear capturas de clases vacias. No usar capturas del proyecto anterior como evidencia de este desarrollo.
+Capturas generadas por formularios reales de Alan con bases temporales mediante scripts/verificar_roles.ps1 y RevisionFlujo. No son imagenes usadas por la interfaz. Las vistas iniciales muestran el seed; flujo-* muestra operaciones ejecutadas. Corresponden al tema final con perfil y cabeceras corregidos. No se presentan como capturas manuales de codigo del IDE.

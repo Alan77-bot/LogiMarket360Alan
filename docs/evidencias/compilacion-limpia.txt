@@ -1,0 +1,22 @@
+Archivo: %USERPROFILE%\Proyectos\LogiMarket360Alan\tmp\codigo-limpio-alan.zip
+SHA256: 8F9B27E0A74721F5E7EF767D8956DD722ECC8A255E383104EE5E4663EBF03A81
+Proyectos: 5
+Copia sin bin/obj: %USERPROFILE%\Proyectos\LogiMarket360Alan\tmp\verificacion-de2ad547c2be40ae9fc7f390d0fd7c7e
+  Determinando los proyectos que se van a restaurar...
+  Se ha restaurado %USERPROFILE%\Proyectos\LogiMarket360Alan\tmp\verificacion-de2ad547c2be40ae9fc7f390d0fd7c7e\LogiMarket.Application\LogiMarket.Application.csproj (en 448 ms).
+  Se ha restaurado %USERPROFILE%\Proyectos\LogiMarket360Alan\tmp\verificacion-de2ad547c2be40ae9fc7f390d0fd7c7e\LogiMarket.Domain\LogiMarket.Domain.csproj (en 434 ms).
+  Se ha restaurado %USERPROFILE%\Proyectos\LogiMarket360Alan\tmp\verificacion-de2ad547c2be40ae9fc7f390d0fd7c7e\LogiMarket.WinForms\LogiMarket.WinForms.csproj (en 806 ms).
+  Se ha restaurado %USERPROFILE%\Proyectos\LogiMarket360Alan\tmp\verificacion-de2ad547c2be40ae9fc7f390d0fd7c7e\LogiMarket.Infrastructure\LogiMarket.Infrastructure.csproj (en 849 ms).
+  Se ha restaurado %USERPROFILE%\Proyectos\LogiMarket360Alan\tmp\verificacion-de2ad547c2be40ae9fc7f390d0fd7c7e\tests\LogiMarket.Tests\LogiMarket.Tests.csproj (en 1.84 s).
+  LogiMarket.Domain -> %USERPROFILE%\Proyectos\LogiMarket360Alan\tmp\verificacion-de2ad547c2be40ae9fc7f390d0fd7c7e\LogiMarket.Domain\bin\Debug\net8.0\LogiMarket.Domain.dll
+  LogiMarket.Application -> %USERPROFILE%\Proyectos\LogiMarket360Alan\tmp\verificacion-de2ad547c2be40ae9fc7f390d0fd7c7e\LogiMarket.Application\bin\Debug\net8.0\LogiMarket.Application.dll
+  LogiMarket.Infrastructure -> %USERPROFILE%\Proyectos\LogiMarket360Alan\tmp\verificacion-de2ad547c2be40ae9fc7f390d0fd7c7e\LogiMarket.Infrastructure\bin\Debug\net8.0\LogiMarket.Infrastructure.dll
+  LogiMarket.WinForms -> %USERPROFILE%\Proyectos\LogiMarket360Alan\tmp\verificacion-de2ad547c2be40ae9fc7f390d0fd7c7e\LogiMarket.WinForms\bin\Debug\net8.0-windows\LogiMarket.WinForms.dll
+  LogiMarket.Tests -> %USERPROFILE%\Proyectos\LogiMarket360Alan\tmp\verificacion-de2ad547c2be40ae9fc7f390d0fd7c7e\tests\LogiMarket.Tests\bin\Debug\net8.0\LogiMarket.Tests.dll
+
+Compilación correcta.
+    0 Advertencia(s)
+    0 Errores
+
+Tiempo transcurrido 00:00:15.57
+RESULTADO: APROBADO
