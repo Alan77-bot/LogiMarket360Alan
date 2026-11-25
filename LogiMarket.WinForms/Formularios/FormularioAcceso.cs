@@ -9,7 +9,7 @@ public sealed class FormularioAcceso : Form
 {
     public FormularioAcceso(OperacionesUi operaciones)
     {
-        Text = "Acceso | LogiMarket 360 Alan";
+        Text = "Acceso | LogiMarket";
         ClientSize = new Size(860, 540);
         MinimumSize = new Size(820, 560);
         StartPosition = FormStartPosition.CenterScreen;
@@ -25,7 +25,7 @@ public sealed class FormularioAcceso : Form
         marca.RowStyles.Add(new(SizeType.Absolute, 110));
         marca.RowStyles.Add(new(SizeType.Percent, 100));
         marca.RowStyles.Add(new(SizeType.Absolute, 50));
-        marca.Controls.Add(new Label { Text = "LOGIMARKET\n360 ALAN", Dock = DockStyle.Fill, ForeColor = Color.White, Font = new Font("Segoe UI", 24, FontStyle.Bold) }, 0, 0);
+        marca.Controls.Add(new Label { Text = "LogiMarket", Dock = DockStyle.Fill, ForeColor = Color.White, Font = new Font("Segoe UI", 24, FontStyle.Bold) }, 0, 0);
         marca.Controls.Add(new Label { Text = "Ventas, inventario y entregas\nen un solo lugar.", Dock = DockStyle.Fill, ForeColor = Color.FromArgb(196, 214, 239), Font = new Font("Segoe UI", 13) }, 0, 1);
         marca.Controls.Add(new Label { Text = "ORDEN EN CADA OPERACION", Dock = DockStyle.Fill, ForeColor = Color.FromArgb(152, 183, 220), Font = new Font("Segoe UI", 8, FontStyle.Bold) }, 0, 3);
         var campos = new TableLayoutPanel { Dock = DockStyle.Fill, Padding = new Padding(38, 32, 38, 20), ColumnCount = 1, RowCount = 11 };

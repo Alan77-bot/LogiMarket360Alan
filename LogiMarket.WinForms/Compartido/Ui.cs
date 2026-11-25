@@ -65,7 +65,7 @@ public static class Ui
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.GetBaseException().Message, "LogiMarket 360 Alan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(ex.GetBaseException().Message, "LogiMarket", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             finally
             {

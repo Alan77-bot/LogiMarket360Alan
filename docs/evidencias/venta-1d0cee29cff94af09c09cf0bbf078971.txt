@@ -1,5 +1,5 @@
 ﻿LOGIMARKET 360 - COMPROBANTE INTERNO
-Pedido: 1d0cee29-cff9-4af0-9c09-cf0bbf078971
+Pedido: 20d1df4e-70f3-45cf-9c63-14e4dc19dc9f
 Cliente: Ana
 KIT_TELETRABAJO x1
 Subtotal: USD 60.00
