@@ -13,7 +13,7 @@
 
 ## Pendientes de la entrega academica
 
-- PDF final suspendido por indicacion del usuario
+- Completar los datos de portada del informe LaTeX disponible en docs/informe-latex
 - Datos institucionales y nombres finales de los dos entregables
 - Capturas de codigo del IDE para la defensa conforme a docs/patrones/CAPTURAS.md
 - Revision manual exhaustiva de TAB foco y escalas DPI de monitor
@@ -29,4 +29,4 @@ Version v1.0.0 El repositorio anterior LogiMarket360 es independiente
 
 El ZIP de codigo no incluye bin obj .vs bases locales ni claves reales Los usuarios y claves Demo123! son ficticios y se documentan para ejecutar la practica
 
-Para entregar formalmente renombrar el ZIP a APE04_LogiMarket360_APELLIDOS_NOMBRES.zip cuando se faciliten los datos El PDF APE04_Informe_APELLIDOS_NOMBRES.pdf queda pendiente por indicacion del usuario
+Para entregar formalmente renombrar el ZIP a APE04_LogiMarket360_APELLIDOS_NOMBRES.zip cuando se faciliten los datos El informe ya fue generado como APE04_Informe_DATOS_PENDIENTES.pdf y debe renombrarse al completar la portada
