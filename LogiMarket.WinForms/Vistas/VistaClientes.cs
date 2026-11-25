@@ -6,7 +6,7 @@ using LogiMarket.WinForms.Formularios;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace LogiMarket.WinForms.Vistas;
-// Responsabilidad de VistaClientes: colaborar desde LogiMarket.WinForms.Vistas sin mezclar reglas, persistencia y pantallas.
+// Esta pantalla presenta datos y delega los cambios en Application; no escribe tablas directamente.
 public sealed class VistaClientes : UserControl
 {
     private readonly DataGridView grid = Ui.Grilla();

@@ -45,7 +45,7 @@ public sealed class FormularioPrincipal : Form
             BackColor = Ui.Azul,
             Padding = new Padding(14, 20, 14, 14)
         };
-        menu.Controls.Add(new Label { Text = $"LOGIMARKET 360 ALAN\n\n{sesion.Nombre}\nRol: {sesion.Rol}", ForeColor = Color.White, Height = 120, Width = 190, Font = new Font("Segoe UI", 11, FontStyle.Bold) });
+        menu.Controls.Add(new Label { Text = $"LOGIMARKET 360\nALAN\n\n{sesion.Nombre} | {sesion.Rol}", ForeColor = Color.White, Height = 120, Width = 190, Font = new Font("Segoe UI", 11, FontStyle.Bold) });
         var permisos = new PermisosVista(sesion.Rol);
         if (!permisos.Consultar)
             throw new UnauthorizedAccessException("Inicie sesion con un rol valido.");

@@ -2,7 +2,7 @@ using LogiMarket.WinForms.Compartido;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace LogiMarket.WinForms.Formularios;
-// Responsabilidad de DialogoCampos: colaborar desde LogiMarket.WinForms.Formularios sin mezclar reglas, persistencia y pantallas.
+// El dialogo captura y valida campos basicos; las reglas del negocio se verifican en los servicios.
 public sealed class DialogoCampos : Form
 {
     private readonly Dictionary<string, Control> campos = [];

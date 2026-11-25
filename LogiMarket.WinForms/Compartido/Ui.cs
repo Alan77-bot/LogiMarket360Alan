@@ -1,7 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
 
 namespace LogiMarket.WinForms.Compartido;
-// Responsabilidad de Ui: colaborar desde LogiMarket.WinForms.Compartido sin mezclar reglas, persistencia y pantallas.
+// Reunimos estilos y controles reutilizables; los formularios conservan su foco en capturar y mostrar datos.
 public static class Ui
 {
     public static readonly Color Fondo = Color.FromArgb(244, 247, 251);
@@ -24,7 +24,7 @@ public static class Ui
             AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells, EnableHeadersVisualStyles = false, CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal, GridColor = Color.FromArgb(232, 237, 244), ColumnHeadersHeight = 38, ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         };
                 // Una tabla legible importa mas que decorar cada celda con imagenes.
-        grid.ColumnHeadersDefaultCellStyle = new DataGridViewCellStyle { BackColor = Azul, ForeColor = Color.White, Font = new Font("Segoe UI", 9, FontStyle.Bold), Padding = new Padding(8) };
+        grid.ColumnHeadersDefaultCellStyle = new DataGridViewCellStyle { BackColor = Azul, ForeColor = Color.White, SelectionBackColor = Azul, SelectionForeColor = Color.White, Font = new Font("Segoe UI", 9, FontStyle.Bold), Padding = new Padding(8) };
         grid.DefaultCellStyle = new DataGridViewCellStyle { BackColor = Color.White, ForeColor = Color.FromArgb(40, 54, 73), SelectionBackColor = Color.FromArgb(221, 235, 252), SelectionForeColor = Azul, Padding = new Padding(8, 5, 8, 5), Font = new Font("Segoe UI", 10) };
         grid.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(247, 249, 252);
         grid.RowTemplate.Height = 34;

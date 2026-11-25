@@ -3,7 +3,7 @@ using LogiMarket.Application.Seguridad;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace LogiMarket.WinForms.Compartido;
-// Responsabilidad de OperacionesUi: colaborar desde LogiMarket.WinForms.Compartido sin mezclar reglas, persistencia y pantallas.
+// Coordina esta responsabilidad a traves de contratos; las reglas del negocio permanecen en su capa.
 // El ambito vive solo durante una operacion; no se comparte DbContext entre pantallas.
 public sealed class OperacionesUi(IServiceProvider proveedor)
 {
