@@ -1,1 +1,0 @@
-Consultar ARQUITECTURA.md para contexto, componentes, clases, datos, estados y secuencias; requisitos en REQUISITOS.md.

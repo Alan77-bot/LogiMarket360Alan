@@ -1,1 +1,0 @@
-Escenarios oficiales conservados en CASOS_OFICIALES.json. MATRIZ.md y MATRIZ_RESULTADOS.json enlazan con la ejecucion nueva de 62 pruebas. Ejecutar dotnet test tests/LogiMarket.Tests para repetir con bases aisladas.

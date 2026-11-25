@@ -15,4 +15,4 @@ La publicacion solo incluye main y ramas funcionales saneadas No incluye respald
 
 Las cuentas y nombres de clientes de la semilla son ficticios El alias publico del propietario y el nombre LogiMarket360Alan se conservan porque identifican el repositorio solicitado
 
-El PDF y los datos institucionales no se completaron porque siguen pendientes por indicacion del usuario
+El informe LaTeX esta preparado con los datos institucionales pendientes Sin datos personales en la portada

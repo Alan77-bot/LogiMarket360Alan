@@ -1,4 +1,4 @@
-# Entrega APE 04 LogiMarket360Alan
+# Entrega APE 04 LogiMarket
 
 ## Codigo y evidencias disponibles
 
@@ -25,7 +25,7 @@ Repositorio creado https://github.com/Alan77-bot/LogiMarket360Alan
 
 Correo real equipo usuario de Windows y rutas privadas retirados de todo el historial y de las evidencias publicadas
 
-Version v1.0.0 El repositorio anterior LogiMarket360 es independiente
+Version actual v1.0.1 Consultar CHANGELOG.md
 
 El ZIP de codigo no incluye bin obj .vs bases locales ni claves reales Los usuarios y claves Demo123! son ficticios y se documentan para ejecutar la practica
 

@@ -1,1 +1,0 @@
-Consultar MAPA.md para los 23 patrones, participantes, rutas, recorridos, pruebas y costos. Los comentarios en cada clase permiten ubicarlos en Visual Studio.

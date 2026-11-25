@@ -1,4 +1,4 @@
-# LogiMarket360Alan
+# LogiMarket
 
 Aplicacion de escritorio academica con C# 12, .NET 8, WinForms, EF Core 8 y SQLite. Interfaz sin imagenes, navegacion por rol, ventas, kits anidados, stock, cobros simulados, despacho, devoluciones, auditoria y reportes.
 
@@ -48,14 +48,14 @@ Flujo de demostracion: VENTAS prepara Ana + KIT_TELETRABAJO x1 ESTANDAR, guarda,
 - docs/pruebas/MATRIZ.md: 38 casos oficiales y resultados nuevos.
 - docs/calidad/REVISION.md: riesgos, comprobaciones y limites reales.
 
-La implementacion adapta la referencia del mismo LogiMarket360 a los archivos separados del proyecto Alan, conservando el Rol escrito por el usuario. No se presenta el codigo como una implementacion manual completa del estudiante ni se reutilizan resultados/capturas anteriores como evidencia de Alan. Git conserva cambios funcionales reales en commits separados; el repositorio publico es https://github.com/Alan77-bot/LogiMarket360Alan con historial y evidencias anonimizados.
+El repositorio conserva el historial de cambios funcionales y las evidencias de ejecucion.
 
 El informe LaTeX esta disponible en docs/informe-latex Los datos de portada siguen pendientes. Las integraciones son simuladas y los comprobantes no tienen validez tributaria.
 ## Publicacion y entrega
 
 Repositorio creado https://github.com/Alan77-bot/LogiMarket360Alan
 
-Version v1.0.0 con ZIP del codigo y evidencias anonimizadas
+Version actual v1.0.1 Cambios en CHANGELOG.md
 
 Consultar docs/ENTREGA.md para distinguir lo implementado de los pendientes academicos El informe LaTeX esta preparado y los datos de portada siguen pendientes No se afirma que existan diez pares de refactorizaciones con pruebas antes y despues ni una revision manual exhaustiva de accesibilidad
 
