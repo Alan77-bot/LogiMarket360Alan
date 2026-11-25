@@ -1,0 +1,10 @@
+# Unifica texto sin alterar el contenido de codigo ni resultados.
+* text=auto
+*.cs text eol=lf
+*.csproj text eol=lf
+*.slnx text eol=lf
+*.md text eol=lf
+*.ps1 text eol=lf
+*.trx text eol=lf
+*.png binary
+*.jpg binary
