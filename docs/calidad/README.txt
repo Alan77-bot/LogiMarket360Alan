@@ -1,1 +1,1 @@
-Conservar errores reales, correcciones, commits y resultados antes/despues cuando ocurran. No reconstruir evidencia ficticia.
+Consultar REVISION.md para decisiones, SOLID, comprobaciones reales y limites de la evidencia. No se inventan defectos, fallos, capturas ni commits retrospectivos.

@@ -1,0 +1,192 @@
+[
+  {
+    "Id": "P01",
+    "Entrada": "Creación de DB desde archivo inexistente y seed.",
+    "Esperado": "Migraciones aplicadas; cinco productos, dos kits y roles; sin duplicados al relanzar seed."
+  },
+  {
+    "Id": "P02",
+    "Entrada": "Ana VIP compra KIT_TELETRABAJO ×1 ESTÁNDAR, base recién preparada.",
+    "Esperado": "Total 59.00; stock P01=7, P02=4, P03=19; estado PAGADO y un pago."
+  },
+  {
+    "Id": "P03",
+    "Entrada": "Luis NORMAL compra 2 P04 + 2 P05 EXPRÉS, base recién preparada.",
+    "Esperado": "Total 102.00; P04=2, P05=28; un pago."
+  },
+  {
+    "Id": "P04",
+    "Entrada": "Carmen MAYORISTA compra P03 ×10 ESTÁNDAR, base recién preparada.",
+    "Esperado": "Total 90.00; P03=10; descuento 15.00."
+  },
+  {
+    "Id": "P05",
+    "Entrada": "KIT_TELETRABAJO ×6 con stock inicial, intentar confirmar.",
+    "Esperado": "Rechazo por P02 insuficiente; sin pago/stock/evento de éxito."
+  },
+  {
+    "Id": "P06",
+    "Entrada": "Simular error de cobro en pedido válido.",
+    "Esperado": "Se conserva inventario y estado previo; sin pago aprobado ni Outbox de éxito."
+  },
+  {
+    "Id": "P07",
+    "Entrada": "Repetir confirmación con misma clave de idempotencia.",
+    "Esperado": "Un pago y un movimiento por SKU; devuelve el resultado original sin cobro doble."
+  },
+  {
+    "Id": "P08",
+    "Entrada": "Pedido PAGADO; intentar cancelar y modificar precio.",
+    "Esperado": "Ambas operaciones denegadas; datos e historial intactos."
+  },
+  {
+    "Id": "P09",
+    "Entrada": "Despachar y entregar con BODEGA; intentar despachar sin pago.",
+    "Esperado": "Éxito solo en secuencia permitida; rechazo sin cambios en estado inválido."
+  },
+  {
+    "Id": "P10",
+    "Entrada": "Cerrar y reabrir; consultar pedido, stock, pago y auditoría.",
+    "Esperado": "Información persiste en SQLite y coincide con operaciones anteriores."
+  },
+  {
+    "Id": "P11",
+    "Entrada": "Factory Method: alternar EMAIL/SMS tras evento.",
+    "Esperado": "Cada creador retorna notificador concreto y registra el aviso correcto."
+  },
+  {
+    "Id": "P12",
+    "Entrada": "Abstract Factory: ESTÁNDAR/EXPRÉS.",
+    "Esperado": "Tarifas 5/12 y plazos 3/1 días; guías coherentes con la familia."
+  },
+  {
+    "Id": "P13",
+    "Entrada": "Builder: pedido vacío y pedido completo.",
+    "Esperado": "Incompleto rechazado; completo crea agregado válido."
+  },
+  {
+    "Id": "P14",
+    "Entrada": "Prototype: clonar KIT_TELETRABAJO; editar cantidad.",
+    "Esperado": "Copia profunda; plantilla/copia previa permanecen intactas."
+  },
+  {
+    "Id": "P15",
+    "Entrada": "Singleton: consultar métricas desde dos vistas.",
+    "Esperado": "Misma instancia compartida, contadores observables y thread-safe."
+  },
+  {
+    "Id": "P16",
+    "Entrada": "Adapter: proveedor legado y alternativo.",
+    "Esperado": "Cobros desde ambos con mismo contrato; legado intacto."
+  },
+  {
+    "Id": "P17",
+    "Entrada": "Bridge: dos comprobantes × dos medios.",
+    "Esperado": "Cuatro combinaciones; VistaPrevia visible y TXT real."
+  },
+  {
+    "Id": "P18",
+    "Entrada": "Composite: kits y composición anidada; intentar ciclo.",
+    "Esperado": "Precios 50/60; expansión correcta; ciclo rechazado."
+  },
+  {
+    "Id": "P19",
+    "Entrada": "Decorator: cobro autorizado, exitoso/fallido.",
+    "Esperado": "LOG de inicio y fin/error rodea la ejecución, no altera resultado."
+  },
+  {
+    "Id": "P20",
+    "Entrada": "Facade: confirmar con fallo en un colaborador.",
+    "Esperado": "Operación consistente; ninguna persistencia parcial indebida."
+  },
+  {
+    "Id": "P21",
+    "Entrada": "Flyweight: 1.000 filas con metadatos repetidos.",
+    "Esperado": "ReferenceEquals true; identidad y memoria documentadas."
+  },
+  {
+    "Id": "P22",
+    "Entrada": "Proxy: rol CONSULTA/BODEGA intenta pagar.",
+    "Esperado": "Rechazo antes de Decorator/Adapter; sin cobro ni LOG de cobro."
+  },
+  {
+    "Id": "P23",
+    "Entrada": "Chain: pedido sin cliente y sin stock; corregir un error.",
+    "Esperado": "Se informa primera validación y luego la siguiente; sin ejecución de cobro."
+  },
+  {
+    "Id": "P24",
+    "Entrada": "Command: confirmar desde UI e invocador de prueba.",
+    "Esperado": "Mismo comando y resultado funcional; historial de invocación."
+  },
+  {
+    "Id": "P25",
+    "Entrada": "Interpreter: ESTADO = PAGADO AND TOTAL >= 50.",
+    "Esperado": "Devuelve únicamente pedidos que cumplen el filtro."
+  },
+  {
+    "Id": "P26",
+    "Entrada": "Interpreter: sintaxis errónea y paréntesis.",
+    "Esperado": "Error legible sin SQL concatenado; precedencia correcta."
+  },
+  {
+    "Id": "P27",
+    "Entrada": "Iterator: recorrer KIT_TELETRABAJO.",
+    "Esperado": "P01, P02, P03 una vez por unidad requerida, sin bucle."
+  },
+  {
+    "Id": "P28",
+    "Entrada": "Mediator: confirmar y revisar tres vistas.",
+    "Esperado": "Catálogo, pedidos y métricas se refrescan sin acoplamiento directo."
+  },
+  {
+    "Id": "P29",
+    "Entrada": "Memento: tres ediciones, dos deshacer y un rehacer.",
+    "Esperado": "Se restauran borradores completos; no se deshace un pago."
+  },
+  {
+    "Id": "P30",
+    "Entrada": "Observer: PedidoPagado con tres suscriptores.",
+    "Esperado": "Notificación, auditoría y métrica actualizadas una vez."
+  },
+  {
+    "Id": "P31",
+    "Entrada": "State: ciclo válido y PAGADO→CANCELADO inválido.",
+    "Esperado": "Transiciones con reglas por estado, sin escritura directa."
+  },
+  {
+    "Id": "P32",
+    "Entrada": "Strategy: VIP, MAYORISTA, NORMAL y nueva promoción.",
+    "Esperado": "Descuentos 6/15/0; extensión sin editar la calculadora central."
+  },
+  {
+    "Id": "P33",
+    "Entrada": "Template Method: defecto día 20; arrepentimiento día 10.",
+    "Esperado": "Defecto aceptado; arrepentimiento rechazado sin reembolso/stock."
+  },
+  {
+    "Id": "P34",
+    "Entrada": "Visitor: KIT_TELETRABAJO.",
+    "Esperado": "Detalle P01/P02/P03; peso total 1.00 kg."
+  },
+  {
+    "Id": "P35",
+    "Entrada": "Devolver pedido ENTREGADO por defecto y repetir solicitud.",
+    "Esperado": "Para Ana: USD 54.00 de reembolso sin flete; un solo reintegro y devolución única."
+  },
+  {
+    "Id": "P36",
+    "Entrada": "Dos cobros concurrentes sobre un SKU cuyo stock se configuró previamente en una unidad.",
+    "Esperado": "Máximo un cobro aprobado; stock no negativo; sin sobreventa."
+  },
+  {
+    "Id": "P37",
+    "Entrada": "Outbox: falla notificador y reiniciar procesador.",
+    "Esperado": "Evento pendiente se recupera, se marca procesado una vez y sin duplicar cobro."
+  },
+  {
+    "Id": "P38",
+    "Entrada": "Pruebas de LSP/ISP/DIP y build desde código limpio.",
+    "Esperado": "Reemplazo de proveedor, contratos segregados, referencias correctas y 25 pruebas automatizadas aprobadas."
+  }
+]

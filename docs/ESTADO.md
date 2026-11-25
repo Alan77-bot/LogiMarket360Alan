@@ -1,0 +1,1 @@
+Implementacion completa con 23 patrones, EF Core 8/SQLite, WinForms sin imagenes y menus por rol. 62 pruebas automaticas nuevas aprobadas. Evidencias de flujo y roles en docs/evidencias. Revisar calidad/REVISION.md para limites reales. Git local, sin remoto; PDF y datos personales pendientes por indicacion del usuario.

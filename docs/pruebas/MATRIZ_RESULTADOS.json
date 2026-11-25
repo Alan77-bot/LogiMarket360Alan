@@ -1,0 +1,574 @@
+[
+  {
+    "Id": "P01",
+    "Entrada": "Creación de DB desde archivo inexistente y seed.",
+    "Esperado": "Migraciones aplicadas; cinco productos, dos kits y roles; sin duplicados al relanzar seed.",
+    "Estado": "APROBADO",
+    "Obtenido": "1 prueba(s) automatizada(s) aprobada(s). Base nueva creada por migraciones, cinco productos, dos kits, cuatro usuarios y ninguna migracion pendiente; seed repetido sin duplicados.",
+    "Fecha": "2026-11-24T19:12:21.5931330-05:00",
+    "Metodos": [
+      "LogiMarket.Tests.Integracion.MigracionesTests.P01_MigracionesYSeedIdempotente"
+    ],
+    "Archivos": [
+      "tests/LogiMarket.Tests/Integracion/MigracionesTests.cs"
+    ],
+    "Evidencia": "docs/evidencias/resultados/aceptacion-alan.trx"
+  },
+  {
+    "Id": "P02",
+    "Entrada": "Ana VIP compra KIT_TELETRABAJO ×1 ESTÁNDAR, base recién preparada.",
+    "Esperado": "Total 59.00; stock P01=7, P02=4, P03=19; estado PAGADO y un pago.",
+    "Estado": "APROBADO",
+    "Obtenido": "1 prueba(s) automatizada(s) aprobada(s). Total 59.00, PAGADO y un pago; stock P01=7, P02=4 y P03=19 comprobado.",
+    "Fecha": "2026-11-24T19:12:21.5931330-05:00",
+    "Metodos": [
+      "LogiMarket.Tests.Aceptacion.CasosOficialesTests.P02_P04_CasosOficiales"
+    ],
+    "Archivos": [
+      "tests/LogiMarket.Tests/Aceptacion/CasosOficialesTests.cs"
+    ],
+    "Evidencia": "docs/evidencias/resultados/aceptacion-alan.trx"
+  },
+  {
+    "Id": "P03",
+    "Entrada": "Luis NORMAL compra 2 P04 + 2 P05 EXPRÉS, base recién preparada.",
+    "Esperado": "Total 102.00; P04=2, P05=28; un pago.",
+    "Estado": "APROBADO",
+    "Obtenido": "1 prueba(s) automatizada(s) aprobada(s). Total 102.00 y un pago; stock P04=2 y P05=28 comprobado.",
+    "Fecha": "2026-11-24T19:12:21.5931330-05:00",
+    "Metodos": [
+      "LogiMarket.Tests.Aceptacion.CasosOficialesTests.P02_P04_CasosOficiales"
+    ],
+    "Archivos": [
+      "tests/LogiMarket.Tests/Aceptacion/CasosOficialesTests.cs"
+    ],
+    "Evidencia": "docs/evidencias/resultados/aceptacion-alan.trx"
+  },
+  {
+    "Id": "P04",
+    "Entrada": "Carmen MAYORISTA compra P03 ×10 ESTÁNDAR, base recién preparada.",
+    "Esperado": "Total 90.00; P03=10; descuento 15.00.",
+    "Estado": "APROBADO",
+    "Obtenido": "1 prueba(s) automatizada(s) aprobada(s). Total 90.00, descuento 15.00 y stock P03=10 comprobado.",
+    "Fecha": "2026-11-24T19:12:21.5931330-05:00",
+    "Metodos": [
+      "LogiMarket.Tests.Aceptacion.CasosOficialesTests.P02_P04_CasosOficiales"
+    ],
+    "Archivos": [
+      "tests/LogiMarket.Tests/Aceptacion/CasosOficialesTests.cs"
+    ],
+    "Evidencia": "docs/evidencias/resultados/aceptacion-alan.trx"
+  },
+  {
+    "Id": "P05",
+    "Entrada": "KIT_TELETRABAJO ×6 con stock inicial, intentar confirmar.",
+    "Esperado": "Rechazo por P02 insuficiente; sin pago/stock/evento de éxito.",
+    "Estado": "APROBADO",
+    "Obtenido": "1 prueba(s) automatizada(s) aprobada(s). Rechazo por P02; sin pago, movimientos ni evento de exito y sin descontar P01.",
+    "Fecha": "2026-11-24T19:12:21.5931330-05:00",
+    "Metodos": [
+      "LogiMarket.Tests.Aplicacion.ConfirmacionTests.P05_KitPorSeisSinEfectos"
+    ],
+    "Archivos": [
+      "tests/LogiMarket.Tests/Aplicacion/ConfirmacionTests.cs"
+    ],
+    "Evidencia": "docs/evidencias/resultados/aceptacion-alan.trx"
+  },
+  {
+    "Id": "P06",
+    "Entrada": "Simular error de cobro en pedido válido.",
+    "Esperado": "Se conserva inventario y estado previo; sin pago aprobado ni Outbox de éxito.",
+    "Estado": "APROBADO",
+    "Obtenido": "1 prueba(s) automatizada(s) aprobada(s). Cobro rechazado, estado VALIDADO e inventario conservado; sin pago aprobado ni Outbox de exito.",
+    "Fecha": "2026-11-24T19:12:21.5931330-05:00",
+    "Metodos": [
+      "LogiMarket.Tests.Aplicacion.ConfirmacionTests.P06_RechazoNoDescuentaStock"
+    ],
+    "Archivos": [
+      "tests/LogiMarket.Tests/Aplicacion/ConfirmacionTests.cs"
+    ],
+    "Evidencia": "docs/evidencias/resultados/aceptacion-alan.trx"
+  },
+  {
+    "Id": "P07",
+    "Entrada": "Repetir confirmación con misma clave de idempotencia.",
+    "Esperado": "Un pago y un movimiento por SKU; devuelve el resultado original sin cobro doble.",
+    "Estado": "APROBADO",
+    "Obtenido": "1 prueba(s) automatizada(s) aprobada(s). Mismo identificador de pago en reintentos; un pago y tres movimientos, uno por SKU.",
+    "Fecha": "2026-11-24T19:12:21.5931330-05:00",
+    "Metodos": [
+      "LogiMarket.Tests.Integracion.IdempotenciaTests.P07_ConfirmacionIdempotente"
+    ],
+    "Archivos": [
+      "tests/LogiMarket.Tests/Integracion/IdempotenciaTests.cs"
+    ],
+    "Evidencia": "docs/evidencias/resultados/aceptacion-alan.trx"
+  },
+  {
+    "Id": "P08",
+    "Entrada": "Pedido PAGADO; intentar cancelar y modificar precio.",
+    "Esperado": "Ambas operaciones denegadas; datos e historial intactos.",
+    "Estado": "APROBADO",
+    "Obtenido": "1 prueba(s) automatizada(s) aprobada(s). Cancelar y editar el pedido pagado provocan rechazo; total e historial conservados.",
+    "Fecha": "2026-11-24T19:12:21.5931330-05:00",
+    "Metodos": [
+      "LogiMarket.Tests.Dominio.EstadosTests.P08_PagadoNoAdmiteCancelarNiEditar"
+    ],
+    "Archivos": [
+      "tests/LogiMarket.Tests/Dominio/EstadosTests.cs"
+    ],
+    "Evidencia": "docs/evidencias/resultados/aceptacion-alan.trx"
+  },
+  {
+    "Id": "P09",
+    "Entrada": "Despachar y entregar con BODEGA; intentar despachar sin pago.",
+    "Esperado": "Éxito solo en secuencia permitida; rechazo sin cambios en estado inválido.",
+    "Estado": "APROBADO",
+    "Obtenido": "1 prueba(s) automatizada(s) aprobada(s). Despacho sin pago rechazado; BODEGA completa despacho y entrega del pedido pagado.",
+    "Fecha": "2026-11-24T19:12:21.5931330-05:00",
+    "Metodos": [
+      "LogiMarket.Tests.Aplicacion.PermisosTests.P09_DespachoEntregaYRechazoSinPago"
+    ],
+    "Archivos": [
+      "tests/LogiMarket.Tests/Aplicacion/PermisosTests.cs"
+    ],
+    "Evidencia": "docs/evidencias/resultados/aceptacion-alan.trx"
+  },
+  {
+    "Id": "P10",
+    "Entrada": "Cerrar y reabrir; consultar pedido, stock, pago y auditoría.",
+    "Esperado": "Información persiste en SQLite y coincide con operaciones anteriores.",
+    "Estado": "APROBADO",
+    "Obtenido": "1 prueba(s) automatizada(s) aprobada(s). Otro proveedor DI abre la misma SQLite y recupera pedido PAGADO, pago, stock P01=7 y auditoria.",
+    "Fecha": "2026-11-24T19:12:21.5931330-05:00",
+    "Metodos": [
+      "LogiMarket.Tests.Integracion.PersistenciaTests.P10_PersistenciaConOtroProveedorDi"
+    ],
+    "Archivos": [
+      "tests/LogiMarket.Tests/Integracion/PersistenciaTests.cs"
+    ],
+    "Evidencia": "docs/evidencias/resultados/aceptacion-alan.trx"
+  },
+  {
+    "Id": "P11",
+    "Entrada": "Factory Method: alternar EMAIL/SMS tras evento.",
+    "Esperado": "Cada creador retorna notificador concreto y registra el aviso correcto.",
+    "Estado": "APROBADO",
+    "Obtenido": "2 prueba(s) automatizada(s) aprobada(s). EMAIL y SMS registran el canal elegido; una sola notificacion por evento.",
+    "Fecha": "2026-11-24T19:12:21.5931330-05:00",
+    "Metodos": [
+      "LogiMarket.Tests.Integracion.OutboxTests.P11_P30_ObserverYFactoryPublicanUnaVez"
+    ],
+    "Archivos": [
+      "tests/LogiMarket.Tests/Integracion/OutboxTests.cs"
+    ],
+    "Evidencia": "docs/evidencias/resultados/aceptacion-alan.trx"
+  },
+  {
+    "Id": "P12",
+    "Entrada": "Abstract Factory: ESTÁNDAR/EXPRÉS.",
+    "Esperado": "Tarifas 5/12 y plazos 3/1 días; guías coherentes con la familia.",
+    "Estado": "APROBADO",
+    "Obtenido": "1 prueba(s) automatizada(s) aprobada(s). ESTANDAR: tarifa 5, plazo 3 y prefijo STD. EXPRES: tarifa 12, plazo 1 y prefijo EXP.",
+    "Fecha": "2026-11-24T19:12:21.5931330-05:00",
+    "Metodos": [
+      "LogiMarket.Tests.Patrones.CreacionalesTests.P12_FamiliasCompatibles"
+    ],
+    "Archivos": [
+      "tests/LogiMarket.Tests/Patrones/CreacionalesTests.cs"
+    ],
+    "Evidencia": "docs/evidencias/resultados/aceptacion-alan.trx"
+  },
+  {
+    "Id": "P13",
+    "Entrada": "Builder: pedido vacío y pedido completo.",
+    "Esperado": "Incompleto rechazado; completo crea agregado válido.",
+    "Estado": "APROBADO",
+    "Obtenido": "1 prueba(s) automatizada(s) aprobada(s). Constructor sin cliente o sin lineas rechazado; agregado completo construido.",
+    "Fecha": "2026-11-24T19:12:21.5931330-05:00",
+    "Metodos": [
+      "LogiMarket.Tests.Patrones.CreacionalesTests.P13_BuilderRechazaIncompleto"
+    ],
+    "Archivos": [
+      "tests/LogiMarket.Tests/Patrones/CreacionalesTests.cs"
+    ],
+    "Evidencia": "docs/evidencias/resultados/aceptacion-alan.trx"
+  },
+  {
+    "Id": "P14",
+    "Entrada": "Prototype: clonar KIT_TELETRABAJO; editar cantidad.",
+    "Esperado": "Copia profunda; plantilla/copia previa permanecen intactas.",
+    "Estado": "APROBADO",
+    "Obtenido": "1 prueba(s) automatizada(s) aprobada(s). Copia profunda comprobada con cambio de cantidad y arbol historico serializado.",
+    "Fecha": "2026-11-24T19:12:21.5931330-05:00",
+    "Metodos": [
+      "LogiMarket.Tests.Patrones.CreacionalesTests.P14_PrototypeProfundo"
+    ],
+    "Archivos": [
+      "tests/LogiMarket.Tests/Patrones/CreacionalesTests.cs"
+    ],
+    "Evidencia": "docs/evidencias/resultados/aceptacion-alan.trx"
+  },
+  {
+    "Id": "P15",
+    "Entrada": "Singleton: consultar métricas desde dos vistas.",
+    "Esperado": "Misma instancia compartida, contadores observables y thread-safe.",
+    "Estado": "APROBADO",
+    "Obtenido": "1 prueba(s) automatizada(s) aprobada(s). Dos ambitos reciben la misma instancia; 1000 registros concurrentes del mismo evento cuentan un pago.",
+    "Fecha": "2026-11-24T19:12:21.5931330-05:00",
+    "Metodos": [
+      "LogiMarket.Tests.Patrones.CreacionalesTests.P15_SingletonIdentidadYConcurrencia"
+    ],
+    "Archivos": [
+      "tests/LogiMarket.Tests/Patrones/CreacionalesTests.cs"
+    ],
+    "Evidencia": "docs/evidencias/resultados/aceptacion-alan.trx"
+  },
+  {
+    "Id": "P16",
+    "Entrada": "Adapter: proveedor legado y alternativo.",
+    "Esperado": "Cobros desde ambos con mismo contrato; legado intacto.",
+    "Estado": "APROBADO",
+    "Obtenido": "2 prueba(s) automatizada(s) aprobada(s). Ambos proveedores aceptan 59.00, conservan referencia en el reintento y rechazan entradas invalidas.",
+    "Fecha": "2026-11-24T19:12:21.5931330-05:00",
+    "Metodos": [
+      "LogiMarket.Tests.Patrones.EstructuralesTests.P16_P38_LspProveedores"
+    ],
+    "Archivos": [
+      "tests/LogiMarket.Tests/Patrones/EstructuralesTests.cs"
+    ],
+    "Evidencia": "docs/evidencias/resultados/aceptacion-alan.trx"
+  },
+  {
+    "Id": "P17",
+    "Entrada": "Bridge: dos comprobantes × dos medios.",
+    "Esperado": "Cuatro combinaciones; VistaPrevia visible y TXT real.",
+    "Estado": "APROBADO",
+    "Obtenido": "1 prueba(s) automatizada(s) aprobada(s). Cuatro combinaciones ejecutadas; vistas previas reales y TXT en docs/evidencias/comprobantes.",
+    "Fecha": "2026-11-24T19:12:21.5931330-05:00",
+    "Metodos": [
+      "LogiMarket.Tests.Patrones.EstructuralesTests.P17_BridgeCuatroCombinacionesContenidoYArchivo"
+    ],
+    "Archivos": [
+      "tests/LogiMarket.Tests/Patrones/EstructuralesTests.cs"
+    ],
+    "Evidencia": "docs/evidencias/resultados/aceptacion-alan.trx"
+  },
+  {
+    "Id": "P18",
+    "Entrada": "Composite: kits y composición anidada; intentar ciclo.",
+    "Esperado": "Precios 50/60; expansión correcta; ciclo rechazado.",
+    "Estado": "APROBADO",
+    "Obtenido": "1 prueba(s) automatizada(s) aprobada(s). Precios 50/60, expansion P01/P02/P03 y cantidades propagadas; ciclo indirecto rechazado.",
+    "Fecha": "2026-11-24T19:12:21.5931330-05:00",
+    "Metodos": [
+      "LogiMarket.Tests.Dominio.KitsTests.KitAnidadoExpandeCantidadesYRechazaCicloIndirecto"
+    ],
+    "Archivos": [
+      "tests/LogiMarket.Tests/Dominio/KitsTests.cs"
+    ],
+    "Evidencia": "docs/evidencias/resultados/aceptacion-alan.trx"
+  },
+  {
+    "Id": "P19",
+    "Entrada": "Decorator: cobro autorizado, exitoso/fallido.",
+    "Esperado": "LOG de inicio y fin/error rodea la ejecución, no altera resultado.",
+    "Estado": "APROBADO",
+    "Obtenido": "2 prueba(s) automatizada(s) aprobada(s). Secuencia observada INICIO, PASARELA y FIN/ERROR, conservando el resultado del proveedor.",
+    "Fecha": "2026-11-24T19:12:21.5931330-05:00",
+    "Metodos": [
+      "LogiMarket.Tests.Patrones.EstructuralesTests.P19_DecoradorRodeaEjecucion"
+    ],
+    "Archivos": [
+      "tests/LogiMarket.Tests/Patrones/EstructuralesTests.cs"
+    ],
+    "Evidencia": "docs/evidencias/resultados/aceptacion-alan.trx"
+  },
+  {
+    "Id": "P20",
+    "Entrada": "Facade: confirmar con fallo en un colaborador.",
+    "Esperado": "Operación consistente; ninguna persistencia parcial indebida.",
+    "Estado": "APROBADO",
+    "Obtenido": "1 prueba(s) automatizada(s) aprobada(s). Fallo del colaborador deja estado VALIDADO, stock P01=8, sin pago ni evento de exito.",
+    "Fecha": "2026-11-24T19:12:21.5931330-05:00",
+    "Metodos": [
+      "LogiMarket.Tests.Aplicacion.ConfirmacionTests.P20_FalloColaboradorNoDejaPersistenciaParcial"
+    ],
+    "Archivos": [
+      "tests/LogiMarket.Tests/Aplicacion/ConfirmacionTests.cs"
+    ],
+    "Evidencia": "docs/evidencias/resultados/aceptacion-alan.trx"
+  },
+  {
+    "Id": "P21",
+    "Entrada": "Flyweight: 1.000 filas con metadatos repetidos.",
+    "Esperado": "ReferenceEquals true; identidad y memoria documentadas.",
+    "Estado": "APROBADO",
+    "Obtenido": "1000 filas, una instancia compartida y ReferenceEquals True; medicion nueva: 104176 frente a 56360 bytes asignados. Condiciones en flujo-ui.txt.",
+    "Fecha": "2026-11-24T19:12:21.5931330-05:00",
+    "Metodos": [
+      "LogiMarket.Tests.Patrones.EstructuralesTests.P21_MilFilasCompartenIdentidadConComparacionEquivalente"
+    ],
+    "Archivos": [
+      "tests/LogiMarket.Tests/Patrones/EstructuralesTests.cs"
+    ],
+    "Evidencia": "docs/evidencias/resultados/aceptacion-alan.trx"
+  },
+  {
+    "Id": "P22",
+    "Entrada": "Proxy: rol CONSULTA/BODEGA intenta pagar.",
+    "Esperado": "Rechazo antes de Decorator/Adapter; sin cobro ni LOG de cobro.",
+    "Estado": "APROBADO",
+    "Obtenido": "2 prueba(s) automatizada(s) aprobada(s). CONSULTA y BODEGA reciben UnauthorizedAccessException antes del proveedor; ningun LOG de COBRO.",
+    "Fecha": "2026-11-24T19:12:21.5931330-05:00",
+    "Metodos": [
+      "LogiMarket.Tests.Aplicacion.PermisosTests.P22_ProxyDetieneAntesDeCobro"
+    ],
+    "Archivos": [
+      "tests/LogiMarket.Tests/Aplicacion/PermisosTests.cs"
+    ],
+    "Evidencia": "docs/evidencias/resultados/aceptacion-alan.trx"
+  },
+  {
+    "Id": "P23",
+    "Entrada": "Chain: pedido sin cliente y sin stock; corregir un error.",
+    "Esperado": "Se informa primera validación y luego la siguiente; sin ejecución de cobro.",
+    "Estado": "APROBADO",
+    "Obtenido": "1 prueba(s) automatizada(s) aprobada(s). Primero se informa CLIENTE y, al corregirlo, STOCK; no se invoca cobro.",
+    "Fecha": "2026-11-24T19:12:21.5931330-05:00",
+    "Metodos": [
+      "LogiMarket.Tests.Patrones.ComportamentalesTests.P23_CadenaPrimeroClienteLuegoStock"
+    ],
+    "Archivos": [
+      "tests/LogiMarket.Tests/Patrones/ComportamentalesTests.cs"
+    ],
+    "Evidencia": "docs/evidencias/resultados/aceptacion-alan.trx"
+  },
+  {
+    "Id": "P24",
+    "Entrada": "Command: confirmar desde UI e invocador de prueba.",
+    "Esperado": "Mismo comando y resultado funcional; historial de invocación.",
+    "Estado": "APROBADO",
+    "Obtenido": "1 prueba(s) automatizada(s) aprobada(s). El boton de cobro y el test invocan ConfirmarPedidoCommand mediante InvocadorComandos.",
+    "Fecha": "2026-11-24T19:12:21.5931330-05:00",
+    "Metodos": [
+      "LogiMarket.Tests.Aplicacion.ComandosTests.P24_ComandoInvocadoRegistraResultado"
+    ],
+    "Archivos": [
+      "tests/LogiMarket.Tests/Aplicacion/ComandosTests.cs"
+    ],
+    "Evidencia": "docs/evidencias/resultados/aceptacion-alan.trx"
+  },
+  {
+    "Id": "P25",
+    "Entrada": "Interpreter: ESTADO = PAGADO AND TOTAL >= 50.",
+    "Esperado": "Devuelve únicamente pedidos que cumplen el filtro.",
+    "Estado": "APROBADO",
+    "Obtenido": "1 prueba(s) automatizada(s) aprobada(s). ESTADO = PAGADO AND TOTAL >= 50 acepta el pedido pagado de 65.00 y descarta el filtro de BORRADOR.",
+    "Fecha": "2026-11-24T19:12:21.5931330-05:00",
+    "Metodos": [
+      "LogiMarket.Tests.Patrones.ComportamentalesTests.P25_InterpreterSeleccionaPagado"
+    ],
+    "Archivos": [
+      "tests/LogiMarket.Tests/Patrones/ComportamentalesTests.cs"
+    ],
+    "Evidencia": "docs/evidencias/resultados/aceptacion-alan.trx"
+  },
+  {
+    "Id": "P26",
+    "Entrada": "Interpreter: sintaxis errónea y paréntesis.",
+    "Esperado": "Error legible sin SQL concatenado; precedencia correcta.",
+    "Estado": "APROBADO",
+    "Obtenido": "1 prueba(s) automatizada(s) aprobada(s). AND tiene prioridad sobre OR; parentesis cambian el resultado y sintaxis invalida genera FormatException.",
+    "Fecha": "2026-11-24T19:12:21.5931330-05:00",
+    "Metodos": [
+      "LogiMarket.Tests.Patrones.ComportamentalesTests.P26_InterpreterPrecedenciaYErrores"
+    ],
+    "Archivos": [
+      "tests/LogiMarket.Tests/Patrones/ComportamentalesTests.cs"
+    ],
+    "Evidencia": "docs/evidencias/resultados/aceptacion-alan.trx"
+  },
+  {
+    "Id": "P27",
+    "Entrada": "Iterator: recorrer KIT_TELETRABAJO.",
+    "Esperado": "P01, P02, P03 una vez por unidad requerida, sin bucle.",
+    "Estado": "APROBADO",
+    "Obtenido": "1 prueba(s) automatizada(s) aprobada(s). Iterador propio produce P01, P02 y P03, termina y permanece terminado.",
+    "Fecha": "2026-11-24T19:12:21.5931330-05:00",
+    "Metodos": [
+      "LogiMarket.Tests.Patrones.ComportamentalesTests.P27_P34_IteratorYVisitorKits"
+    ],
+    "Archivos": [
+      "tests/LogiMarket.Tests/Patrones/ComportamentalesTests.cs"
+    ],
+    "Evidencia": "docs/evidencias/resultados/aceptacion-alan.trx"
+  },
+  {
+    "Id": "P28",
+    "Entrada": "Mediator: confirmar y revisar tres vistas.",
+    "Esperado": "Catálogo, pedidos y métricas se refrescan sin acoplamiento directo.",
+    "Estado": "APROBADO",
+    "Obtenido": "1 prueba(s) automatizada(s) aprobada(s). Verificacion automatica del coordinador y capturas 07, 08 y 09: pedido pagado, stock actualizado y metrica de pago=1.",
+    "Fecha": "2026-11-24T19:12:21.5931330-05:00",
+    "Metodos": [
+      "LogiMarket.Tests.Patrones.MediatorTests.P28_MediatorRefrescaStockPedidosYMetricas"
+    ],
+    "Archivos": [
+      "tests/LogiMarket.Tests/Patrones/MediatorTests.cs"
+    ],
+    "Evidencia": "docs/evidencias/resultados/aceptacion-alan.trx"
+  },
+  {
+    "Id": "P29",
+    "Entrada": "Memento: tres ediciones, dos deshacer y un rehacer.",
+    "Esperado": "Se restauran borradores completos; no se deshace un pago.",
+    "Estado": "APROBADO",
+    "Obtenido": "1 prueba(s) automatizada(s) aprobada(s). Tres estados: deshacer devuelve cantidades 2 y 1; rehacer devuelve 2. Historial bloqueado rechaza deshacer.",
+    "Fecha": "2026-11-24T19:12:21.5931330-05:00",
+    "Metodos": [
+      "LogiMarket.Tests.Patrones.ComportamentalesTests.P29_MementoTresCambiosDosDeshacerUnRehacer"
+    ],
+    "Archivos": [
+      "tests/LogiMarket.Tests/Patrones/ComportamentalesTests.cs"
+    ],
+    "Evidencia": "docs/evidencias/resultados/aceptacion-alan.trx"
+  },
+  {
+    "Id": "P30",
+    "Entrada": "Observer: PedidoPagado con tres suscriptores.",
+    "Esperado": "Notificación, auditoría y métrica actualizadas una vez.",
+    "Estado": "APROBADO",
+    "Obtenido": "2 prueba(s) automatizada(s) aprobada(s). Un aviso, una auditoria de PedidoPagado y una metrica; segundo procesamiento no publica de nuevo.",
+    "Fecha": "2026-11-24T19:12:21.5931330-05:00",
+    "Metodos": [
+      "LogiMarket.Tests.Integracion.OutboxTests.P11_P30_ObserverYFactoryPublicanUnaVez"
+    ],
+    "Archivos": [
+      "tests/LogiMarket.Tests/Integracion/OutboxTests.cs"
+    ],
+    "Evidencia": "docs/evidencias/resultados/aceptacion-alan.trx"
+  },
+  {
+    "Id": "P31",
+    "Entrada": "State: ciclo válido y PAGADO→CANCELADO inválido.",
+    "Esperado": "Transiciones con reglas por estado, sin escritura directa.",
+    "Estado": "APROBADO",
+    "Obtenido": "1 prueba(s) automatizada(s) aprobada(s). Ciclo permitido completo; despacho prematuro, cancelacion y repeticion rechazados.",
+    "Fecha": "2026-11-24T19:12:21.5931330-05:00",
+    "Metodos": [
+      "LogiMarket.Tests.Dominio.EstadosTests.P31_StateRechazaRetrocesoYRepeticion"
+    ],
+    "Archivos": [
+      "tests/LogiMarket.Tests/Dominio/EstadosTests.cs"
+    ],
+    "Evidencia": "docs/evidencias/resultados/aceptacion-alan.trx"
+  },
+  {
+    "Id": "P32",
+    "Entrada": "Strategy: VIP, MAYORISTA, NORMAL y nueva promoción.",
+    "Esperado": "Descuentos 6/15/0; extensión sin editar la calculadora central.",
+    "Estado": "APROBADO",
+    "Obtenido": "1 prueba(s) automatizada(s) aprobada(s). Politica nueva aplica 20% sin editar la calculadora; pruebas numericas adicionales verifican VIP, MAYORISTA y NORMAL.",
+    "Fecha": "2026-11-24T19:12:21.5931330-05:00",
+    "Metodos": [
+      "LogiMarket.Tests.Dominio.PromocionesTests.P32_ExtenderStrategySinCambiarCalculadora"
+    ],
+    "Archivos": [
+      "tests/LogiMarket.Tests/Dominio/PromocionesTests.cs"
+    ],
+    "Evidencia": "docs/evidencias/resultados/aceptacion-alan.trx"
+  },
+  {
+    "Id": "P33",
+    "Entrada": "Template Method: defecto día 20; arrepentimiento día 10.",
+    "Esperado": "Defecto aceptado; arrepentimiento rechazado sin reembolso/stock.",
+    "Estado": "APROBADO",
+    "Obtenido": "1 prueba(s) automatizada(s) aprobada(s). Arrepentimiento dia 10 rechazado; defecto dia 20 tambien verificado en P35.",
+    "Fecha": "2026-11-24T19:12:21.5931330-05:00",
+    "Metodos": [
+      "LogiMarket.Tests.Aplicacion.DevolucionesTests.P33_ArrepentimientoDiaDiezNoAlteraStock"
+    ],
+    "Archivos": [
+      "tests/LogiMarket.Tests/Aplicacion/DevolucionesTests.cs"
+    ],
+    "Evidencia": "docs/evidencias/resultados/aceptacion-alan.trx"
+  },
+  {
+    "Id": "P34",
+    "Entrada": "Visitor: KIT_TELETRABAJO.",
+    "Esperado": "Detalle P01/P02/P03; peso total 1.00 kg.",
+    "Estado": "APROBADO",
+    "Obtenido": "1 prueba(s) automatizada(s) aprobada(s). Visitor obtiene tres SKU y peso total 1.00 kg del kit teletrabajo.",
+    "Fecha": "2026-11-24T19:12:21.5931330-05:00",
+    "Metodos": [
+      "LogiMarket.Tests.Patrones.ComportamentalesTests.P27_P34_IteratorYVisitorKits"
+    ],
+    "Archivos": [
+      "tests/LogiMarket.Tests/Patrones/ComportamentalesTests.cs"
+    ],
+    "Evidencia": "docs/evidencias/resultados/aceptacion-alan.trx"
+  },
+  {
+    "Id": "P35",
+    "Entrada": "Devolver pedido ENTREGADO por defecto y repetir solicitud.",
+    "Esperado": "Para Ana: USD 54.00 de reembolso sin flete; un solo reintegro y devolución única.",
+    "Estado": "APROBADO",
+    "Obtenido": "1 prueba(s) automatizada(s) aprobada(s). Ana recibe 54.00, sin envio; stock P01 vuelve a 8 y la solicitud repetida se rechaza; una devolucion.",
+    "Fecha": "2026-11-24T19:12:21.5931330-05:00",
+    "Metodos": [
+      "LogiMarket.Tests.Aplicacion.DevolucionesTests.P35_DevolucionAnaUnicaPor54"
+    ],
+    "Archivos": [
+      "tests/LogiMarket.Tests/Aplicacion/DevolucionesTests.cs"
+    ],
+    "Evidencia": "docs/evidencias/resultados/aceptacion-alan.trx"
+  },
+  {
+    "Id": "P36",
+    "Entrada": "Dos cobros concurrentes sobre un SKU cuyo stock se configuró previamente en una unidad.",
+    "Esperado": "Máximo un cobro aprobado; stock no negativo; sin sobreventa.",
+    "Estado": "APROBADO",
+    "Obtenido": "1 prueba(s) automatizada(s) aprobada(s). Con P01=1 y dos confirmaciones concurrentes: una aceptada, un pago y stock final cero.",
+    "Fecha": "2026-11-24T19:12:21.5931330-05:00",
+    "Metodos": [
+      "LogiMarket.Tests.Integracion.ConcurrenciaTests.P36_DosConfirmacionesConcurrentesSinSobreventa"
+    ],
+    "Archivos": [
+      "tests/LogiMarket.Tests/Integracion/ConcurrenciaTests.cs"
+    ],
+    "Evidencia": "docs/evidencias/resultados/aceptacion-alan.trx"
+  },
+  {
+    "Id": "P37",
+    "Entrada": "Outbox: falla notificador y reiniciar procesador.",
+    "Esperado": "Evento pendiente se recupera, se marca procesado una vez y sin duplicar cobro.",
+    "Estado": "APROBADO",
+    "Obtenido": "1 prueba(s) automatizada(s) aprobada(s). Fallo deja evento pendiente con un intento; procesador nuevo lo recupera; un aviso y un pago.",
+    "Fecha": "2026-11-24T19:12:21.5931330-05:00",
+    "Metodos": [
+      "LogiMarket.Tests.Integracion.OutboxTests.P37_RecuperacionOutboxConNuevoProcesador"
+    ],
+    "Archivos": [
+      "tests/LogiMarket.Tests/Integracion/OutboxTests.cs"
+    ],
+    "Evidencia": "docs/evidencias/resultados/aceptacion-alan.trx"
+  },
+  {
+    "Id": "P38",
+    "Entrada": "Pruebas de LSP/ISP/DIP y build desde código limpio.",
+    "Esperado": "Reemplazo de proveedor, contratos segregados, referencias correctas y 25 pruebas automatizadas aprobadas.",
+    "Estado": "APROBADO",
+    "Obtenido": "Contratos y referencias comprobados por las pruebas; compilacion limpia registrada en docs/evidencias/compilacion-limpia.txt.",
+    "Fecha": "2026-11-24T19:12:21.5931330-05:00",
+    "Metodos": [
+      "LogiMarket.Tests.Patrones.EstructuralesTests.P16_P38_LspProveedores",
+      "LogiMarket.Tests.Arquitectura.DependenciasTests.P38_DependenciasInternasSinFrameworksDePersistenciaNiUi"
+    ],
+    "Archivos": [
+      "tests/LogiMarket.Tests/Arquitectura/DependenciasTests.cs",
+      "tests/LogiMarket.Tests/Patrones/EstructuralesTests.cs"
+    ],
+    "Evidencia": "docs/evidencias/resultados/aceptacion-alan.trx"
+  }
+]

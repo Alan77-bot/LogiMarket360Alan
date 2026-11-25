@@ -1,1 +1,1 @@
-Pendiente: matriz oficial P01-P38, esperado, obtenido, fecha y evidencia. Ninguna prueba implementada o aprobada por ahora.
+Escenarios oficiales conservados en CASOS_OFICIALES.json. MATRIZ.md y MATRIZ_RESULTADOS.json enlazan con la ejecucion nueva de 62 pruebas. Ejecutar dotnet test tests/LogiMarket.Tests para repetir con bases aisladas.

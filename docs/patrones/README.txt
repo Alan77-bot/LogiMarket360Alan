@@ -1,1 +1,1 @@
-Pendiente: mapa de los 23 patrones con problema, participantes, archivo, recorrido, prueba, beneficio y costo. Las carpetas preparadas no equivalen a patrones implementados.
+Consultar MAPA.md para los 23 patrones, participantes, rutas, recorridos, pruebas y costos. Los comentarios en cada clase permiten ubicarlos en Visual Studio.

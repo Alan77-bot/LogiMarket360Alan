@@ -1,1 +1,1 @@
-Las migraciones seran generadas con dotnet ef cuando existan entidades y mapeos. No se escribiran migraciones ficticias.
+InicialAlan y su snapshot fueron generados con EF Core para los namespaces del proyecto Alan. Para cambios futuros crear otra migracion; no editar una migracion ya aplicada para simular historial.
